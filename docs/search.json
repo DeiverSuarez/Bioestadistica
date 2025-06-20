@@ -1,0 +1,162 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bioestadística Aplicada e Interactiva: Guía con R, Python y Aplicaciones Shiny",
+    "section": "",
+    "text": "Preface\nLa enseñanza de la bioestadística en contextos de salud pública, biología y ciencias biomédicas representa uno de los mayores retos pedagógicos de nuestro tiempo. Enfrentar datos reales, interpretar resultados y comunicar hallazgos de forma clara y rigurosa requiere no solo dominio conceptual, sino también habilidades prácticas y tecnológicas. Este libro nace precisamente de esa necesidad: ofrecer una guía moderna, aplicada e interactiva para aprender bioestadística desde la experiencia, con herramientas computacionales actuales como R, Python y Shiny.\nBioestadística Aplicada e Interactiva ha sido desarrollada a partir del trabajo docente realizado en los cursos MPH 3102 – Métodos Estadísticos I y MPH 7202 – Inferential Statistics, impartidos en la Universidad de Puerto Rico – Recinto de Mayagüez. A lo largo de múltiples sesiones, se han cubierto desde fundamentos básicos hasta técnicas avanzadas, siempre con una orientación aplicada e intuitiva.\nEste libro tiene tres pilares fundamentales:\n\nAplicación práctica: cada capítulo parte de ejemplos reales en salud pública, medicina, o investigación biológica. Los datos usados provienen de estudios auténticos, accesibles, y pertinentes para los desafíos actuales de investigación.\nInteractividad: se ha incorporado el desarrollo de aplicaciones Shiny y scripts reproducibles en R y Python que permiten al lector explorar los conceptos de manera dinámica. No se trata solo de leer, sino de hacer estadística.\nAccesibilidad conceptual: sin perder el rigor estadístico, se ha privilegiado un lenguaje claro, explicaciones paso a paso, y recursos visuales tomados de las presentaciones utilizadas en clase (transformadas para uso autónomo y progresivo del lector).\n\nLos temas abordados incluyen:\n\nEstadística descriptiva y visualización de datos\nProbabilidades y distribuciones (Binomial, Poisson, Normal)\nInferencia: estimaciones, intervalos de confianza, pruebas de hipótesis\nComparación de grupos: t-tests, ANOVA, pruebas no paramétricas\nModelos de regresión: lineal simple, múltiple, y logística\nAnálisis de frecuencias: tablas de contingencia, chi-cuadrado, prueba exacta de Fisher\nPruebas no paramétricas: Sign Test, Wilcoxon, Mann–Whitney, Kruskal–Wallis\nAnálisis de supervivencia: estimación de curvas de Kaplan–Meier, prueba log-rank, modelo de riesgos proporcionales de Cox\n\nEste libro también está diseñado para acompañarse de un repositorio de materiales interactivos, conjuntos de datos y aplicaciones, que pueden ser consultados y reutilizados por estudiantes e investigadores.\nFinalmente, este esfuerzo busca integrar la enseñanza estadística con la capacidad de analizar críticamente datos biomédicos. Que esta guía sirva para formar no solo usuarios de herramientas estadísticas, sino también pensadores críticos capaces de transformar datos en decisiones informadas.\n\nDr. Deiver Suárez Gómez, PhD\nDepartamento de Biología\nUniversidad de Puerto Rico – Recinto de Mayagüez",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "La bioestadística es una disciplina fundamental en las ciencias de la salud, la biología y la investigación biomédica. Su objetivo principal es proporcionar herramientas que permitan describir, analizar e interpretar datos cuantitativos provenientes de experimentos, estudios clínicos, encuestas y registros médicos. Comprender los principios de la estadística no solo es crucial para evaluar la validez de los hallazgos científicos, sino también para diseñar investigaciones rigurosas y tomar decisiones informadas basadas en evidencia.\nEste libro ha sido estructurado con base en más de una docena de sesiones impartidas a estudiantes de maestría en salud pública y biología, organizadas en torno a los siguientes ejes temáticos:\n\nLa exploración inicial de datos y la visualización descriptiva, abordando la importancia de las escalas de medición, la estructura de los conjuntos de datos, y las representaciones gráficas fundamentales.\nEl uso de herramientas computacionales modernas como R y Python para aplicar conceptos estadísticos de forma práctica, reproducible e interactiva.\nLa probabilidad como lenguaje para modelar la incertidumbre, incluyendo el enfoque clásico, empírico y bayesiano, y su relación con la toma de decisiones.\nEl estudio de distribuciones teóricas fundamentales como la binomial, la de Poisson y la normal, esenciales para el desarrollo de la inferencia estadística.\nEl desarrollo de técnicas inferenciales, como los intervalos de confianza y las pruebas de hipótesis, con énfasis en la interpretación correcta de los resultados.\nLa comparación entre modelos paramétricos y no paramétricos, y la selección adecuada de pruebas según las características del diseño y los datos disponibles.\nLa incorporación de modelos de regresión lineal y logística, así como el análisis de interacciones, efectos confusores y criterios de selección de variables.\nLa enseñanza del análisis de supervivencia, incluyendo censura, curvas de Kaplan–Meier, prueba log-rank y modelo de riesgos proporcionales de Cox.\n\nEste libro se diferencia de otros textos de bioestadística por su enfoque altamente práctico e interactivo. Cada capítulo incluye ejemplos basados en situaciones reales, ejercicios con datos reales, y aplicaciones Shiny que permiten explorar conceptos estadísticos en tiempo real.\nAdemás, el libro ha sido concebido como un recurso integral para la docencia y el autoaprendizaje. No se requiere experiencia previa con programación: el lector será guiado paso a paso en el uso de código en R y Python, con el objetivo de desarrollar competencia y autonomía en el análisis de datos.\nEn conjunto, este libro ofrece una experiencia de aprendizaje accesible, actualizada y centrada en la aplicación del conocimiento estadístico. Está dirigido a estudiantes de posgrado, investigadores, profesionales de la salud y docentes que deseen fortalecer su formación cuantitativa y aplicar la estadística de forma rigurosa y efectiva.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "2.1 Estructura Temática\nBioestadística Aplicada e Interactiva: Guía con R, Python y Aplicaciones Shiny es un texto integral y didáctico diseñado para estudiantes y profesionales de la salud, biología, y ciencias afines que desean dominar la estadística aplicada en un contexto real y computacional. A partir de una docencia activa y más de una docena de sesiones desarrolladas en cursos como MPH 3102 y MPH 7202, el libro articula teoría, práctica y tecnología para ofrecer un enfoque accesible, moderno e interactivo.\nEl contenido del libro abarca los fundamentos de la bioestadística, el análisis descriptivo, la teoría de la probabilidad y la inferencia estadística, hasta técnicas avanzadas como regresión múltiple, regresión logística y análisis de supervivencia. Todos los temas están acompañados por ejemplos reproducibles en R y Python, así como aplicaciones interactivas desarrolladas en Shiny que permiten explorar los conceptos de forma visual y práctica.\nEl libro se organiza en capítulos progresivos que abarcan:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#estructura-temática",
+    "href": "summary.html#estructura-temática",
+    "title": "2  Summary",
+    "section": "",
+    "text": "Fundamentos de bioestadística: variables, tipos de datos, escalas de medición y exploración inicial.\nVisualización y estadística descriptiva: gráficos, tablas, medidas de tendencia central y dispersión.\nTeoría de la probabilidad: enfoques clásico, empírico y bayesiano, eventos y reglas de probabilidad.\nDistribuciones de probabilidad: binomial, Poisson y normal, con aplicaciones biomédicas.\nInferencia estadística: estimación de parámetros, intervalos de confianza y pruebas de hipótesis.\nComparaciones entre grupos: t-student, ANOVA, pruebas no paramétricas (Wilcoxon, Kruskal–Wallis).\nModelos de regresión:\n\nRegresión lineal simple y múltiple\nRegresión logística binaria\nInclusión de interacciones y análisis de confusión\nSelección de variables y diagnóstico de modelos\n\nAnálisis de frecuencias: tablas de contingencia, pruebas chi-cuadrado y prueba exacta de Fisher.\nAnálisis de supervivencia: censura, curvas de Kaplan–Meier, log-rank test, modelo de Cox y supuestos.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#enfoque-pedagógico",
+    "href": "summary.html#enfoque-pedagógico",
+    "title": "2  Summary",
+    "section": "2.2 Enfoque Pedagógico",
+    "text": "2.2 Enfoque Pedagógico\nEste libro ha sido diseñado no solo como material de consulta, sino como una herramienta interactiva de aprendizaje autónomo. Cada capítulo incluye:\n\nExplicaciones teóricas accesibles\nCasos reales y ejemplos contextualizados\nCódigo comentado en R y Python\nEjercicios guiados y soluciones\nAplicaciones Shiny interactivas para visualización y análisis",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#público-objetivo",
+    "href": "summary.html#público-objetivo",
+    "title": "2  Summary",
+    "section": "2.3 Público Objetivo",
+    "text": "2.3 Público Objetivo\n\nEstudiantes de maestría y doctorado en salud pública, biología, epidemiología, psicología y áreas afines\nProfesionales que deseen fortalecer sus competencias en análisis de datos biomédicos\nDocentes que buscan recursos modernos y prácticos para sus cursos\n\n\nEste libro busca transformar la forma en que se enseña y se aprende bioestadística: desde una práctica pasiva y memorística hacia una experiencia activa, exploratoria y fundamentada en datos reales.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "01_datos.html",
+    "href": "01_datos.html",
+    "title": "3  Tipos y Naturaleza de los Datos",
+    "section": "",
+    "text": "3.1 Introducción\nLos análisis estadístico comienza con datos. Comprender su naturaleza, origen y estructura es fundamental para aplicar correctamente las técnicas estadísticas. Este capítulo introduce los conceptos básicos sobre tipos de datos, variables y su clasificación, ilustrados con ejemplos prácticos en R y Python.\nAl finalizar este capítulo, podrás:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tipos y Naturaleza de los Datos</span>"
+    ]
+  },
+  {
+    "objectID": "01_datos.html#introducción",
+    "href": "01_datos.html#introducción",
+    "title": "3  Tipos y Naturaleza de los Datos",
+    "section": "",
+    "text": "Definir qué se entiende por datos en el contexto de salud pública\nClasificar variables según su naturaleza y escala de medición\nReconocer la diferencia entre variables cualitativas y cuantitativas\nCrear y explorar conjuntos de datos simples en R y Python",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tipos y Naturaleza de los Datos</span>"
+    ]
+  },
+  {
+    "objectID": "01_datos.html#qué-son-los-datos",
+    "href": "01_datos.html#qué-son-los-datos",
+    "title": "3  Tipos y Naturaleza de los Datos",
+    "section": "3.2 ¿Qué son los datos?",
+    "text": "3.2 ¿Qué son los datos?\nEn estadística, los datos representan observaciones o mediciones recolectadas sobre unidades de análisis: personas, comunidades, eventos u objetos.\nEn salud pública, los datos pueden provenir de:\n\nEncuestas poblacionales\nRegistros clínicos o epidemiológicos\nEnsayos clínicos\nEstudios de vigilancia\n\nEjemplos comunes de variables recolectadas incluyen:\n\nEdad de los pacientes\nPresión arterial\nNivel socioeconómico\nDiagnóstico de enfermedad",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tipos y Naturaleza de los Datos</span>"
+    ]
+  },
+  {
+    "objectID": "01_datos.html#tipos-de-variables",
+    "href": "01_datos.html#tipos-de-variables",
+    "title": "3  Tipos y Naturaleza de los Datos",
+    "section": "3.3 Tipos de variables",
+    "text": "3.3 Tipos de variables\nLas variables se pueden clasificar de acuerdo con:\n\nSu naturaleza (cualitativa o cuantitativa)\nSu escala de medición (nominal, ordinal, intervalo o razón)\n\n\n3.3.1 Variables cualitativas\nRepresentan categorías o atributos. No tienen significado numérico.\n\nNominales: No poseen un orden inherente\nEjemplo: tipo de sangre (A, B, AB, O)\nOrdinales: Poseen un orden lógico\nEjemplo: nivel de dolor (leve, moderado, severo)\n\n\n\n3.3.2 Variables cuantitativas\nRepresentan cantidades numéricas.\n\nDiscretas: Valores enteros contables\nEjemplo: número de hijos\nContinuas: Pueden tomar cualquier valor dentro de un intervalo\nEjemplo: estatura, peso corporal\n\n\n\n3.3.3 Tabla resumen\n\n\n\nTipo\nSubtipo\nEjemplo\n\n\n\n\nCualitativa\nNominal\nTipo de sangre\n\n\nCualitativa\nOrdinal\nNivel de dolor (leve, moderado, severo)\n\n\nCuantitativa\nDiscreta\nNúmero de visitas médicas\n\n\nCuantitativa\nContinua\nÍndice de masa corporal",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tipos y Naturaleza de los Datos</span>"
+    ]
+  },
+  {
+    "objectID": "01_datos.html#cargar-y-explorar-datos",
+    "href": "01_datos.html#cargar-y-explorar-datos",
+    "title": "3  Tipos y Naturaleza de los Datos",
+    "section": "3.4 Cargar y explorar datos",
+    "text": "3.4 Cargar y explorar datos\nA continuación, se presentan ejemplos prácticos para crear y explorar conjuntos de datos simples en R y Python, simulando variables típicas en salud pública.\n\n3.4.1 En R\n\n# Crear un DataFrame en R\ndatos &lt;- data.frame(\n  sexo = c(\"F\", \"M\", \"F\", \"M\"),\n  edad = c(23, 35, 29, 41),\n  peso = c(55.2, 70.3, 60.1, 82.5)\n)\n# Ver datos\nprint(datos)\n\n  sexo edad peso\n1    F   23 55.2\n2    M   35 70.3\n3    F   29 60.1\n4    M   41 82.5\n\n# Ver estructura\nstr(datos)\n\n'data.frame':   4 obs. of  3 variables:\n $ sexo: chr  \"F\" \"M\" \"F\" \"M\"\n $ edad: num  23 35 29 41\n $ peso: num  55.2 70.3 60.1 82.5\n\n# Ver resumen\nsummary(datos)\n\n     sexo                edad           peso      \n Length:4           Min.   :23.0   Min.   :55.20  \n Class :character   1st Qu.:27.5   1st Qu.:58.88  \n Mode  :character   Median :32.0   Median :65.20  \n                    Mean   :32.0   Mean   :67.03  \n                    3rd Qu.:36.5   3rd Qu.:73.35  \n                    Max.   :41.0   Max.   :82.50  \n\n\n\n\n3.4.2 En Python\n\n# Crear un DataFrame en Python\nimport pandas as pd\n\ndatos = pd.DataFrame({\n    \"sexo\": [\"F\", \"M\", \"F\", \"M\"],\n    \"edad\": [23, 35, 29, 41],\n    \"peso\": [55.2, 70.3, 60.1, 82.5]\n})\n\n# Ver datos\ndatos\n\n  sexo  edad  peso\n0    F    23  55.2\n1    M    35  70.3\n2    F    29  60.1\n3    M    41  82.5\n\n# Ver estructura \ndatos.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 4 entries, 0 to 3\nData columns (total 3 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   sexo    4 non-null      object \n 1   edad    4 non-null      int64  \n 2   peso    4 non-null      float64\ndtypes: float64(1), int64(1), object(1)\nmemory usage: 224.0+ bytes\n\n# Ver resumen\ndatos.describe()\n\n            edad       peso\ncount   4.000000   4.000000\nmean   32.000000  67.025000\nstd     7.745967  12.082874\nmin    23.000000  55.200000\n25%    27.500000  58.875000\n50%    32.000000  65.200000\n75%    36.500000  73.350000\nmax    41.000000  82.500000",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tipos y Naturaleza de los Datos</span>"
+    ]
+  },
+  {
+    "objectID": "01_datos.html#conclusión",
+    "href": "01_datos.html#conclusión",
+    "title": "3  Tipos y Naturaleza de los Datos",
+    "section": "3.5 Conclusión",
+    "text": "3.5 Conclusión\nComprender los tipos de variables es el primer paso para aplicar correctamente métodos de análisis estadístico. Esta clasificación influye directamente en:\n\nLa selección de pruebas estadísticas\nLa representación gráfica\nEl resumen numérico apropiado\n\nEn los siguientes capítulos, profundizaremos en la estadística descriptiva como base del análisis de datos en salud pública.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tipos y Naturaleza de los Datos</span>"
+    ]
+  },
+  {
+    "objectID": "02_estadistica_descriptiva.html",
+    "href": "02_estadistica_descriptiva.html",
+    "title": "4  Estadística Descriptiva",
+    "section": "",
+    "text": "4.1 1. Carga y descripción del conjunto de datos\nEste capítulo utiliza un conjunto de datos real descargado de Kaggle: Stroke Prediction Dataset, que contiene información demográfica, médica y conductual de pacientes. El objetivo es explorar los datos aplicando técnicas de estadística descriptiva, apoyados por gráficos, código en R y Python, una aplicación Shiny y material audiovisual.\ndatos &lt;- read.csv(\"healthcare-dataset-stroke-data.csv\")\nsummary(datos)\n\n       id           gender               age         hypertension    \n Min.   :   67   Length:5110        Min.   : 0.08   Min.   :0.00000  \n 1st Qu.:17741   Class :character   1st Qu.:25.00   1st Qu.:0.00000  \n Median :36932   Mode  :character   Median :45.00   Median :0.00000  \n Mean   :36518                      Mean   :43.23   Mean   :0.09746  \n 3rd Qu.:54682                      3rd Qu.:61.00   3rd Qu.:0.00000  \n Max.   :72940                      Max.   :82.00   Max.   :1.00000  \n heart_disease     ever_married        work_type         Residence_type    \n Min.   :0.00000   Length:5110        Length:5110        Length:5110       \n 1st Qu.:0.00000   Class :character   Class :character   Class :character  \n Median :0.00000   Mode  :character   Mode  :character   Mode  :character  \n Mean   :0.05401                                                           \n 3rd Qu.:0.00000                                                           \n Max.   :1.00000                                                           \n avg_glucose_level     bmi            smoking_status         stroke       \n Min.   : 55.12    Length:5110        Length:5110        Min.   :0.00000  \n 1st Qu.: 77.25    Class :character   Class :character   1st Qu.:0.00000  \n Median : 91.89    Mode  :character   Mode  :character   Median :0.00000  \n Mean   :106.15                                          Mean   :0.04873  \n 3rd Qu.:114.09                                          3rd Qu.:0.00000  \n Max.   :271.74                                          Max.   :1.00000  \n\nhead(datos)\n\n     id gender age hypertension heart_disease ever_married     work_type\n1  9046   Male  67            0             1          Yes       Private\n2 51676 Female  61            0             0          Yes Self-employed\n3 31112   Male  80            0             1          Yes       Private\n4 60182 Female  49            0             0          Yes       Private\n5  1665 Female  79            1             0          Yes Self-employed\n6 56669   Male  81            0             0          Yes       Private\n  Residence_type avg_glucose_level  bmi  smoking_status stroke\n1          Urban            228.69 36.6 formerly smoked      1\n2          Rural            202.21  N/A    never smoked      1\n3          Rural            105.92 32.5    never smoked      1\n4          Urban            171.23 34.4          smokes      1\n5          Rural            174.12   24    never smoked      1\n6          Urban            186.21   29 formerly smoked      1\nimport pandas as pd\ndatos = pd.read_csv(\"healthcare-dataset-stroke-data.csv\")\ndatos.head()\n\n      id  gender   age  ...   bmi   smoking_status stroke\n0   9046    Male  67.0  ...  36.6  formerly smoked      1\n1  51676  Female  61.0  ...   NaN     never smoked      1\n2  31112    Male  80.0  ...  32.5     never smoked      1\n3  60182  Female  49.0  ...  34.4           smokes      1\n4   1665  Female  79.0  ...  24.0     never smoked      1\n\n[5 rows x 12 columns]\n\ndatos.describe(include='all')\n\n                  id  gender  ...  smoking_status       stroke\ncount    5110.000000    5110  ...            5110  5110.000000\nunique           NaN       3  ...               4          NaN\ntop              NaN  Female  ...    never smoked          NaN\nfreq             NaN    2994  ...            1892          NaN\nmean    36517.829354     NaN  ...             NaN     0.048728\nstd     21161.721625     NaN  ...             NaN     0.215320\nmin        67.000000     NaN  ...             NaN     0.000000\n25%     17741.250000     NaN  ...             NaN     0.000000\n50%     36932.000000     NaN  ...             NaN     0.000000\n75%     54682.000000     NaN  ...             NaN     0.000000\nmax     72940.000000     NaN  ...             NaN     1.000000\n\n[11 rows x 12 columns]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Estadística Descriptiva</span>"
+    ]
+  },
+  {
+    "objectID": "02_estadistica_descriptiva.html#gráficos-descriptivos",
+    "href": "02_estadistica_descriptiva.html#gráficos-descriptivos",
+    "title": "4  Estadística Descriptiva",
+    "section": "4.2 2. Gráficos descriptivos",
+    "text": "4.2 2. Gráficos descriptivos\n\n4.2.1 Boxplot de edad según presencia de ACV\n\nboxplot(age ~ stroke, data = datos, main = \"Edad por Stroke\", col = \"lightblue\")\n\n\n\n\n\n\n\n\n\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nsns.boxplot(x=\"stroke\", y=\"age\", data=datos)\nplt.title(\"Edad por Stroke\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n4.2.2 Histograma de glucosa promedio\n\nhist(datos$avg_glucose_level, main = \"Glucosa Promedio\", xlab = \"Nivel de glucosa\", col = \"lightgreen\")\n\n\n\n\n\n\n\n\n\nsns.histplot(data=datos, x=\"avg_glucose_level\", kde=True, color=\"green\")\nplt.title(\"Distribución del nivel de glucosa\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n4.2.3 Frecuencias y proporciones\n\ntable(datos$gender)\n\n\nFemale   Male  Other \n  2994   2115      1 \n\nprop.table(table(datos$stroke))\n\n\n         0          1 \n0.95127202 0.04872798 \n\n\n\nprint(datos[\"gender\"].value_counts())\n\ngender\nFemale    2994\nMale      2115\nOther        1\nName: count, dtype: int64\n\nprint(datos[\"stroke\"].value_counts(normalize=True))\n\nstroke\n0    0.951272\n1    0.048728\nName: proportion, dtype: float64\n\n\n\n\n4.2.4 Aplicación interactiva\nComo complemento a este capítulo, se ha desarrollado una aplicación interactiva utilizando Shiny que permite explorar conceptos de estadística descriptiva y análisis exploratorio con visualizaciones dinámicas y opciones personalizables para el usuario.\n🔗 Accede a la app aquí:\n👉 https://deiversg.shinyapps.io/app_statistical_Methods/\n\n🎥 Video tutorial – ¿Cómo usar la app?\n\n\n\n\n\nVideo tutorial: ¿Cómo usar la app?",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Estadística Descriptiva</span>"
+    ]
+  },
+  {
+    "objectID": "02_estadistica_descriptiva.html#recursos-audiovisuales",
+    "href": "02_estadistica_descriptiva.html#recursos-audiovisuales",
+    "title": "4  Estadística Descriptiva",
+    "section": "4.3 5. Recursos audiovisuales",
+    "text": "4.3 5. Recursos audiovisuales\n\n4.3.1 🎥 Introducción a la estadística descriptiva\n\n\n\n\n\nVideo: Introducción a la estadística descriptiva\n\n\n\n\n4.3.2 📊 Visualización de datos en R (boxplots, histogramas)\n\n\n\n\n\nVideo: Visualización de datos en R\n\n\n\n\n4.3.3 🐍 Exploración con Python (Seaborn, pandas)\n\n\n\n\n\nVideo: Exploración con Python",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Estadística Descriptiva</span>"
+    ]
+  },
+  {
+    "objectID": "02_estadistica_descriptiva.html#conclusión",
+    "href": "02_estadistica_descriptiva.html#conclusión",
+    "title": "4  Estadística Descriptiva",
+    "section": "4.4 6. Conclusión",
+    "text": "4.4 6. Conclusión\nEl análisis exploratorio de datos con herramientas como R y Python permite obtener una comprensión inicial robusta de los patrones en datos biomédicos. Esto es esencial antes de aplicar modelos predictivos como regresión o clasificación. El uso de gráficos y resúmenes numéricos fortalece la interpretación clínica y estadística de los fenómenos observados.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Estadística Descriptiva</span>"
+    ]
+  }
+]
