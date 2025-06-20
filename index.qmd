@@ -1,0 +1,34 @@
+# Preface {.unnumbered}
+
+La enseñanza de la bioestadística en contextos de salud pública, biología y ciencias biomédicas representa uno de los mayores retos pedagógicos de nuestro tiempo. Enfrentar datos reales, interpretar resultados y comunicar hallazgos de forma clara y rigurosa requiere no solo dominio conceptual, sino también habilidades prácticas y tecnológicas. Este libro nace precisamente de esa necesidad: ofrecer una guía moderna, aplicada e interactiva para aprender bioestadística desde la experiencia, con herramientas computacionales actuales como **R**, **Python** y **Shiny**.
+
+*Bioestadística Aplicada e Interactiva* ha sido desarrollada a partir del trabajo docente realizado en los cursos **MPH 3102 – Métodos Estadísticos I** y **MPH 7202 – Inferential Statistics**, impartidos en la Universidad de Puerto Rico – Recinto de Mayagüez. A lo largo de múltiples sesiones, se han cubierto desde fundamentos básicos hasta técnicas avanzadas, siempre con una orientación aplicada e intuitiva.
+
+Este libro tiene tres pilares fundamentales:
+
+-   **Aplicación práctica**: cada capítulo parte de ejemplos reales en salud pública, medicina, o investigación biológica. Los datos usados provienen de estudios auténticos, accesibles, y pertinentes para los desafíos actuales de investigación.
+
+-   **Interactividad**: se ha incorporado el desarrollo de aplicaciones **Shiny** y scripts reproducibles en **R** y **Python** que permiten al lector explorar los conceptos de manera dinámica. No se trata solo de leer, sino de *hacer* estadística.
+
+-   **Accesibilidad conceptual**: sin perder el rigor estadístico, se ha privilegiado un lenguaje claro, explicaciones paso a paso, y recursos visuales tomados de las presentaciones utilizadas en clase (transformadas para uso autónomo y progresivo del lector).
+
+Los temas abordados incluyen:
+
+-   Estadística descriptiva y visualización de datos
+-   Probabilidades y distribuciones (Binomial, Poisson, Normal)
+-   Inferencia: estimaciones, intervalos de confianza, pruebas de hipótesis
+-   Comparación de grupos: t-tests, ANOVA, pruebas no paramétricas
+-   Modelos de regresión: lineal simple, múltiple, y logística
+-   Análisis de frecuencias: tablas de contingencia, chi-cuadrado, prueba exacta de Fisher
+-   Pruebas no paramétricas: Sign Test, Wilcoxon, Mann–Whitney, Kruskal–Wallis
+-   Análisis de supervivencia: estimación de curvas de Kaplan–Meier, prueba log-rank, modelo de riesgos proporcionales de Cox
+
+Este libro también está diseñado para acompañarse de un repositorio de materiales interactivos, conjuntos de datos y aplicaciones, que pueden ser consultados y reutilizados por estudiantes e investigadores.
+
+Finalmente, este esfuerzo busca integrar la enseñanza estadística con la capacidad de analizar críticamente datos biomédicos. Que esta guía sirva para formar no solo usuarios de herramientas estadísticas, sino también **pensadores críticos** capaces de transformar datos en decisiones informadas.
+
+------------------------------------------------------------------------
+
+**Dr. Deiver Suárez Gómez, PhD**\
+Departamento de Biología\
+Universidad de Puerto Rico – Recinto de Mayagüez

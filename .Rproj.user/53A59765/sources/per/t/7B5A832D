@@ -1,0 +1,33 @@
+{
+    "id": "7B5A832D",
+    "path": "~/Documents/bioestadistica-salud-publica/bioestadistica/02_estadistica_descriptiva.qmd",
+    "project_path": "02_estadistica_descriptiva.qmd",
+    "type": "quarto_markdown",
+    "hash": "1461689899",
+    "contents": "",
+    "dirty": false,
+    "created": 1750359419158.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "25,13",
+        "scrollLine": "12",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "44:0",
+        "quartoPreviewFormat": "html"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1750391555,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1750391555999,
+    "read_only": false,
+    "read_only_alternatives": []
+}
