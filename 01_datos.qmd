@@ -7,7 +7,7 @@ reticulate::use_condaenv("quarto-env", required = TRUE)
 
 ## Introducción
 
-Todo análisis estadístico comienza con datos. Comprender su naturaleza, origen y estructura es fundamental para aplicar correctamente las técnicas estadísticas. Este capítulo introduce los conceptos básicos sobre tipos de datos, variables y su clasificación, ilustrados con ejemplos prácticos en **R** y **Python**.
+Los análisis estadístico comienza con datos. Comprender su naturaleza, origen y estructura es fundamental para aplicar correctamente las técnicas estadísticas. Este capítulo introduce los conceptos básicos sobre tipos de datos, variables y su clasificación, ilustrados con ejemplos prácticos en **R** y **Python**.
 
 Al finalizar este capítulo, podrás:
 

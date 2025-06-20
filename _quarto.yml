@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Bioestadística Aplicada e Interactiva: Guía con R, Python y Aplicaciones Shiny"
@@ -18,11 +19,12 @@ book:
 
 bibliography: references.bib
 
-
 format:
   html: default
   pdf: default
   docx: default
+
 lang: es
+
 
 
