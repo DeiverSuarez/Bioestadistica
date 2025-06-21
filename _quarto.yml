@@ -17,14 +17,8 @@ book:
     - 05_regresion.qmd
     - references.qmd
 
-bibliography: references.bib
-
 format:
   html: default
-  pdf: default
-  docx: default
 
 lang: es
-
-
 

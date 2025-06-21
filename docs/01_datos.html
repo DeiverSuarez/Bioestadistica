@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Tipos y Naturaleza de los Datos – Bioestadística Aplicada e Interactiva: Guía con R, Python y Aplicaciones Shiny</title>
+<title>¿Qué es la Bioestadística? – Bioestadística Aplicada e Interactiva: Guía con R, Python y Aplicaciones Shiny</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_datos.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipos y Naturaleza de los Datos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_datos.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">¿Qué es la Bioestadística?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -163,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_datos.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipos y Naturaleza de los Datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">¿Qué es la Bioestadística?</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -206,20 +206,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">3.1</span> Introducción</a></li>
-  <li><a href="#qué-son-los-datos" id="toc-qué-son-los-datos" class="nav-link" data-scroll-target="#qué-son-los-datos"><span class="header-section-number">3.2</span> ¿Qué son los datos?</a></li>
-  <li><a href="#tipos-de-variables" id="toc-tipos-de-variables" class="nav-link" data-scroll-target="#tipos-de-variables"><span class="header-section-number">3.3</span> Tipos de variables</a>
+  <li><a href="#ejemplos" id="toc-ejemplos" class="nav-link active" data-scroll-target="#ejemplos">Ejemplos:</a></li>
+  <li><a href="#motivación-para-estudiar-estadística" id="toc-motivación-para-estudiar-estadística" class="nav-link" data-scroll-target="#motivación-para-estudiar-estadística">Motivación para estudiar estadística</a></li>
+  <li><a href="#fuentes-de-datos-en-bioestadística" id="toc-fuentes-de-datos-en-bioestadística" class="nav-link" data-scroll-target="#fuentes-de-datos-en-bioestadística">Fuentes de datos en bioestadística</a>
   <ul class="collapse">
-  <li><a href="#variables-cualitativas" id="toc-variables-cualitativas" class="nav-link" data-scroll-target="#variables-cualitativas"><span class="header-section-number">3.3.1</span> Variables cualitativas</a></li>
-  <li><a href="#variables-cuantitativas" id="toc-variables-cuantitativas" class="nav-link" data-scroll-target="#variables-cuantitativas"><span class="header-section-number">3.3.2</span> Variables cuantitativas</a></li>
-  <li><a href="#tabla-resumen" id="toc-tabla-resumen" class="nav-link" data-scroll-target="#tabla-resumen"><span class="header-section-number">3.3.3</span> Tabla resumen</a></li>
+  <li><a href="#principales-fuentes-de-datos-en-ciencias-de-la-salud" id="toc-principales-fuentes-de-datos-en-ciencias-de-la-salud" class="nav-link" data-scroll-target="#principales-fuentes-de-datos-en-ciencias-de-la-salud">Principales fuentes de datos en ciencias de la salud</a></li>
+  <li><a href="#por-qué-es-importante-conocer-la-fuente-de-los-datos" id="toc-por-qué-es-importante-conocer-la-fuente-de-los-datos" class="nav-link" data-scroll-target="#por-qué-es-importante-conocer-la-fuente-de-los-datos">¿Por qué es importante conocer la fuente de los datos?</a></li>
+  <li><a href="#ejemplos-1" id="toc-ejemplos-1" class="nav-link" data-scroll-target="#ejemplos-1">Ejemplos</a></li>
+  <li><a href="#explora-bases-de-datos-abiertas" id="toc-explora-bases-de-datos-abiertas" class="nav-link" data-scroll-target="#explora-bases-de-datos-abiertas">🌐 Explora bases de datos abiertas</a></li>
   </ul></li>
-  <li><a href="#cargar-y-explorar-datos" id="toc-cargar-y-explorar-datos" class="nav-link" data-scroll-target="#cargar-y-explorar-datos"><span class="header-section-number">3.4</span> Cargar y explorar datos</a>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables</a>
   <ul class="collapse">
-  <li><a href="#en-r" id="toc-en-r" class="nav-link" data-scroll-target="#en-r"><span class="header-section-number">3.4.1</span> En R</a></li>
-  <li><a href="#en-python" id="toc-en-python" class="nav-link" data-scroll-target="#en-python"><span class="header-section-number">3.4.2</span> En Python</a></li>
+  <li><a href="#tipos-de-variables" id="toc-tipos-de-variables" class="nav-link" data-scroll-target="#tipos-de-variables">Tipos de variables</a></li>
   </ul></li>
-  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión"><span class="header-section-number">3.5</span> Conclusión</a></li>
+  <li><a href="#variables-aleatorias" id="toc-variables-aleatorias" class="nav-link" data-scroll-target="#variables-aleatorias">Variables aleatorias</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo">Ejemplo:</a></li>
+  </ul></li>
+  <li><a href="#escalas-de-medición" id="toc-escalas-de-medición" class="nav-link" data-scroll-target="#escalas-de-medición">Escalas de medición</a></li>
+  <li><a href="#población-y-muestra" id="toc-población-y-muestra" class="nav-link" data-scroll-target="#población-y-muestra">Población y muestra</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1">Ejemplo:</a></li>
+  </ul></li>
+  <li><a href="#muestreo-aleatorio-simple" id="toc-muestreo-aleatorio-simple" class="nav-link" data-scroll-target="#muestreo-aleatorio-simple">Muestreo aleatorio simple</a>
+  <ul class="collapse">
+  <li><a href="#definición" id="toc-definición" class="nav-link" data-scroll-target="#definición">Definición</a></li>
+  <li><a href="#ventajas" id="toc-ventajas" class="nav-link" data-scroll-target="#ventajas">Ventajas</a></li>
+  <li><a href="#desventajas" id="toc-desventajas" class="nav-link" data-scroll-target="#desventajas">Desventajas</a></li>
+  <li><a href="#en-r" id="toc-en-r" class="nav-link" data-scroll-target="#en-r">En R</a></li>
+  <li><a href="#en-python" id="toc-en-python" class="nav-link" data-scroll-target="#en-python">En Python</a></li>
+  </ul></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión">Conclusión</a></li>
   </ul>
 </nav>
     </div>
@@ -228,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tipos y Naturaleza de los Datos</span></h1>
+<h1 class="title"><span class="chapter-title">¿Qué es la Bioestadística?</span></h1>
 </div>
 
 
@@ -245,203 +262,339 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introducción" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">3.1</span> Introducción</h2>
-<p>Los análisis estadístico comienza con datos. Comprender su naturaleza, origen y estructura es fundamental para aplicar correctamente las técnicas estadísticas. Este capítulo introduce los conceptos básicos sobre tipos de datos, variables y su clasificación, ilustrados con ejemplos prácticos en <strong>R</strong> y <strong>Python</strong>.</p>
-<p>Al finalizar este capítulo, podrás:</p>
+<p>La <strong>bioestadística</strong> es una rama de la estadística esencial para entender la vida a través de los datos. Se aplica a información proveniente de organismos vivos, desde células individuales hasta poblaciones humanas enteras, y permite traducir esos datos en conocimiento útil para la salud pública, la medicina, la biología y otras ciencias de la vida.</p>
+<p>Su propósito es interpretar, analizar y contextualizar datos complejos para tomar decisiones informadas. Esto va desde evaluar si un tratamiento médico es efectivo, hasta identificar factores de riesgo en enfermedades crónicas, modelar la propagación de epidemias o entender cómo influyen los determinantes sociales en la salud.</p>
+<section id="ejemplos" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplos">Ejemplos:</h3>
 <ul>
-<li>Definir qué se entiende por datos en el contexto de salud pública</li>
-<li>Clasificar variables según su naturaleza y escala de medición</li>
-<li>Reconocer la diferencia entre variables cualitativas y cuantitativas</li>
-<li>Crear y explorar conjuntos de datos simples en R y Python</li>
+<li>En una pandemia, la bioestadística permite estimar la velocidad de transmisión de un virus y proyectar su impacto.</li>
+<li>En un hospital, ayuda a decidir si un nuevo medicamento mejora significativamente la supervivencia de pacientes con cáncer.</li>
+<li>En biología molecular, permite identificar genes cuya expresión cambia en respuesta a una enfermedad.</li>
 </ul>
-<hr>
+<p>La bioestadística nos invita a pensar críticamente y a ver más allá de los números: a encontrar patrones, formular hipótesis y validar teorías con base en evidencia. En última instancia, es una disciplina que busca mejorar vidas a través de decisiones basadas en datos confiables.</p>
 </section>
-<section id="qué-son-los-datos" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="qué-son-los-datos"><span class="header-section-number">3.2</span> ¿Qué son los datos?</h2>
-<p>En estadística, los <strong>datos</strong> representan observaciones o mediciones recolectadas sobre unidades de análisis: personas, comunidades, eventos u objetos.</p>
-<p>En salud pública, los datos pueden provenir de:</p>
+<section id="motivación-para-estudiar-estadística" class="level1">
+<h1>Motivación para estudiar estadística</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ciclo_estadistica_decision2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" data-fig-cap="Ciclo de la estadística: La estadística descriptiva resume los datos de la muestra; la probabilidad permite inferencias hacia la población; y la estadística inferencial nos guía en la toma de decisiones informadas basadas en esa inferencia."></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Leyenda de la figura">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Leyenda de la figura
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Esta figura ilustra el flujo general del proceso estadístico. Todo comienza con una <strong>población</strong>, de la cual se extrae una <strong>muestra</strong> para su análisis. A partir de esa muestra, se aplican dos ramas fundamentales: la <strong>estadística descriptiva</strong>, que resume y presenta los datos, y la <strong>estadística inferencial</strong>, que permite hacer generalizaciones sobre la población. Ambas ramas se apoyan en la <strong>probabilidad</strong> como base teórica para manejar la incertidumbre. Finalmente, el análisis estadístico orienta la <strong>toma de decisiones</strong>, permitiendo aplicar el conocimiento generado a problemas reales.</p>
+</div>
+</div>
+<p>La estadística es esencial en la investigación científica porque actúa como el lenguaje con el que interpretamos la variabilidad inherente al mundo natural y social. Nos permite responder preguntas complejas con evidencia numérica, y transforma la incertidumbre en conocimiento útil y accionable.</p>
+<p>Gracias a la estadística, podemos:</p>
 <ul>
-<li>Encuestas poblacionales</li>
-<li>Registros clínicos o epidemiológicos</li>
-<li>Ensayos clínicos</li>
-<li>Estudios de vigilancia</li>
+<li><strong>Extraer conclusiones significativas</strong> a partir de datos, por ejemplo, determinar si un tratamiento realmente mejora la salud de los pacientes o si una intervención de salud pública reduce la incidencia de una enfermedad.</li>
+<li><strong>Medir la incertidumbre</strong>, lo cual es fundamental cuando se trabaja con muestras en lugar de poblaciones completas. Esto permite comunicar el grado de confianza en los resultados obtenidos, algo crucial al tomar decisiones clínicas o políticas.</li>
+<li><strong>Tomar decisiones fundamentadas</strong> basadas en análisis objetivos. Desde la asignación de recursos hospitalarios hasta la aprobación de nuevas vacunas, la estadística provee la base para justificar esas decisiones.</li>
 </ul>
-<p>Ejemplos comunes de variables recolectadas incluyen:</p>
-<ul>
-<li>Edad de los pacientes</li>
-<li>Presión arterial</li>
-<li>Nivel socioeconómico</li>
-<li>Diagnóstico de enfermedad</li>
-</ul>
-<hr>
+<p>En esencia, la estadística no solo ayuda a responder “¿qué está ocurriendo?”, sino también “¿por qué?”, “¿cuánto?” y “¿con qué grado de certeza?”. Es una brújula intelectual que guía la ciencia hacia conclusiones robustas y reproducibles.</p>
 </section>
-<section id="tipos-de-variables" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="tipos-de-variables"><span class="header-section-number">3.3</span> Tipos de variables</h2>
-<p>Las variables se pueden clasificar de acuerdo con:</p>
-<ul>
-<li>Su <strong>naturaleza</strong> (cualitativa o cuantitativa)</li>
-<li>Su <strong>escala de medición</strong> (nominal, ordinal, intervalo o razón)</li>
-</ul>
-<section id="variables-cualitativas" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="variables-cualitativas"><span class="header-section-number">3.3.1</span> Variables cualitativas</h3>
-<p>Representan categorías o atributos. No tienen significado numérico.</p>
-<ul>
-<li><p><strong>Nominales:</strong> No poseen un orden inherente<br>
-<em>Ejemplo:</em> tipo de sangre (A, B, AB, O)</p></li>
-<li><p><strong>Ordinales:</strong> Poseen un orden lógico<br>
-<em>Ejemplo:</em> nivel de dolor (leve, moderado, severo)</p></li>
-</ul>
-</section>
-<section id="variables-cuantitativas" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="variables-cuantitativas"><span class="header-section-number">3.3.2</span> Variables cuantitativas</h3>
-<p>Representan cantidades numéricas.</p>
-<ul>
-<li><p><strong>Discretas:</strong> Valores enteros contables<br>
-<em>Ejemplo:</em> número de hijos</p></li>
-<li><p><strong>Continuas:</strong> Pueden tomar cualquier valor dentro de un intervalo<br>
-<em>Ejemplo:</em> estatura, peso corporal</p></li>
-</ul>
-</section>
-<section id="tabla-resumen" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="tabla-resumen"><span class="header-section-number">3.3.3</span> Tabla resumen</h3>
+<section id="fuentes-de-datos-en-bioestadística" class="level1">
+<h1>Fuentes de datos en bioestadística</h1>
+<p>La calidad del análisis estadístico depende directamente de la calidad de los datos. En bioestadística, los datos provienen de múltiples fuentes, cada una con sus características, ventajas y desafíos. Comprender estas fuentes permite seleccionar el diseño de estudio adecuado, prever limitaciones y garantizar la validez de los resultados.</p>
+<section id="principales-fuentes-de-datos-en-ciencias-de-la-salud" class="level3">
+<h3 class="anchored" data-anchor-id="principales-fuentes-de-datos-en-ciencias-de-la-salud">Principales fuentes de datos en ciencias de la salud</h3>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 36%">
+<col style="width: 42%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Tipo</th>
-<th>Subtipo</th>
-<th>Ejemplo</th>
+<th>Fuente de datos</th>
+<th>Descripción</th>
+<th>Ejemplos reales</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Cualitativa</td>
-<td>Nominal</td>
-<td>Tipo de sangre</td>
+<td><strong>Registros clínicos</strong></td>
+<td>Información recogida de forma rutinaria en hospitales, centros de salud.</td>
+<td>Historias médicas, resultados de laboratorio, diagnósticos, tratamientos, medicamentos.</td>
 </tr>
 <tr class="even">
-<td>Cualitativa</td>
-<td>Ordinal</td>
-<td>Nivel de dolor (leve, moderado, severo)</td>
+<td><strong>Encuestas poblacionales</strong></td>
+<td>Instrumentos estructurados aplicados a una muestra representativa.</td>
+<td>Encuesta Nacional de Salud, Behavioral Risk Factor Surveillance System (BRFSS).</td>
 </tr>
 <tr class="odd">
-<td>Cuantitativa</td>
-<td>Discreta</td>
-<td>Número de visitas médicas</td>
+<td><strong>Ensayos clínicos</strong></td>
+<td>Estudios controlados para evaluar la eficacia y seguridad de tratamientos.</td>
+<td>Comparación de un nuevo medicamento frente a un placebo en pacientes con diabetes.</td>
 </tr>
 <tr class="even">
-<td>Cuantitativa</td>
-<td>Continua</td>
-<td>Índice de masa corporal</td>
+<td><strong>Estudios observacionales</strong></td>
+<td>Recolección de datos sin intervenir en los factores de exposición.</td>
+<td>Seguimiento de hábitos alimenticios y desarrollo de enfermedades cardiovasculares.</td>
+</tr>
+<tr class="odd">
+<td><strong>Bases de datos genómicas y moleculares</strong></td>
+<td>Conjuntos masivos de datos de expresión génica, variantes genéticas, etc.</td>
+<td>RNA-seq, microarreglos, The Cancer Genome Atlas (TCGA), ENCODE.</td>
+</tr>
+<tr class="even">
+<td><strong>Sistemas de vigilancia epidemiológica</strong></td>
+<td>Recolección sistemática para detectar y responder a eventos de salud pública.</td>
+<td>Casos de dengue, brotes de influenza, vigilancia del COVID-19.</td>
+</tr>
+<tr class="odd">
+<td><strong>Experimentos en laboratorio o modelos animales</strong></td>
+<td>Datos obtenidos en condiciones controladas.</td>
+<td>Ensayos con ratones modificados genéticamente, cultivos celulares.</td>
 </tr>
 </tbody>
 </table>
-<hr>
 </section>
-</section>
-<section id="cargar-y-explorar-datos" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="cargar-y-explorar-datos"><span class="header-section-number">3.4</span> Cargar y explorar datos</h2>
-<p>A continuación, se presentan ejemplos prácticos para crear y explorar conjuntos de datos simples en <strong>R</strong> y <strong>Python</strong>, simulando variables típicas en salud pública.</p>
-<section id="en-r" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="en-r"><span class="header-section-number">3.4.1</span> En R</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un DataFrame en R</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">sexo =</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">edad =</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">35</span>, <span class="dv">29</span>, <span class="dv">41</span>),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">peso =</span> <span class="fu">c</span>(<span class="fl">55.2</span>, <span class="fl">70.3</span>, <span class="fl">60.1</span>, <span class="fl">82.5</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver datos</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(datos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  sexo edad peso
-1    F   23 55.2
-2    M   35 70.3
-3    F   29 60.1
-4    M   41 82.5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver estructura</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(datos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   4 obs. of  3 variables:
- $ sexo: chr  "F" "M" "F" "M"
- $ edad: num  23 35 29 41
- $ peso: num  55.2 70.3 60.1 82.5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver resumen</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     sexo                edad           peso      
- Length:4           Min.   :23.0   Min.   :55.20  
- Class :character   1st Qu.:27.5   1st Qu.:58.88  
- Mode  :character   Median :32.0   Median :65.20  
-                    Mean   :32.0   Mean   :67.03  
-                    3rd Qu.:36.5   3rd Qu.:73.35  
-                    Max.   :41.0   Max.   :82.50  </code></pre>
-</div>
-</div>
-</section>
-<section id="en-python" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="en-python"><span class="header-section-number">3.4.2</span> En Python</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un DataFrame en Python</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>datos <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sexo"</span>: [<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>],</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"edad"</span>: [<span class="dv">23</span>, <span class="dv">35</span>, <span class="dv">29</span>, <span class="dv">41</span>],</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"peso"</span>: [<span class="fl">55.2</span>, <span class="fl">70.3</span>, <span class="fl">60.1</span>, <span class="fl">82.5</span>]</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver datos</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>datos</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  sexo  edad  peso
-0    F    23  55.2
-1    M    35  70.3
-2    F    29  60.1
-3    M    41  82.5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver estructura </span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>datos.info()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 4 entries, 0 to 3
-Data columns (total 3 columns):
- #   Column  Non-Null Count  Dtype  
----  ------  --------------  -----  
- 0   sexo    4 non-null      object 
- 1   edad    4 non-null      int64  
- 2   peso    4 non-null      float64
-dtypes: float64(1), int64(1), object(1)
-memory usage: 224.0+ bytes</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver resumen</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>datos.describe()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>            edad       peso
-count   4.000000   4.000000
-mean   32.000000  67.025000
-std     7.745967  12.082874
-min    23.000000  55.200000
-25%    27.500000  58.875000
-50%    32.000000  65.200000
-75%    36.500000  73.350000
-max    41.000000  82.500000</code></pre>
-</div>
-</div>
-<hr>
-</section>
-</section>
-<section id="conclusión" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="conclusión"><span class="header-section-number">3.5</span> Conclusión</h2>
-<p>Comprender los tipos de variables es el primer paso para aplicar correctamente métodos de análisis estadístico. Esta clasificación influye directamente en:</p>
+<section id="por-qué-es-importante-conocer-la-fuente-de-los-datos" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-es-importante-conocer-la-fuente-de-los-datos">¿Por qué es importante conocer la fuente de los datos?</h3>
 <ul>
-<li>La selección de pruebas estadísticas</li>
-<li>La representación gráfica</li>
-<li>El resumen numérico apropiado</li>
+<li><strong>Define el tipo de análisis posible.</strong> Por ejemplo, los ensayos clínicos permiten establecer relaciones causales; las encuestas, asociaciones poblacionales.</li>
+<li><strong>Afecta la calidad del dato.</strong> Algunas fuentes pueden tener sesgos (por ejemplo, autoinforme en encuestas) o datos faltantes.</li>
+<li><strong>Permite evaluar la representatividad.</strong> ¿La muestra refleja adecuadamente la población de interés?</li>
 </ul>
-<p>En los siguientes capítulos, profundizaremos en la <strong>estadística descriptiva</strong> como base del análisis de datos en salud pública.</p>
+</section>
+<section id="ejemplos-1" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplos-1">Ejemplos</h3>
+<ul>
+<li><strong>Estudiante de medicina:</strong> ¿Qué tan efectiva es una nueva vacuna contra el virus respiratorio sincitial (VRS)? → Se analiza un ensayo clínico.</li>
+<li><strong>Estudiante de salud pública:</strong> ¿Cuántos adultos hacen actividad física en Puerto Rico? → Se consultan datos de BRFSS del CDC.</li>
+<li><strong>Estudiante de biología molecular:</strong> ¿Qué genes se activan cuando una célula es infectada por un virus? → Se usan datos de RNA-seq o Microarreglos.</li>
+<li><strong>Estudiante de epidemiología:</strong> ¿Cuántos casos de dengue hubo este año y en qué municipios? → Se consulta el sistema de vigilancia del Departamento de Salud.</li>
+</ul>
+</section>
+<section id="explora-bases-de-datos-abiertas" class="level3">
+<h3 class="anchored" data-anchor-id="explora-bases-de-datos-abiertas">🌐 Explora bases de datos abiertas</h3>
+<p>Puedes comenzar a explorar bases reales con los siguientes enlaces:</p>
+<ul>
+<li><a href="https://data.cdc.gov">data.cdc.gov</a></li>
+<li><a href="https://www.ncbi.nlm.nih.gov/geo/">GEO – Gene Expression Omnibus</a></li>
+<li><a href="https://ourworldindata.org/">Our World in Data</a></li>
+<li><a href="https://datos.pr.gov/">Datos Abiertos de Puerto Rico</a></li>
+</ul>
+</section>
+</section>
+<section id="variables" class="level1">
+<h1>Variables</h1>
+<p>Una <strong>variable</strong> es una característica que puede tomar diferentes valores entre individuos, objetos o situaciones. Ejemplos: estatura, peso, edad.</p>
+<section id="tipos-de-variables" class="level2">
+<h2 class="anchored" data-anchor-id="tipos-de-variables">Tipos de variables</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 36%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Subtipo</th>
+<th>Ejemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Cualitativas</strong></td>
+<td>Nominales</td>
+<td>Sexo, diagnóstico médico, etnicidad</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Ordinales</td>
+<td>Nivel educativo, escala de dolor</td>
+</tr>
+<tr class="odd">
+<td><strong>Cuantitativas</strong></td>
+<td>Discretas</td>
+<td>Número de hijos, admisiones hospitalarias</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Continuas</td>
+<td>Edad, IMC, presión arterial</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Ejercicio">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejercicio
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Clasifique las siguientes variables como nominal, ordinal, discreta o continua:</p>
+<ul>
+<li>Estado civil:</li>
+<li>Nivel educativo:</li>
+<li>Medallas de los Juegos Panamericanos:</li>
+<li>Calificaciones en un curso (A, B, C, D, F):</li>
+<li>Puntos anotados en un juego de baloncesto:</li>
+<li>Número de habitantes de un municipio:</li>
+<li>Ingreso anual de una familia en Puerto Rico:</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="variables-aleatorias" class="level1">
+<h1>Variables aleatorias</h1>
+<p>Una <strong>variable aleatoria</strong> es aquella cuyo valor depende del azar. En salud, por ejemplo, la estatura, el peso o la edad son variables aleatorias, ya que varían entre personas.</p>
+<section id="ejemplo" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo">Ejemplo:</h3>
+<p>Si lanzamos una moneda:</p>
+<ul>
+<li>Variable aleatoria ( X ):
+<ul>
+<li>Resultado: cara (1) o cruz (0)</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Ejemplos en salud">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplos en salud
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Número de hijos por madre</li>
+<li>Nivel de glucosa en sangre</li>
+<li>Respuesta al tratamiento</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="escalas-de-medición" class="level1">
+<h1>Escalas de medición</h1>
+<p>Las escalas de medición determinan cómo se interpretan los valores observados:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Escala</th>
+<th>Características</th>
+<th>Ejemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nominal</td>
+<td>No orden</td>
+<td>Sexo, tipo de sangre</td>
+</tr>
+<tr class="even">
+<td>Ordinal</td>
+<td>Orden, sin distancias fijas</td>
+<td>Grado de dolor</td>
+</tr>
+<tr class="odd">
+<td>Intervalo</td>
+<td>Orden y distancia, sin cero absoluto</td>
+<td>Temperatura en °C</td>
+</tr>
+<tr class="even">
+<td>Razón</td>
+<td>Orden, distancia y cero absoluto</td>
+<td>Peso, edad, ingresos</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="población-y-muestra" class="level1">
+<h1>Población y muestra</h1>
+<ul>
+<li><strong>Población:</strong> Conjunto total de elementos que se desea estudiar (personas, células, plantas, etc.). Puede ser finita o infinita.</li>
+<li><strong>Muestra:</strong> Subconjunto de la población seleccionado para su análisis.</li>
+</ul>
+<section id="ejemplo-1" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-1">Ejemplo:</h3>
+<ul>
+<li>Población: Todos los estudiantes de una universidad</li>
+<li>Muestra: 100 estudiantes seleccionados aleatoriamente</li>
+</ul>
+</section>
+</section>
+<section id="muestreo-aleatorio-simple" class="level1">
+<h1>Muestreo aleatorio simple</h1>
+<section id="definición" class="level3">
+<h3 class="anchored" data-anchor-id="definición">Definición</h3>
+<p>Una muestra de tamaño ( n ) se selecciona de una población de tamaño ( N ), de forma que cada elemento tiene la misma probabilidad de ser elegido.</p>
+</section>
+<section id="ventajas" class="level3">
+<h3 class="anchored" data-anchor-id="ventajas">Ventajas</h3>
+<ul>
+<li>Todos los individuos tienen igual oportunidad.</li>
+<li>Resultados más generalizables si el tamaño es adecuado.</li>
+</ul>
+</section>
+<section id="desventajas" class="level3">
+<h3 class="anchored" data-anchor-id="desventajas">Desventajas</h3>
+<ul>
+<li>Se necesita una lista completa de la población.</li>
+<li>Muestras pequeñas pueden no ser representativas.</li>
+</ul>
+</section>
+<section id="en-r" class="level3">
+<h3 class="anchored" data-anchor-id="en-r">En R</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>poblacion <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Sin reemplazo</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>muestra1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>muestra1 </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 31 79 51 14 67 42 50 43 97 25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Con reemplazo</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>muestra2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>muestra2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 90 91 69 91 57 92  9 93 99 72</code></pre>
+</div>
+</div>
+</section>
+<section id="en-python" class="level3">
+<h3 class="anchored" data-anchor-id="en-python">En Python</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>poblacion <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">101</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">123</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sin reemplazo</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>muestra1 <span class="op">=</span> random.sample(poblacion, <span class="dv">10</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Muestra sin reemplazo:"</span>, muestra1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Muestra sin reemplazo: [7, 35, 12, 99, 53, 14, 5, 49, 69, 72]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Con reemplazo</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>muestra2 <span class="op">=</span> [random.choice(poblacion) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Muestra con reemplazo:"</span>, muestra2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Muestra con reemplazo: [43, 44, 7, 21, 18, 44, 72, 43, 90, 32]</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="conclusión" class="level1">
+<h1>Conclusión</h1>
+<p>Comprender el tipo de datos, las variables involucradas y cómo se seleccionan las muestras es fundamental para aplicar correctamente los métodos estadísticos en salud. Estos conceptos son la base para avanzar hacia la estadística descriptiva e inferencial.</p>
 
 
 </section>

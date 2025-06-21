@@ -1,131 +1,182 @@
+---
+title: "¿Qué es la Bioestadística?"
+number-sections: false
+---
 
 ```{r, echo=FALSE}
 reticulate::use_condaenv("quarto-env", required = TRUE)
 ```
 
-# Tipos y Naturaleza de los Datos
 
-## Introducción
+La **bioestadística** es una rama de la estadística esencial para entender la vida a través de los datos. Se aplica a información proveniente de organismos vivos, desde células individuales hasta poblaciones humanas enteras, y permite traducir esos datos en conocimiento útil para la salud pública, la medicina, la biología y otras ciencias de la vida.
 
-Los análisis estadístico comienza con datos. Comprender su naturaleza, origen y estructura es fundamental para aplicar correctamente las técnicas estadísticas. Este capítulo introduce los conceptos básicos sobre tipos de datos, variables y su clasificación, ilustrados con ejemplos prácticos en **R** y **Python**.
+Su propósito es interpretar, analizar y contextualizar datos complejos para tomar decisiones informadas. Esto va desde evaluar si un tratamiento médico es efectivo, hasta identificar factores de riesgo en enfermedades crónicas, modelar la propagación de epidemias o entender cómo influyen los determinantes sociales en la salud.
 
-Al finalizar este capítulo, podrás:
+### Ejemplos:
+- En una pandemia, la bioestadística permite estimar la velocidad de transmisión de un virus y proyectar su impacto.
+- En un hospital, ayuda a decidir si un nuevo medicamento mejora significativamente la supervivencia de pacientes con cáncer.
+- En biología molecular, permite identificar genes cuya expresión cambia en respuesta a una enfermedad.
 
--   Definir qué se entiende por datos en el contexto de salud pública
--   Clasificar variables según su naturaleza y escala de medición
--   Reconocer la diferencia entre variables cualitativas y cuantitativas
--   Crear y explorar conjuntos de datos simples en R y Python
+La bioestadística nos invita a pensar críticamente y a ver más allá de los números: a encontrar patrones, formular hipótesis y validar teorías con base en evidencia. En última instancia, es una disciplina que busca mejorar vidas a través de decisiones basadas en datos confiables.
 
-------------------------------------------------------------------------
+# Motivación para estudiar estadística
 
-## ¿Qué son los datos?
+![](ciclo_estadistica_decision2.png){fig-align="center" width="80%" fig-cap="Ciclo de la estadística: La estadística descriptiva resume los datos de la muestra; la probabilidad permite inferencias hacia la población; y la estadística inferencial nos guía en la toma de decisiones informadas basadas en esa inferencia."}
 
-En estadística, los **datos** representan observaciones o mediciones recolectadas sobre unidades de análisis: personas, comunidades, eventos u objetos.
+::: {.callout-note title="Leyenda de la figura"}
+Esta figura ilustra el flujo general del proceso estadístico. Todo comienza con una **población**, de la cual se extrae una **muestra** para su análisis. A partir de esa muestra, se aplican dos ramas fundamentales: la **estadística descriptiva**, que resume y presenta los datos, y la **estadística inferencial**, que permite hacer generalizaciones sobre la población. Ambas ramas se apoyan en la **probabilidad** como base teórica para manejar la incertidumbre. Finalmente, el análisis estadístico orienta la **toma de decisiones**, permitiendo aplicar el conocimiento generado a problemas reales.
+:::
 
-En salud pública, los datos pueden provenir de:
+La estadística es esencial en la investigación científica porque actúa como el lenguaje con el que interpretamos la variabilidad inherente al mundo natural y social. Nos permite responder preguntas complejas con evidencia numérica, y transforma la incertidumbre en conocimiento útil y accionable.
 
--   Encuestas poblacionales
--   Registros clínicos o epidemiológicos
--   Ensayos clínicos
--   Estudios de vigilancia
+Gracias a la estadística, podemos:
 
-Ejemplos comunes de variables recolectadas incluyen:
+- **Extraer conclusiones significativas** a partir de datos, por ejemplo, determinar si un tratamiento realmente mejora la salud de los pacientes o si una intervención de salud pública reduce la incidencia de una enfermedad.
+- **Medir la incertidumbre**, lo cual es fundamental cuando se trabaja con muestras en lugar de poblaciones completas. Esto permite comunicar el grado de confianza en los resultados obtenidos, algo crucial al tomar decisiones clínicas o políticas.
+- **Tomar decisiones fundamentadas** basadas en análisis objetivos. Desde la asignación de recursos hospitalarios hasta la aprobación de nuevas vacunas, la estadística provee la base para justificar esas decisiones.
 
--   Edad de los pacientes
--   Presión arterial
--   Nivel socioeconómico
--   Diagnóstico de enfermedad
+En esencia, la estadística no solo ayuda a responder "¿qué está ocurriendo?", sino también "¿por qué?", "¿cuánto?" y "¿con qué grado de certeza?". Es una brújula intelectual que guía la ciencia hacia conclusiones robustas y reproducibles.
 
-------------------------------------------------------------------------
+# Fuentes de datos en bioestadística
+
+La calidad del análisis estadístico depende directamente de la calidad de los datos. En bioestadística, los datos provienen de múltiples fuentes, cada una con sus características, ventajas y desafíos. Comprender estas fuentes permite seleccionar el diseño de estudio adecuado, prever limitaciones y garantizar la validez de los resultados.
+
+### Principales fuentes de datos en ciencias de la salud
+
+| Fuente de datos                            | Descripción                                                                  | Ejemplos reales                                                                         |
+|--------------------------------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| **Registros clínicos**                     | Información recogida de forma rutinaria en hospitales, centros de salud.    | Historias médicas, resultados de laboratorio, diagnósticos, tratamientos, medicamentos. |
+| **Encuestas poblacionales**                | Instrumentos estructurados aplicados a una muestra representativa.           | Encuesta Nacional de Salud, Behavioral Risk Factor Surveillance System (BRFSS).         |
+| **Ensayos clínicos**                       | Estudios controlados para evaluar la eficacia y seguridad de tratamientos.   | Comparación de un nuevo medicamento frente a un placebo en pacientes con diabetes.      |
+| **Estudios observacionales**               | Recolección de datos sin intervenir en los factores de exposición.           | Seguimiento de hábitos alimenticios y desarrollo de enfermedades cardiovasculares.      |
+| **Bases de datos genómicas y moleculares** | Conjuntos masivos de datos de expresión génica, variantes genéticas, etc.    | RNA-seq, microarreglos, The Cancer Genome Atlas (TCGA), ENCODE.                         |
+| **Sistemas de vigilancia epidemiológica**  | Recolección sistemática para detectar y responder a eventos de salud pública.| Casos de dengue, brotes de influenza, vigilancia del COVID-19.                          |
+| **Experimentos en laboratorio o modelos animales** | Datos obtenidos en condiciones controladas.                             | Ensayos con ratones modificados genéticamente, cultivos celulares.|
+
+### ¿Por qué es importante conocer la fuente de los datos?
+
+- **Define el tipo de análisis posible.** Por ejemplo, los ensayos clínicos permiten establecer relaciones causales; las encuestas, asociaciones poblacionales.
+- **Afecta la calidad del dato.** Algunas fuentes pueden tener sesgos (por ejemplo, autoinforme en encuestas) o datos faltantes.
+- **Permite evaluar la representatividad.** ¿La muestra refleja adecuadamente la población de interés?
+
+### Ejemplos
+
+- **Estudiante de medicina:** ¿Qué tan efectiva es una nueva vacuna contra el virus respiratorio sincitial (VRS)? → Se analiza un ensayo clínico.
+- **Estudiante de salud pública:** ¿Cuántos adultos hacen actividad física en Puerto Rico? → Se consultan datos de BRFSS del CDC.
+- **Estudiante de biología molecular:** ¿Qué genes se activan cuando una célula es infectada por un virus? → Se usan datos de RNA-seq o Microarreglos.
+- **Estudiante de epidemiología:** ¿Cuántos casos de dengue hubo este año y en qué municipios? → Se consulta el sistema de vigilancia del Departamento de Salud.
+
+### 🌐 Explora bases de datos abiertas
+
+Puedes comenzar a explorar bases reales con los siguientes enlaces:
+
+- [data.cdc.gov](https://data.cdc.gov)
+- [GEO – Gene Expression Omnibus](https://www.ncbi.nlm.nih.gov/geo/)
+- [Our World in Data](https://ourworldindata.org/)
+- [Datos Abiertos de Puerto Rico](https://datos.pr.gov/)
+
+# Variables
+
+Una **variable** es una característica que puede tomar diferentes valores entre individuos, objetos o situaciones. Ejemplos: estatura, peso, edad.
 
 ## Tipos de variables
 
-Las variables se pueden clasificar de acuerdo con:
+| Tipo | Subtipo | Ejemplos |
+|------|---------|----------|
+| **Cualitativas** | Nominales | Sexo, diagnóstico médico, etnicidad |
+|                  | Ordinales | Nivel educativo, escala de dolor |
+| **Cuantitativas** | Discretas | Número de hijos, admisiones hospitalarias |
+|                   | Continuas | Edad, IMC, presión arterial |
 
--   Su **naturaleza** (cualitativa o cuantitativa)
--   Su **escala de medición** (nominal, ordinal, intervalo o razón)
+::: {.callout-note title="Ejercicio"}
+Clasifique las siguientes variables como nominal, ordinal, discreta o continua:
 
-### Variables cualitativas
+- Estado civil:
+- Nivel educativo:
+- Medallas de los Juegos Panamericanos:
+- Calificaciones en un curso (A, B, C, D, F):
+- Puntos anotados en un juego de baloncesto:
+- Número de habitantes de un municipio:
+- Ingreso anual de una familia en Puerto Rico:
+:::
 
-Representan categorías o atributos. No tienen significado numérico.
+# Variables aleatorias
 
--   **Nominales:** No poseen un orden inherente\
-    *Ejemplo:* tipo de sangre (A, B, AB, O)
+Una **variable aleatoria** es aquella cuyo valor depende del azar. En salud, por ejemplo, la estatura, el peso o la edad son variables aleatorias, ya que varían entre personas.
 
--   **Ordinales:** Poseen un orden lógico\
-    *Ejemplo:* nivel de dolor (leve, moderado, severo)
+### Ejemplo:
+Si lanzamos una moneda:
 
-### Variables cuantitativas
+- Variable aleatoria \( X \):
+  - Resultado: cara (1) o cruz (0)
 
-Representan cantidades numéricas.
+::: {.callout-tip title="Ejemplos en salud"}
+- Número de hijos por madre
+- Nivel de glucosa en sangre
+- Respuesta al tratamiento
+:::
 
--   **Discretas:** Valores enteros contables\
-    *Ejemplo:* número de hijos
+# Escalas de medición
 
--   **Continuas:** Pueden tomar cualquier valor dentro de un intervalo\
-    *Ejemplo:* estatura, peso corporal
+Las escalas de medición determinan cómo se interpretan los valores observados:
 
-### Tabla resumen
+| Escala | Características | Ejemplos |
+|--------|------------------|----------|
+| Nominal | No orden | Sexo, tipo de sangre |
+| Ordinal | Orden, sin distancias fijas | Grado de dolor |
+| Intervalo | Orden y distancia, sin cero absoluto | Temperatura en °C |
+| Razón | Orden, distancia y cero absoluto | Peso, edad, ingresos |
 
-| Tipo         | Subtipo  | Ejemplo                                 |
-|--------------|----------|-----------------------------------------|
-| Cualitativa  | Nominal  | Tipo de sangre                          |
-| Cualitativa  | Ordinal  | Nivel de dolor (leve, moderado, severo) |
-| Cuantitativa | Discreta | Número de visitas médicas               |
-| Cuantitativa | Continua | Índice de masa corporal                 |
+# Población y muestra
 
-------------------------------------------------------------------------
+- **Población:** Conjunto total de elementos que se desea estudiar (personas, células, plantas, etc.). Puede ser finita o infinita.
+- **Muestra:** Subconjunto de la población seleccionado para su análisis.
 
-## Cargar y explorar datos
+### Ejemplo:
 
-A continuación, se presentan ejemplos prácticos para crear y explorar conjuntos de datos simples en **R** y **Python**, simulando variables típicas en salud pública.
+- Población: Todos los estudiantes de una universidad
+- Muestra: 100 estudiantes seleccionados aleatoriamente
+
+# Muestreo aleatorio simple
+
+### Definición
+Una muestra de tamaño \( n \) se selecciona de una población de tamaño \( N \), de forma que cada elemento tiene la misma probabilidad de ser elegido.
+
+### Ventajas
+- Todos los individuos tienen igual oportunidad.
+- Resultados más generalizables si el tamaño es adecuado.
+
+### Desventajas
+- Se necesita una lista completa de la población.
+- Muestras pequeñas pueden no ser representativas.
 
 ### En R
-
-```{r, echo=TRUE, eval=TRUE}
-
-# Crear un DataFrame en R
-datos <- data.frame(
-  sexo = c("F", "M", "F", "M"),
-  edad = c(23, 35, 29, 41),
-  peso = c(55.2, 70.3, 60.1, 82.5)
-)
-# Ver datos
-print(datos)
-# Ver estructura
-str(datos)
-# Ver resumen
-summary(datos)
+```{r}
+poblacion <- 1:100
+set.seed(123)
+# Sin reemplazo
+muestra1 <- sample(poblacion, size = 10, replace = FALSE)
+muestra1 
+# Con reemplazo
+muestra2 <- sample(poblacion, size = 10, replace = TRUE)
+muestra2
 ```
 
 ### En Python
-
 ```{python}
-# Crear un DataFrame en Python
-import pandas as pd
-
-datos = pd.DataFrame({
-    "sexo": ["F", "M", "F", "M"],
-    "edad": [23, 35, 29, 41],
-    "peso": [55.2, 70.3, 60.1, 82.5]
-})
-
-# Ver datos
-datos
-# Ver estructura 
-datos.info()
-# Ver resumen
-datos.describe()
+import random
+poblacion = list(range(1, 101))
+random.seed(123)
+# Sin reemplazo
+muestra1 = random.sample(poblacion, 10)
+print("Muestra sin reemplazo:", muestra1)
+# Con reemplazo
+muestra2 = [random.choice(poblacion) for _ in range(10)]
+print("Muestra con reemplazo:", muestra2)
 ```
 
-------------------------------------------------------------------------
+# Conclusión
 
-## Conclusión
+Comprender el tipo de datos, las variables involucradas y cómo se seleccionan las muestras es fundamental para aplicar correctamente los métodos estadísticos en salud. Estos conceptos son la base para avanzar hacia la estadística descriptiva e inferencial.
 
-Comprender los tipos de variables es el primer paso para aplicar correctamente métodos de análisis estadístico. Esta clasificación influye directamente en:
 
--   La selección de pruebas estadísticas
--   La representación gráfica
--   El resumen numérico apropiado
-
-En los siguientes capítulos, profundizaremos en la **estadística descriptiva** como base del análisis de datos en salud pública.
