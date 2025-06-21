@@ -1,22 +1,12 @@
 [
   {
-    "objectID": "01_datos.html",
-    "href": "01_datos.html",
-    "title": "¿Qué es la Bioestadística?",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Bioestadística Aplicada e Interactiva: Guía con R, Python y Aplicaciones Shiny",
     "section": "",
-    "text": "Ejemplos:\nLa bioestadística es una rama de la estadística esencial para entender la vida a través de los datos. Se aplica a información proveniente de organismos vivos, desde células individuales hasta poblaciones humanas enteras, y permite traducir esos datos en conocimiento útil para la salud pública, la medicina, la biología y otras ciencias de la vida.\nSu propósito es interpretar, analizar y contextualizar datos complejos para tomar decisiones informadas. Esto va desde evaluar si un tratamiento médico es efectivo, hasta identificar factores de riesgo en enfermedades crónicas, modelar la propagación de epidemias o entender cómo influyen los determinantes sociales en la salud.\nLa bioestadística nos invita a pensar críticamente y a ver más allá de los números: a encontrar patrones, formular hipótesis y validar teorías con base en evidencia. En última instancia, es una disciplina que busca mejorar vidas a través de decisiones basadas en datos confiables.",
+    "text": "Preface\nLa enseñanza de la bioestadística en contextos de salud pública, biología y ciencias biomédicas representa uno de los mayores retos pedagógicos de nuestro tiempo. Enfrentar datos reales, interpretar resultados y comunicar hallazgos de forma clara y rigurosa requiere no solo dominio conceptual, sino también habilidades prácticas y tecnológicas. Este libro nace precisamente de esa necesidad: ofrecer una guía moderna, aplicada e interactiva para aprender bioestadística desde la experiencia, con herramientas computacionales actuales como R, Python y Shiny.\nBioestadística Aplicada e Interactiva ha sido desarrollada a partir del trabajo docente realizado en los cursos MPH 3102 – Métodos Estadísticos I y MPH 7202 – Inferential Statistics, impartidos en la Universidad de Puerto Rico – Recinto de Mayagüez. A lo largo de múltiples sesiones, se han cubierto desde fundamentos básicos hasta técnicas avanzadas, siempre con una orientación aplicada e intuitiva.\nEste libro tiene tres pilares fundamentales:\n\nAplicación práctica: cada capítulo parte de ejemplos reales en salud pública, medicina, o investigación biológica. Los datos usados provienen de estudios auténticos, accesibles, y pertinentes para los desafíos actuales de investigación.\nInteractividad: se ha incorporado el desarrollo de aplicaciones Shiny y scripts reproducibles en R y Python que permiten al lector explorar los conceptos de manera dinámica. No se trata solo de leer, sino de hacer estadística.\nAccesibilidad conceptual: sin perder el rigor estadístico, se ha privilegiado un lenguaje claro, explicaciones paso a paso, y recursos visuales tomados de las presentaciones utilizadas en clase (transformadas para uso autónomo y progresivo del lector).\n\nLos temas abordados incluyen:\n\nEstadística descriptiva y visualización de datos\nProbabilidades y distribuciones (Binomial, Poisson, Normal)\nInferencia: estimaciones, intervalos de confianza, pruebas de hipótesis\nComparación de grupos: t-tests, ANOVA, pruebas no paramétricas\nModelos de regresión: lineal simple, múltiple, y logística\nAnálisis de frecuencias: tablas de contingencia, chi-cuadrado, prueba exacta de Fisher\nPruebas no paramétricas: Sign Test, Wilcoxon, Mann–Whitney, Kruskal–Wallis\nAnálisis de supervivencia: estimación de curvas de Kaplan–Meier, prueba log-rank, modelo de riesgos proporcionales de Cox\n\nEste libro también está diseñado para acompañarse de un repositorio de materiales interactivos, conjuntos de datos y aplicaciones, que pueden ser consultados y reutilizados por estudiantes e investigadores.\nFinalmente, este esfuerzo busca integrar la enseñanza estadística con la capacidad de analizar críticamente datos biomédicos. Que esta guía sirva para formar no solo usuarios de herramientas estadísticas, sino también pensadores críticos capaces de transformar datos en decisiones informadas.\n\nDr. Deiver Suárez Gómez, PhD\nDepartamento de Biología\nUniversidad de Puerto Rico – Recinto de Mayagüez",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>¿Qué es la Bioestadística?</span>"
-    ]
-  },
-  {
-    "objectID": "01_datos.html#tipos-de-variables",
-    "href": "01_datos.html#tipos-de-variables",
-    "title": "¿Qué es la Bioestadística?",
-    "section": "Tipos de variables",
-    "text": "Tipos de variables\n\n\n\n\n\n\n\n\nTipo\nSubtipo\nEjemplos\n\n\n\n\nCualitativas\nNominales\nSexo, diagnóstico médico, etnicidad\n\n\n\nOrdinales\nNivel educativo, escala de dolor\n\n\nCuantitativas\nDiscretas\nNúmero de hijos, admisiones hospitalarias\n\n\n\nContinuas\nEdad, IMC, presión arterial\n\n\n\n\n\n\n\n\n\nEjercicio\n\n\n\nClasifique las siguientes variables como nominal, ordinal, discreta o continua:\n\nEstado civil:\nNivel educativo:\nMedallas de los Juegos Panamericanos:\nCalificaciones en un curso (A, B, C, D, F):\nPuntos anotados en un juego de baloncesto:\nNúmero de habitantes de un municipio:\nIngreso anual de una familia en Puerto Rico:",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>¿Qué es la Bioestadística?</span>"
+      "Preface"
     ]
   },
   {
@@ -70,6 +60,26 @@
     ]
   },
   {
+    "objectID": "01_datos.html",
+    "href": "01_datos.html",
+    "title": "¿Qué es la Bioestadística?",
+    "section": "",
+    "text": "Ejemplos:\nLa bioestadística es una rama de la estadística esencial para entender la vida a través de los datos. Se aplica a información proveniente de organismos vivos, desde células individuales hasta poblaciones humanas enteras, y permite traducir esos datos en conocimiento útil para la salud pública, la medicina, la biología y otras ciencias de la vida.\nSu propósito es interpretar, analizar y contextualizar datos complejos para tomar decisiones informadas. Esto va desde evaluar si un tratamiento médico es efectivo, hasta identificar factores de riesgo en enfermedades crónicas, modelar la propagación de epidemias o entender cómo influyen los determinantes sociales en la salud.\nLa bioestadística nos invita a pensar críticamente y a ver más allá de los números: a encontrar patrones, formular hipótesis y validar teorías con base en evidencia. En última instancia, es una disciplina que busca mejorar vidas a través de decisiones basadas en datos confiables.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>¿Qué es la Bioestadística?</span>"
+    ]
+  },
+  {
+    "objectID": "01_datos.html#tipos-de-variables",
+    "href": "01_datos.html#tipos-de-variables",
+    "title": "¿Qué es la Bioestadística?",
+    "section": "Tipos de variables",
+    "text": "Tipos de variables\n\n\n\n\n\n\n\n\nTipo\nSubtipo\nEjemplos\n\n\n\n\nCualitativas\nNominales\nSexo, diagnóstico médico, etnicidad\n\n\n\nOrdinales\nNivel educativo, escala de dolor\n\n\nCuantitativas\nDiscretas\nNúmero de hijos, admisiones hospitalarias\n\n\n\nContinuas\nEdad, IMC, presión arterial\n\n\n\n\n\n\n\n\n\nEjercicio\n\n\n\nClasifique las siguientes variables como nominal, ordinal, discreta o continua:\n\nEstado civil:\nNivel educativo:\nMedallas de los Juegos Panamericanos:\nCalificaciones en un curso (A, B, C, D, F):\nPuntos anotados en un juego de baloncesto:\nNúmero de habitantes de un municipio:\nIngreso anual de una familia en Puerto Rico:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>¿Qué es la Bioestadística?</span>"
+    ]
+  },
+  {
     "objectID": "02_estadistica_descriptiva.html",
     "href": "02_estadistica_descriptiva.html",
     "title": "4  Estadística Descriptiva",
@@ -107,56 +117,6 @@
     "text": "4.4 6. Conclusión\nEl análisis exploratorio de datos con herramientas como R y Python permite obtener una comprensión inicial robusta de los patrones en datos biomédicos. Esto es esencial antes de aplicar modelos predictivos como regresión o clasificación. El uso de gráficos y resúmenes numéricos fortalece la interpretación clínica y estadística de los fenómenos observados.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Estadística Descriptiva</span>"
-    ]
-  },
-  {
-    "objectID": "01_datos.html#principales-fuentes-de-datos-en-ciencias-de-la-salud",
-    "href": "01_datos.html#principales-fuentes-de-datos-en-ciencias-de-la-salud",
-    "title": "¿Qué es la Bioestadística?",
-    "section": "Principales fuentes de datos en ciencias de la salud",
-    "text": "Principales fuentes de datos en ciencias de la salud\n\n\n\n\n\n\n\n\nFuente de datos\nDescripción\nEjemplos reales\n\n\n\n\nRegistros clínicos\nInformación recogida de forma rutinaria en hospitales, centros de salud.\nHistorias médicas, resultados de laboratorio, diagnósticos, tratamientos, medicamentos.\n\n\nEncuestas poblacionales\nInstrumentos estructurados aplicados a una muestra representativa.\nEncuesta Nacional de Salud, Behavioral Risk Factor Surveillance System (BRFSS).\n\n\nEnsayos clínicos\nEstudios controlados para evaluar la eficacia y seguridad de tratamientos.\nComparación de un nuevo medicamento frente a un placebo en pacientes con diabetes.\n\n\nEstudios observacionales\nRecolección de datos sin intervenir en los factores de exposición.\nSeguimiento de hábitos alimenticios y desarrollo de enfermedades cardiovasculares.\n\n\nBases de datos genómicas y moleculares\nConjuntos masivos de datos de expresión génica, variantes genéticas, etc.\nRNA-seq, microarreglos, The Cancer Genome Atlas (TCGA), ENCODE.\n\n\nSistemas de vigilancia epidemiológica\nRecolección sistemática para detectar y responder a eventos de salud pública.\nCasos de dengue, brotes de influenza, vigilancia del COVID-19.\n\n\nExperimentos en laboratorio o modelos animales\nDatos obtenidos en condiciones controladas.\nEnsayos con ratones modificados genéticamente, cultivos celulares.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>¿Qué es la Bioestadística?</span>"
-    ]
-  },
-  {
-    "objectID": "01_datos.html#por-qué-es-importante-conocer-la-fuente-de-los-datos",
-    "href": "01_datos.html#por-qué-es-importante-conocer-la-fuente-de-los-datos",
-    "title": "¿Qué es la Bioestadística?",
-    "section": "¿Por qué es importante conocer la fuente de los datos?",
-    "text": "¿Por qué es importante conocer la fuente de los datos?\n\nDefine el tipo de análisis posible. Por ejemplo, los ensayos clínicos permiten establecer relaciones causales; las encuestas, asociaciones poblacionales.\nAfecta la calidad del dato. Algunas fuentes pueden tener sesgos (por ejemplo, autoinforme en encuestas) o datos faltantes.\nPermite evaluar la representatividad. ¿La muestra refleja adecuadamente la población de interés?",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>¿Qué es la Bioestadística?</span>"
-    ]
-  },
-  {
-    "objectID": "01_datos.html#ejemplos-para-conectar-con-los-estudiantes",
-    "href": "01_datos.html#ejemplos-para-conectar-con-los-estudiantes",
-    "title": "¿Qué es la Bioestadística?",
-    "section": "📦 Ejemplos para conectar con los estudiantes",
-    "text": "📦 Ejemplos para conectar con los estudiantes\n\nEstudiante de medicina: ¿Qué tan efectiva es una nueva vacuna contra el virus respiratorio sincitial (VRS)? → Se analiza un ensayo clínico.\nEstudiante de salud pública: ¿Cuántos adultos hacen actividad física en Puerto Rico? → Se consultan datos de BRFSS.\nEstudiante de biología molecular: ¿Qué genes se activan cuando una célula es infectada por un virus? → Se usan datos de RNA-seq.\nEstudiante de epidemiología: ¿Cuántos casos de dengue hubo este año y en qué municipios? → Se consulta el sistema de vigilancia del Departamento de Salud.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>¿Qué es la Bioestadística?</span>"
-    ]
-  },
-  {
-    "objectID": "01_datos.html#explora-bases-de-datos-abiertas",
-    "href": "01_datos.html#explora-bases-de-datos-abiertas",
-    "title": "¿Qué es la Bioestadística?",
-    "section": "🌐 Explora bases de datos abiertas",
-    "text": "🌐 Explora bases de datos abiertas\nPuedes comenzar a explorar bases reales con los siguientes enlaces:\n\ndata.cdc.gov\nGEO – Gene Expression Omnibus\nOur World in Data\nDatos Abiertos de Puerto Rico",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>¿Qué es la Bioestadística?</span>"
-    ]
-  },
-  {
-    "objectID": "01_datos.html#ejemplos-1",
-    "href": "01_datos.html#ejemplos-1",
-    "title": "¿Qué es la Bioestadística?",
-    "section": "Ejemplos",
-    "text": "Ejemplos\n\nEstudiante de medicina: ¿Qué tan efectiva es una nueva vacuna contra el virus respiratorio sincitial (VRS)? → Se analiza un ensayo clínico.\nEstudiante de salud pública: ¿Cuántos adultos hacen actividad física en Puerto Rico? → Se consultan datos de BRFSS del CDC.\nEstudiante de biología molecular: ¿Qué genes se activan cuando una célula es infectada por un virus? → Se usan datos de RNA-seq o Microarreglos.\nEstudiante de epidemiología: ¿Cuántos casos de dengue hubo este año y en qué municipios? → Se consulta el sistema de vigilancia del Departamento de Salud.",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>¿Qué es la Bioestadística?</span>"
     ]
   }
 ]
