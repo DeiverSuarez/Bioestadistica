@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#gráficos-descriptivos-variables-cuantitativa" id="toc-gráficos-descriptivos-variables-cuantitativa" class="nav-link" data-scroll-target="#gráficos-descriptivos-variables-cuantitativa"><span class="header-section-number">4.2</span> Gráficos descriptivos (Variables Cuantitativa)</a>
   <ul class="collapse">
   <li><a href="#boxplot-de-edad-según-presencia-de-acv" id="toc-boxplot-de-edad-según-presencia-de-acv" class="nav-link" data-scroll-target="#boxplot-de-edad-según-presencia-de-acv"><span class="header-section-number">4.2.1</span> Boxplot de edad según presencia de ACV</a></li>
-  <li><a href="#histograma-de-glucosa-promedio" id="toc-histograma-de-glucosa-promedio" class="nav-link" data-scroll-target="#histograma-de-glucosa-promedio"><span class="header-section-number">4.2.2</span> Histograma de glucosa promedio</a></li>
+  <li><a href="#histograma-del-nivel-promedio-de-glucosa" id="toc-histograma-del-nivel-promedio-de-glucosa" class="nav-link" data-scroll-target="#histograma-del-nivel-promedio-de-glucosa"><span class="header-section-number">4.2.2</span> Histograma del nivel promedio de glucosa</a></li>
   <li><a href="#scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi" id="toc-scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi" class="nav-link" data-scroll-target="#scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi"><span class="header-section-number">4.2.3</span> scatter plot (diagrama de dispersión) entre las variables Age y Bmi</a></li>
   </ul></li>
   <li><a href="#gráficos-descriptivos-variables-categóricas" id="toc-gráficos-descriptivos-variables-categóricas" class="nav-link" data-scroll-target="#gráficos-descriptivos-variables-categóricas"><span class="header-section-number">4.3</span> Gráficos descriptivos (Variables Categóricas)</a>
@@ -256,7 +256,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Este capítulo utiliza un conjunto de datos real descargado de <a href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset">Kaggle: Stroke Prediction Dataset</a> o <a href="https://github.com/DeiverSuarez/Bioestadistica/blob/main/healthcare-dataset-stroke-data.csv">Github</a>, que contiene información demográfica, médica y conductual de pacientes. El objetivo es explorar los datos aplicando técnicas de estadística descriptiva, apoyados por gráficos, código en R y una aplicación Shiny y material audiovisual.</p>
+<p>Este capítulo explora un conjunto de datos reales proveniente del <a href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset">Stroke Prediction Dataset</a>, disponible también en <a href="https://github.com/DeiverSuarez/Bioestadistica/blob/main/healthcare-dataset-stroke-data.csv">Github</a>. El dataset contiene información demográfica, médica y de comportamiento de pacientes, con el objetivo de predecir la ocurrencia de accidentes cerebrovasculares (ACV).</p>
+<p>Utilizaremos herramientas de estadística descriptiva para explorar y resumir los datos, apoyándonos en visualizaciones gráficas, código en R, aplicaciones Shiny y recursos audiovisuales complementarios.</p>
+<p><strong>Clasificación de las variables</strong></p>
+<p>En la siguiente tabla se presenta una descripción de las variables del conjunto de datos, clasificadas según su tipo (categórica o cuantitativa) y su escala de medición.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="table-responsive">
@@ -359,6 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="4.2" class="anchored" data-anchor-id="gráficos-descriptivos-variables-cuantitativa"><span class="header-section-number">4.2</span> Gráficos descriptivos (Variables Cuantitativa)</h2>
 <section id="boxplot-de-edad-según-presencia-de-acv" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="boxplot-de-edad-según-presencia-de-acv"><span class="header-section-number">4.2.1</span> Boxplot de edad según presencia de ACV</h3>
+<p>Este gráfico permite comparar la distribución de la edad entre pacientes que han sufrido un ACV (stroke = 1) y los que no (stroke = 0).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(age <span class="sc">~</span> stroke, <span class="at">data =</span> datos, <span class="at">main =</span> <span class="st">"Edad por Stroke"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -371,8 +375,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-<section id="histograma-de-glucosa-promedio" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="histograma-de-glucosa-promedio"><span class="header-section-number">4.2.2</span> Histograma de glucosa promedio</h3>
+<section id="histograma-del-nivel-promedio-de-glucosa" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="histograma-del-nivel-promedio-de-glucosa"><span class="header-section-number">4.2.2</span> Histograma del nivel promedio de glucosa</h3>
+<p>Este histograma muestra la distribución de la variable avg_glucose_level y superpone una curva de densidad para observar su comportamiento general.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(datos<span class="sc">$</span>avg_glucose_level,</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribución del nivel de glucosa"</span>,</span>
@@ -393,6 +398,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi" class="level3" data-number="4.2.3">
 <h3 data-number="4.2.3" class="anchored" data-anchor-id="scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi"><span class="header-section-number">4.2.3</span> scatter plot (diagrama de dispersión) entre las variables Age y Bmi</h3>
+<p>Esta visualización permite explorar la posible relación lineal o no lineal entre la edad y el índice de masa corporal (BMI).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(datos<span class="sc">$</span>age, datos<span class="sc">$</span>bmi, </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Relación entre Edad y BMI"</span>,</span>
@@ -413,6 +419,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="4.3" class="anchored" data-anchor-id="gráficos-descriptivos-variables-categóricas"><span class="header-section-number">4.3</span> Gráficos descriptivos (Variables Categóricas)</h2>
 <section id="gráfico-de-barras-apiladas" class="level3" data-number="4.3.1">
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="gráfico-de-barras-apiladas"><span class="header-section-number">4.3.1</span> Gráfico de barras apiladas</h3>
+<p>Este gráfico de barras apiladas normalizadas muestra la proporción de pacientes con y sin enfermedad cardíaca, según su estatus como fumadores.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -437,6 +444,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="graficon-de-frecuencia-absoluta-y-relativa" class="level3" data-number="4.3.2">
 <h3 data-number="4.3.2" class="anchored" data-anchor-id="graficon-de-frecuencia-absoluta-y-relativa"><span class="header-section-number">4.3.2</span> graficon de frecuencia absoluta y relativa</h3>
+<p>A continuación, se presentan dos gráficos: el primero muestra la frecuencia absoluta de cada categoría de fumador, mientras que el segundo presenta la frecuencia relativa (en porcentaje).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)  <span class="co"># para p1 + p2</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -471,6 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="gráfico-de-barras-agrupadas" class="level3" data-number="4.3.3">
 <h3 data-number="4.3.3" class="anchored" data-anchor-id="gráfico-de-barras-agrupadas"><span class="header-section-number">4.3.3</span> Gráfico de barras agrupadas</h3>
+<p>Este gráfico permite comparar de forma directa la frecuencia de enfermedad cardíaca en cada categoría de fumador.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> smoking_status, <span class="at">fill =</span> <span class="fu">factor</span>(heart_disease))) <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
@@ -487,6 +496,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="mapa-de-calor-de-una-tabla-de-contingencia" class="level3" data-number="4.3.4">
 <h3 data-number="4.3.4" class="anchored" data-anchor-id="mapa-de-calor-de-una-tabla-de-contingencia"><span class="header-section-number">4.3.4</span> Mapa de calor de una tabla de contingencia</h3>
+<p>Representación visual de la frecuencia entre categorías cruzadas de smoking_status y heart_disease.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -512,6 +522,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="gráfico-de-pastel-pie-chart" class="level3" data-number="4.3.5">
 <h3 data-number="4.3.5" class="anchored" data-anchor-id="gráfico-de-pastel-pie-chart"><span class="header-section-number">4.3.5</span> Gráfico de pastel (pie chart)</h3>
+<p>Una visualización clásica de distribución proporcional para smoking_status.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(smoking_status) <span class="sc">%&gt;%</span></span>

@@ -6,7 +6,15 @@
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-Este capítulo utiliza un conjunto de datos real descargado de [Kaggle: Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) o [Github](https://github.com/DeiverSuarez/Bioestadistica/blob/main/healthcare-dataset-stroke-data.csv), que contiene información demográfica, médica y conductual de pacientes. El objetivo es explorar los datos aplicando técnicas de estadística descriptiva, apoyados por gráficos, código en R y una aplicación Shiny y material audiovisual.
+Este capítulo explora un conjunto de datos reales proveniente del [Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset), disponible también en [Github](https://github.com/DeiverSuarez/Bioestadistica/blob/main/healthcare-dataset-stroke-data.csv). El dataset contiene información demográfica, médica y de comportamiento de pacientes, con el objetivo de predecir la ocurrencia de accidentes cerebrovasculares (ACV).
+
+Utilizaremos herramientas de estadística descriptiva para explorar y resumir los datos, apoyándonos en visualizaciones gráficas, código en R, aplicaciones Shiny y recursos audiovisuales complementarios.
+
+
+**Clasificación de las variables**
+
+En la siguiente tabla se presenta una descripción de las variables del conjunto de datos, clasificadas según su tipo (categórica o cuantitativa) y su escala de medición.
+
 
 ```{r, echo=FALSE}
 library(knitr)
@@ -41,13 +49,17 @@ head(datos)
 
 ### Boxplot de edad según presencia de ACV
 
+Este gráfico permite comparar la distribución de la edad entre pacientes que han sufrido un ACV (stroke = 1) y los que no (stroke = 0).
+
 ```{r}
 boxplot(age ~ stroke, data = datos, main = "Edad por Stroke", col = "lightblue")
 ```
 
 ------------------------------------------------------------------------
 
-### Histograma de glucosa promedio
+### Histograma del nivel promedio de glucosa
+
+Este histograma muestra la distribución de la variable avg_glucose_level y superpone una curva de densidad para observar su comportamiento general.
 
 ```{r}
 hist(datos$avg_glucose_level,
@@ -63,6 +75,8 @@ lines(density(datos$avg_glucose_level), col = "darkgreen", lwd = 2)  # curva de 
 
 ### scatter plot (diagrama de dispersión) entre las variables Age y Bmi
 
+Esta visualización permite explorar la posible relación lineal o no lineal entre la edad y el índice de masa corporal (BMI).
+
 ```{r}
 plot(datos$age, datos$bmi, 
      main = "Relación entre Edad y BMI",
@@ -74,6 +88,9 @@ plot(datos$age, datos$bmi,
 ## Gráficos descriptivos (Variables Categóricas)
 
 ### Gráfico de barras apiladas
+
+Este gráfico de barras apiladas normalizadas muestra la proporción de pacientes con y sin enfermedad cardíaca, según su estatus como fumadores.
+
 ```{r}
 library(ggplot2)
 library(dplyr)
@@ -91,6 +108,8 @@ datos %>%
 ```
 
 ### graficon de frecuencia absoluta y relativa
+
+A continuación, se presentan dos gráficos: el primero muestra la frecuencia absoluta de cada categoría de fumador, mientras que el segundo presenta la frecuencia relativa (en porcentaje).
 
 ```{r}
 library(patchwork)  # para p1 + p2
@@ -120,6 +139,8 @@ p1 + p2
 
 ### Gráfico de barras agrupadas
 
+Este gráfico permite comparar de forma directa la frecuencia de enfermedad cardíaca en cada categoría de fumador.
+
 ```{r}
 
 ggplot(datos, aes(x = smoking_status, fill = factor(heart_disease))) +
@@ -130,6 +151,9 @@ ggplot(datos, aes(x = smoking_status, fill = factor(heart_disease))) +
 ```
 
 ### Mapa de calor de una tabla de contingencia
+
+Representación visual de la frecuencia entre categorías cruzadas de smoking_status y heart_disease.
+
 ```{r}
 library(reshape2)
 
@@ -147,6 +171,8 @@ ggplot(df_heat, aes(x = heart_disease, y = smoking_status, fill = frecuencia)) +
 ```
 
 ### Gráfico de pastel (pie chart)
+Una visualización clásica de distribución proporcional para smoking_status.
+
 ```{r}
 
 datos %>%
