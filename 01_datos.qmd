@@ -3,10 +3,6 @@ title: "¿Qué es la Bioestadística?"
 number-sections: false
 ---
 
-```{r, echo=FALSE}
-reticulate::use_condaenv("quarto-env", required = TRUE)
-```
-
 
 La **bioestadística** es una rama de la estadística esencial para entender la vida a través de los datos. Se aplica a información proveniente de organismos vivos, desde células individuales hasta poblaciones humanas enteras, y permite traducir esos datos en conocimiento útil para la salud pública, la medicina, la biología y otras ciencias de la vida.
 
@@ -160,19 +156,6 @@ muestra1
 # Con reemplazo
 muestra2 <- sample(poblacion, size = 10, replace = TRUE)
 muestra2
-```
-
-### En Python
-```{python}
-import random
-poblacion = list(range(1, 101))
-random.seed(123)
-# Sin reemplazo
-muestra1 = random.sample(poblacion, 10)
-print("Muestra sin reemplazo:", muestra1)
-# Con reemplazo
-muestra2 = [random.choice(poblacion) for _ in range(10)]
-print("Muestra con reemplazo:", muestra2)
 ```
 
 # Conclusión

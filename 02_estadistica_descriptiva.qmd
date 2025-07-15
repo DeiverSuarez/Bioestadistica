@@ -1,12 +1,4 @@
-
-
-
-```{r, echo=FALSE}
-reticulate::use_condaenv("quarto-env", required = TRUE)
-```
-
 # Estadística Descriptiva
-
 
 ```{r}
 #| echo: false
@@ -14,29 +6,38 @@ reticulate::use_condaenv("quarto-env", required = TRUE)
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
+Este capítulo utiliza un conjunto de datos real descargado de [Kaggle: Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset) o [Github](https://github.com/DeiverSuarez/Bioestadistica/blob/main/healthcare-dataset-stroke-data.csv), que contiene información demográfica, médica y conductual de pacientes. El objetivo es explorar los datos aplicando técnicas de estadística descriptiva, apoyados por gráficos, código en R y una aplicación Shiny y material audiovisual.
 
-Este capítulo utiliza un conjunto de datos real descargado de [Kaggle: Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset), que contiene información demográfica, médica y conductual de pacientes. El objetivo es explorar los datos aplicando técnicas de estadística descriptiva, apoyados por gráficos, código en R y Python, una aplicación Shiny y material audiovisual.
+```{r, echo=FALSE}
+library(knitr)
+library(kableExtra)
+
+summary_df_simple <- data.frame(
+  Variable = c("gender", "age", "hypertension", "heart_disease", "ever_married", "work_type",
+               "Residence_type", "avg_glucose_level", "bmi", "smoking_status", "stroke"),
+  `Tipo.de.Variable` = c("Categórica", "Cuantitativa", "Categórica", "Categórica", "Categórica", "Categórica",
+                         "Categórica", "Cuantitativa", "Cuantitativa", "Categórica", "Categórica"),
+  `Escala.de.Medición` = c("Nominal", "Ratio", "Ordinal", "Nominal", "Nominal", "Nominal",
+                           "Nominal", "Ratio", "Ratio", "Nominal", "Nominal")
+)
+
+kable(summary_df_simple, format = "html", caption = "Tabla de clasificación de variables") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "center") %>%
+  column_spec(1, bold = TRUE)
+```
 
 ------------------------------------------------------------------------
 
-## 1. Carga y descripción del conjunto de datos
+## Carga y descripción del conjunto de datos
 
 ```{r}
 datos <- read.csv("healthcare-dataset-stroke-data.csv")
-summary(datos)
 head(datos)
-```
-
-```{python}
-import pandas as pd
-datos = pd.read_csv("healthcare-dataset-stroke-data.csv")
-datos.head()
-datos.describe(include='all')
 ```
 
 ------------------------------------------------------------------------
 
-## 2. Gráficos descriptivos
+## Gráficos descriptivos (Variables Cuantitativa)
 
 ### Boxplot de edad según presencia de ACV
 
@@ -44,103 +45,192 @@ datos.describe(include='all')
 boxplot(age ~ stroke, data = datos, main = "Edad por Stroke", col = "lightblue")
 ```
 
-```{python}
-import seaborn as sns
-import matplotlib.pyplot as plt
-sns.boxplot(x="stroke", y="age", data=datos)
-plt.title("Edad por Stroke")
-plt.show()
-```
-
 ------------------------------------------------------------------------
 
 ### Histograma de glucosa promedio
 
 ```{r}
-hist(datos$avg_glucose_level, main = "Glucosa Promedio", xlab = "Nivel de glucosa", col = "lightgreen")
-```
+hist(datos$avg_glucose_level,
+     main = "Distribución del nivel de glucosa",
+     xlab = "Nivel de glucosa",
+     col = "lightgreen",
+     probability = TRUE, breaks = 50)  # activa escala de densidad
 
-```{python}
-sns.histplot(data=datos, x="avg_glucose_level", kde=True, color="green")
-plt.title("Distribución del nivel de glucosa")
-plt.show()
+lines(density(datos$avg_glucose_level), col = "darkgreen", lwd = 2)  # curva de densidad
 ```
 
 ------------------------------------------------------------------------
 
-### Frecuencias y proporciones
+### scatter plot (diagrama de dispersión) entre las variables Age y Bmi
 
 ```{r}
-table(datos$gender)
-prop.table(table(datos$stroke))
+plot(datos$age, datos$bmi, 
+     main = "Relación entre Edad y BMI",
+     xlab = "Edad",
+     ylab = "BMI",
+     pch = 19, col = "darkblue")
 ```
 
-```{python}
-print(datos["gender"].value_counts())
-print(datos["stroke"].value_counts(normalize=True))
+## Gráficos descriptivos (Variables Categóricas)
+
+### Gráfico de barras apiladas
+```{r}
+library(ggplot2)
+library(dplyr)
+datos %>%
+  count(smoking_status, heart_disease) %>%
+  group_by(smoking_status) %>%
+  mutate(porcentaje = n / sum(n) * 100) %>%
+  ggplot(aes(x = smoking_status, y = porcentaje, fill = factor(heart_disease))) +
+  geom_col(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  labs(title = "Proporción de Heart Disease por Smoking Status",
+       x = "Smoking Status", y = "Porcentaje", fill = "Heart Disease") +
+  theme_minimal()
+
+```
+
+### graficon de frecuencia absoluta y relativa
+
+```{r}
+library(patchwork)  # para p1 + p2
+
+# Gráfico de frecuencia absoluta
+p1 <- ggplot(datos, aes(x = smoking_status)) +
+  geom_bar(fill = "steelblue") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 25)) +  # ROTACIÓN del eje x
+  labs(title = "Frecuencia absoluta smoking status", x = "Smoking Status", y = "Frecuencia")
+
+# Gráfico de frecuencia relativa
+p2 <- datos %>%
+  count(smoking_status) %>%
+  mutate(porcentaje = n / sum(n) * 100) %>%
+  ggplot(aes(x = smoking_status, y = porcentaje)) +
+  geom_col(fill = "darkorange") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 25)) +  # ROTACIÓN del eje x
+  geom_text(aes(label = paste0(round(porcentaje, 1), "%")), vjust = -0.5) +
+  labs(title = "Frecuencia relativa smoking status", x = "Smoking Status", y = "Porcentaje")
+
+# Mostrar ambos gráficos lado a lado
+p1 + p2
+
+```
+
+### Gráfico de barras agrupadas
+
+```{r}
+
+ggplot(datos, aes(x = smoking_status, fill = factor(heart_disease))) +
+  geom_bar(position = "dodge") +
+  labs(title = "Smoking Status vs Heart Disease (Barras Agrupadas)", x = "Smoking Status", fill = "Heart Disease") +
+  theme_minimal()
+
+```
+
+### Mapa de calor de una tabla de contingencia
+```{r}
+library(reshape2)
+
+tabla <- table(datos$smoking_status, datos$heart_disease)
+df_heat <- as.data.frame(tabla)
+names(df_heat) <- c("smoking_status", "heart_disease", "frecuencia")
+
+ggplot(df_heat, aes(x = heart_disease, y = smoking_status, fill = frecuencia)) +
+  geom_tile() +
+  geom_text(aes(label = frecuencia), color = "white") +
+  scale_fill_gradient(low = "lightblue", high = "darkblue") +
+  labs(title = "Heatmap: Smoking Status vs Heart Disease",
+       x = "Heart Disease", y = "Smoking Status") +
+  theme_minimal()
+```
+
+### Gráfico de pastel (pie chart)
+```{r}
+
+datos %>%
+  count(smoking_status) %>%
+  mutate(porcentaje = n / sum(n) * 100,
+         label = paste0(smoking_status, ": ", round(porcentaje, 1), "%")) %>%
+  ggplot(aes(x = "", y = porcentaje, fill = smoking_status)) +
+  geom_col(width = 1) +
+  coord_polar(theta = "y") +
+  theme_void() +
+  geom_text(aes(label = label), position = position_stack(vjust = 0.5)) +
+  labs(title = "Distribución de Smoking Status")
+
 ```
 
 
-### Aplicación interactiva
+
+## Aplicación interactiva
 
 Como complemento a este capítulo, se ha desarrollado una aplicación interactiva utilizando Shiny que permite explorar conceptos de estadística descriptiva y análisis exploratorio con visualizaciones dinámicas y opciones personalizables para el usuario.
 
-🔗 **Accede a la app aquí:**  
-👉 [https://deiversg.shinyapps.io/app_statistical_Methods/](https://deiversg.shinyapps.io/app_statistical_Methods/)
-
----
-
-🎥 **Video tutorial – ¿Cómo usar la app?**
-
-:::{.only-html}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TU_ID_DEL_VIDEO" title="Tutorial app estadística" frameborder="0" allowfullscreen></iframe>
-:::
-
-:::{.only-pdf}
-Video tutorial: [¿Cómo usar la app?](https://www.youtube.com/watch?v=TU_ID_DEL_VIDEO)
-:::
-
+🔗 **Accede a la app aquí:**\
+👉 <https://deiversg.shinyapps.io/app_statistical_Methods/>
 
 ------------------------------------------------------------------------
 
-## 5. Recursos audiovisuales
+🎥 **Video tutorial – ¿Cómo usar la app?**
+
+::: only-html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TU_ID_DEL_VIDEO" title="Tutorial app estadística" frameborder="0" allowfullscreen>
+
+</iframe>
+:::
+
+::: only-pdf
+Video tutorial: [¿Cómo usar la app?](https://www.youtube.com/watch?v=TU_ID_DEL_VIDEO)
+:::
+
+------------------------------------------------------------------------
+
+## Recursos audiovisuales
 
 ### 🎥 Introducción a la estadística descriptiva
 
-:::{.only-html}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/W1_eCwuYkAI" title="Estadística descriptiva básica" frameborder="0" allowfullscreen></iframe>
+::: only-html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W1_eCwuYkAI" title="Estadística descriptiva básica" frameborder="0" allowfullscreen>
+
+</iframe>
 :::
 
-:::{.only-pdf}
+::: only-pdf
 Video: [Introducción a la estadística descriptiva](https://www.youtube.com/watch?v=W1_eCwuYkAI)
 :::
 
----
+------------------------------------------------------------------------
 
 ### 📊 Visualización de datos en R (boxplots, histogramas)
 
-:::{.only-html}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QyntPbbTOns" title="Visualización en R" frameborder="0" allowfullscreen></iframe>
+::: only-html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QyntPbbTOns" title="Visualización en R" frameborder="0" allowfullscreen>
+
+</iframe>
 :::
 
-:::{.only-pdf}
+::: only-pdf
 Video: [Visualización de datos en R](https://www.youtube.com/watch?v=QyntPbbTOns)
 :::
 
----
+------------------------------------------------------------------------
 
 ### 🐍 Exploración con Python (Seaborn, pandas)
 
-:::{.only-html}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ludqgCJe1aI" title="Python Exploratorio" frameborder="0" allowfullscreen></iframe>
+::: only-html
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ludqgCJe1aI" title="Python Exploratorio" frameborder="0" allowfullscreen>
+
+</iframe>
 :::
 
-:::{.only-pdf}
+::: only-pdf
 Video: [Exploración con Python](https://www.youtube.com/watch?v=ludqgCJe1aI)
 :::
 
 ------------------------------------------------------------------------
 
-## 6. Conclusión
+## Conclusión
 
 El análisis exploratorio de datos con herramientas como R y Python permite obtener una comprensión inicial robusta de los patrones en datos biomédicos. Esto es esencial antes de aplicar modelos predictivos como regresión o clasificación. El uso de gráficos y resúmenes numéricos fortalece la interpretación clínica y estadística de los fenómenos observados.
