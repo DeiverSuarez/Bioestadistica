@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-231ef2f9d4ce3268f31ef752336c15d2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d3c9390091c69a50683db05bc45f20d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -207,30 +207,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Tabla de contenidos</h2>
    
-  <ul>
-  <li><a href="#carga-y-descripción-del-conjunto-de-datos" id="toc-carga-y-descripción-del-conjunto-de-datos" class="nav-link active" data-scroll-target="#carga-y-descripción-del-conjunto-de-datos"><span class="header-section-number">4.1</span> Carga y descripción del conjunto de datos</a></li>
-  <li><a href="#gráficos-descriptivos-variables-cuantitativa" id="toc-gráficos-descriptivos-variables-cuantitativa" class="nav-link" data-scroll-target="#gráficos-descriptivos-variables-cuantitativa"><span class="header-section-number">4.2</span> Gráficos descriptivos (Variables Cuantitativa)</a>
   <ul class="collapse">
-  <li><a href="#boxplot-de-edad-según-presencia-de-acv" id="toc-boxplot-de-edad-según-presencia-de-acv" class="nav-link" data-scroll-target="#boxplot-de-edad-según-presencia-de-acv"><span class="header-section-number">4.2.1</span> Boxplot de edad según presencia de ACV</a></li>
-  <li><a href="#histograma-del-nivel-promedio-de-glucosa" id="toc-histograma-del-nivel-promedio-de-glucosa" class="nav-link" data-scroll-target="#histograma-del-nivel-promedio-de-glucosa"><span class="header-section-number">4.2.2</span> Histograma del nivel promedio de glucosa</a></li>
-  <li><a href="#scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi" id="toc-scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi" class="nav-link" data-scroll-target="#scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi"><span class="header-section-number">4.2.3</span> scatter plot (diagrama de dispersión) entre las variables Age y Bmi</a></li>
-  </ul></li>
-  <li><a href="#gráficos-descriptivos-variables-categóricas" id="toc-gráficos-descriptivos-variables-categóricas" class="nav-link" data-scroll-target="#gráficos-descriptivos-variables-categóricas"><span class="header-section-number">4.3</span> Gráficos descriptivos (Variables Categóricas)</a>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">5</span> Introducción</a></li>
+  <li><a href="#contexto-del-estudios" id="toc-contexto-del-estudios" class="nav-link" data-scroll-target="#contexto-del-estudios"><span class="header-section-number">6</span> Contexto del Estudios</a></li>
+  <li><a href="#clasificación-y-tipos-de-variables" id="toc-clasificación-y-tipos-de-variables" class="nav-link" data-scroll-target="#clasificación-y-tipos-de-variables"><span class="header-section-number">7</span> Clasificación y Tipos de Variables</a>
   <ul class="collapse">
-  <li><a href="#gráfico-de-barras-apiladas" id="toc-gráfico-de-barras-apiladas" class="nav-link" data-scroll-target="#gráfico-de-barras-apiladas"><span class="header-section-number">4.3.1</span> Gráfico de barras apiladas</a></li>
-  <li><a href="#graficon-de-frecuencia-absoluta-y-relativa" id="toc-graficon-de-frecuencia-absoluta-y-relativa" class="nav-link" data-scroll-target="#graficon-de-frecuencia-absoluta-y-relativa"><span class="header-section-number">4.3.2</span> graficon de frecuencia absoluta y relativa</a></li>
-  <li><a href="#gráfico-de-barras-agrupadas" id="toc-gráfico-de-barras-agrupadas" class="nav-link" data-scroll-target="#gráfico-de-barras-agrupadas"><span class="header-section-number">4.3.3</span> Gráfico de barras agrupadas</a></li>
-  <li><a href="#mapa-de-calor-de-una-tabla-de-contingencia" id="toc-mapa-de-calor-de-una-tabla-de-contingencia" class="nav-link" data-scroll-target="#mapa-de-calor-de-una-tabla-de-contingencia"><span class="header-section-number">4.3.4</span> Mapa de calor de una tabla de contingencia</a></li>
-  <li><a href="#gráfico-de-pastel-pie-chart" id="toc-gráfico-de-pastel-pie-chart" class="nav-link" data-scroll-target="#gráfico-de-pastel-pie-chart"><span class="header-section-number">4.3.5</span> Gráfico de pastel (pie chart)</a></li>
+  <li><a href="#carga-y-descripción-del-conjunto-de-datos" id="toc-carga-y-descripción-del-conjunto-de-datos" class="nav-link" data-scroll-target="#carga-y-descripción-del-conjunto-de-datos"><span class="header-section-number">7.1</span> Carga y descripción del conjunto de datos</a></li>
+  <li><a href="#gráficos-descriptivos-variables-cuantitativa" id="toc-gráficos-descriptivos-variables-cuantitativa" class="nav-link" data-scroll-target="#gráficos-descriptivos-variables-cuantitativa"><span class="header-section-number">7.2</span> Gráficos descriptivos (Variables Cuantitativa)</a></li>
+  <li><a href="#comparación-de-variables-cuantitativas-según-la-ocurrencia-de-acv-stroke" id="toc-comparación-de-variables-cuantitativas-según-la-ocurrencia-de-acv-stroke" class="nav-link" data-scroll-target="#comparación-de-variables-cuantitativas-según-la-ocurrencia-de-acv-stroke"><span class="header-section-number">7.3</span> Comparación de variables cuantitativas según la ocurrencia de ACV (stroke)</a></li>
+  <li><a href="#exploración-de-relaciones-entre-variables-cuantitativas-matriz-de-dispersión-entre-edad-glucosa-y-bmi" id="toc-exploración-de-relaciones-entre-variables-cuantitativas-matriz-de-dispersión-entre-edad-glucosa-y-bmi" class="nav-link" data-scroll-target="#exploración-de-relaciones-entre-variables-cuantitativas-matriz-de-dispersión-entre-edad-glucosa-y-bmi"><span class="header-section-number">7.4</span> Exploración de relaciones entre variables cuantitativas: matriz de dispersión entre edad, glucosa y BMI</a></li>
+  <li><a href="#análisis-de-variables-categóricas" id="toc-análisis-de-variables-categóricas" class="nav-link" data-scroll-target="#análisis-de-variables-categóricas"><span class="header-section-number">7.5</span> Análisis de Variables Categóricas</a></li>
+  <li><a href="#gráficos-descriptivos-variables-categóricas" id="toc-gráficos-descriptivos-variables-categóricas" class="nav-link" data-scroll-target="#gráficos-descriptivos-variables-categóricas"><span class="header-section-number">7.6</span> Gráficos descriptivos (Variables Categóricas)</a></li>
+  <li><a href="#aplicación-interactiva" id="toc-aplicación-interactiva" class="nav-link" data-scroll-target="#aplicación-interactiva"><span class="header-section-number">7.7</span> Aplicación interactiva</a></li>
+  <li><a href="#recursos-audiovisuales" id="toc-recursos-audiovisuales" class="nav-link" data-scroll-target="#recursos-audiovisuales"><span class="header-section-number">7.8</span> Recursos audiovisuales</a></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión"><span class="header-section-number">7.9</span> Conclusión</a></li>
   </ul></li>
-  <li><a href="#aplicación-interactiva" id="toc-aplicación-interactiva" class="nav-link" data-scroll-target="#aplicación-interactiva"><span class="header-section-number">4.4</span> Aplicación interactiva</a></li>
-  <li><a href="#recursos-audiovisuales" id="toc-recursos-audiovisuales" class="nav-link" data-scroll-target="#recursos-audiovisuales"><span class="header-section-number">4.5</span> Recursos audiovisuales</a>
-  <ul class="collapse">
-  <li><a href="#introducción-a-la-estadística-descriptiva" id="toc-introducción-a-la-estadística-descriptiva" class="nav-link" data-scroll-target="#introducción-a-la-estadística-descriptiva"><span class="header-section-number">4.5.1</span> 🎥 Introducción a la estadística descriptiva</a></li>
-  <li><a href="#visualización-de-datos-en-r-boxplots-histogramas" id="toc-visualización-de-datos-en-r-boxplots-histogramas" class="nav-link" data-scroll-target="#visualización-de-datos-en-r-boxplots-histogramas"><span class="header-section-number">4.5.2</span> 📊 Visualización de datos en R (boxplots, histogramas)</a></li>
-  <li><a href="#exploración-con-python-seaborn-pandas" id="toc-exploración-con-python-seaborn-pandas" class="nav-link" data-scroll-target="#exploración-con-python-seaborn-pandas"><span class="header-section-number">4.5.3</span> 🐍 Exploración con Python (Seaborn, pandas)</a></li>
-  </ul></li>
-  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión"><span class="header-section-number">4.6</span> Conclusión</a></li>
   </ul>
 </nav>
     </div>
@@ -256,10 +247,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="introducción" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Introducción</h1>
+<p>La estadística descriptiva constituye el primer paso esencial en el análisis de datos, ya que permite organizar, resumir y visualizar la información de manera clara y comprensible. A través de ella, es posible identificar patrones, detectar anomalías y formular hipótesis preliminares antes de aplicar métodos más complejos de inferencia o modelado predictivo.</p>
+<p>Como señalan Spriestersbach y colaboradores (2009), la presentación adecuada de los datos no solo facilita su comprensión, sino que también revela si fueron recolectados y analizados de forma rigurosa. Esta etapa cobra especial relevancia en el contexto de investigaciones biomédicas, donde cada observación —ya sea un paciente, una célula o un evento clínico— representa una unidad estadística con múltiples variables asociadas, tanto cuantitativas como cualitativas.</p>
+<p>Este libro propone una aproximación aplicada y visual al estudio de la estadística descriptiva, utilizando un conjunto de datos reales relacionados con la predicción de accidentes cerebrovasculares (ACV). A través de herramientas como R, aplicaciones Shiny y visualizaciones dinámicas, el lector podrá explorar variables categóricas y numéricas, interpretar sus distribuciones, y comprender cómo la escala de medición influye en la selección de representaciones gráficas y resúmenes numéricos.</p>
+<p>Además de gráficos clásicos como histogramas, diagramas de caja y gráficos de barras, se incluirán recursos interactivos, ejemplos reproducibles y videos tutoriales que fortalecen el aprendizaje autónomo. Este enfoque busca no solo enseñar técnicas estadísticas, sino también fomentar una comprensión crítica del análisis de datos en escenarios reales.</p>
+<p>Al finalizar este recorrido, el lector habrá adquirido competencias fundamentales para describir datos con claridad, detectar relaciones entre variables y establecer las bases sólidas para futuros análisis inferenciales. Como base de todo estudio científico riguroso, la estadística descriptiva es mucho más que una etapa inicial: es una herramienta poderosa para ver con claridad aquello que los datos tienen por decirnos.</p>
+</section>
+<section id="contexto-del-estudios" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Contexto del Estudios</h1>
 <p>Este capítulo explora un conjunto de datos reales proveniente del <a href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset">Stroke Prediction Dataset</a>, disponible también en <a href="https://github.com/DeiverSuarez/Bioestadistica/blob/main/healthcare-dataset-stroke-data.csv">Github</a>. El dataset contiene información demográfica, médica y de comportamiento de pacientes, con el objetivo de predecir la ocurrencia de accidentes cerebrovasculares (ACV).</p>
 <p>Utilizaremos herramientas de estadística descriptiva para explorar y resumir los datos, apoyándonos en visualizaciones gráficas, código en R, aplicaciones Shiny y recursos audiovisuales complementarios.</p>
-<p><strong>Clasificación de las variables</strong></p>
-<p>En la siguiente tabla se presenta una descripción de las variables del conjunto de datos, clasificadas según su tipo (categórica o cuantitativa) y su escala de medición.</p>
+</section>
+<section id="clasificación-y-tipos-de-variables" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Clasificación y Tipos de Variables</h1>
+<p>En la siguiente tabla se presenta una descripción de las variables del conjunto de datos, clasificadas según su tipo (categórica o cuantitativa) y su escala de medición. Es importante esta clasificación para elegir representaciones gráficas adecuadas.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="table-responsive">
@@ -334,11 +337,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <hr>
-<section id="carga-y-descripción-del-conjunto-de-datos" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="carga-y-descripción-del-conjunto-de-datos"><span class="header-section-number">4.1</span> Carga y descripción del conjunto de datos</h2>
+<section id="carga-y-descripción-del-conjunto-de-datos" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="carga-y-descripción-del-conjunto-de-datos"><span class="header-section-number">7.1</span> Carga y descripción del conjunto de datos</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"healthcare-dataset-stroke-data.csv"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>     id gender age hypertension heart_disease ever_married     work_type
 1  9046   Male  67            0             1          Yes       Private
@@ -358,34 +364,173 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-<section id="gráficos-descriptivos-variables-cuantitativa" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="gráficos-descriptivos-variables-cuantitativa"><span class="header-section-number">4.2</span> Gráficos descriptivos (Variables Cuantitativa)</h2>
-<section id="boxplot-de-edad-según-presencia-de-acv" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="boxplot-de-edad-según-presencia-de-acv"><span class="header-section-number">4.2.1</span> Boxplot de edad según presencia de ACV</h3>
-<p>Este gráfico permite comparar la distribución de la edad entre pacientes que han sufrido un ACV (stroke = 1) y los que no (stroke = 0).</p>
+<section id="gráficos-descriptivos-variables-cuantitativa" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="gráficos-descriptivos-variables-cuantitativa"><span class="header-section-number">7.2</span> Gráficos descriptivos (Variables Cuantitativa)</h2>
+<p>Las variables cuantitativas del conjunto de datos —aquellas de naturaleza numérica, ya sean continuas o discretas, que permiten realizar operaciones aritméticas y análisis estadísticos— son: age (edad), avg_glucose_level (nivel promedio de glucosa en sangre) y bmi (índice de masa corporal).</p>
+<p>Es importante destacar que la variable bmi contiene valores faltantes codificados como “N/A” en formato de texto, lo cual impide que R la reconozca automáticamente como variable numérica. Esta situación puede afectar el cálculo de estadísticas resumen y la generación de gráficos como histogramas y boxplots.</p>
+<p>Para resolverlo, es necesario reemplazar los valores “N/A” por NA (la forma correcta de representar datos faltantes en R) y luego convertir la columna a tipo numérico. A continuación se muestra el código utilizado para esta limpieza, seguido de los primeros 20 valores de la variable bmi como ejemplo ilustrativo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(age <span class="sc">~</span> stroke, <span class="at">data =</span> datos, <span class="at">main =</span> <span class="st">"Edad por Stroke"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>bmi[datos<span class="sc">$</span>bmi <span class="sc">==</span> <span class="st">"N/A"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span>  <span class="co"># Reemplazar "N/A" por NA en la variable bmi.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>bmi <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(datos<span class="sc">$</span>bmi)   <span class="co"># Convertir la variable bmi a numérica.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>bmi[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>]                      <span class="co"># Los primeros 20 datos de la variable bmi.</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 36.6   NA 32.5 34.4 24.0 29.0 27.4 22.8   NA 24.2 29.7 36.8 27.3   NA 28.2
+[16] 30.9 37.5 25.8 37.8   NA</code></pre>
+</div>
+</div>
+<p>A continuación, se presenta un panel comparativo que resume gráficamente la distribución de tres variables numéricas clave del conjunto de datos: edad, nivel promedio de glucosa en sangre e índice de masa corporal (IMC). Para cada variable se incluyen tres tipos de gráficos:</p>
+<ul>
+<li><p>Un histograma para visualizar la frecuencia de los valores.</p></li>
+<li><p>Un boxplot para identificar la mediana, rango intercuartílico y posibles valores atípicos.</p></li>
+<li><p>Una curva de densidad para observar la forma suavizada de la distribución.</p></li>
+</ul>
+<p>Estos gráficos se organizan en una matriz de 3 filas y 3 columnas, permitiendo una comparación visual clara y simultánea entre las variables, facilitando la identificación de patrones como asimetrías, concentraciones y valores extremos.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar patchwork si no lo tienes</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("patchwork")</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráficos para 'age'</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">"#69b3a2"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma de Edad"</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Frecuencia"</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">y =</span> age)) <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"#FF9999"</span>) <span class="sc">+</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot de Edad"</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> age)) <span class="sc">+</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"#404080"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Densidad de Edad"</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Densidad"</span>) <span class="sc">+</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráficos para 'avg_glucose_level'</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> avg_glucose_level)) <span class="sc">+</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">"#69b3a2"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma de Glucosa"</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Frecuencia"</span>) <span class="sc">+</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>p5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">y =</span> avg_glucose_level)) <span class="sc">+</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"#FF9999"</span>) <span class="sc">+</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot de Glucosa"</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>p6 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> avg_glucose_level)) <span class="sc">+</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"#404080"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Densidad de Glucosa"</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Densidad"</span>) <span class="sc">+</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráficos para 'bmi'</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>p7 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> bmi)) <span class="sc">+</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">"#69b3a2"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma de IMC"</span>, <span class="at">x =</span> <span class="st">"IMC"</span>, <span class="at">y =</span> <span class="st">"Frecuencia"</span>) <span class="sc">+</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>p8 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">y =</span> bmi)) <span class="sc">+</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"#FF9999"</span>) <span class="sc">+</span></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot de IMC"</span>, <span class="at">x =</span> <span class="st">"IMC"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>p9 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> bmi)) <span class="sc">+</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">"#404080"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Densidad de IMC"</span>, <span class="at">x =</span> <span class="st">"IMC"</span>, <span class="at">y =</span> <span class="st">"Densidad"</span>) <span class="sc">+</span></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Unir todos los gráficos en una sola figura: 3 columnas x 3 filas</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>panel_final <span class="ot">&lt;-</span> (p1 <span class="sc">|</span> p4 <span class="sc">|</span> p7) <span class="sc">/</span></span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>               (p2 <span class="sc">|</span> p5 <span class="sc">|</span> p8) <span class="sc">/</span></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>               (p3 <span class="sc">|</span> p6 <span class="sc">|</span> p9) <span class="sc">+</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>               <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">"Distribuciones para Variables Cuantitativas"</span>,</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>                               <span class="at">theme =</span> <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">face =</span> <span class="st">"bold"</span>)))</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar el panel completo</span></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>panel_final</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="02_estadistica_descriptiva_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="02_estadistica_descriptiva_files/figure-html/code-fold- true-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<hr>
+<p>La figura anterior presenta un resumen visual de tres variables cuantitativas clave del conjunto de datos: edad, nivel promedio de glucosa en sangre e índice de masa corporal (IMC). Para cada variable se muestran tres representaciones gráficas: un histograma (distribución de frecuencias), un diagrama de caja (boxplot) y una curva de densidad (estimación suavizada de la distribución).</p>
+<p>🔹 Edad</p>
+<ul>
+<li><p>El histograma de edad revela una distribución aproximadamente uniforme entre los 20 y 80 años, aunque con una ligera acumulación en adultos mayores.</p></li>
+<li><p>El boxplot indica una mediana cercana a los 50 años, sin valores extremos evidentes.</p></li>
+<li><p>La curva de densidad refuerza la percepción de una distribución dispersa, sin fuerte sesgo.</p></li>
+</ul>
+<p>🔹 Nivel de glucosa promedio</p>
+<ul>
+<li><p>El histograma muestra una clara asimetría positiva (sesgo a la derecha), con muchos pacientes en el rango de 80–150 mg/dL y pocos con niveles superiores a 200.</p></li>
+<li><p>El boxplot confirma esta asimetría al mostrar varios outliers por encima del tercer cuartil.</p></li>
+<li><p>La densidad sugiere una distribución no normal, lo cual podría requerir transformación si se usa en modelos paramétricos.</p></li>
+</ul>
+<p>🔹 IMC (Índice de masa corporal)</p>
+<ul>
+<li><p>El histograma de IMC muestra una distribución centrada en valores entre 25 y 35, compatibles con sobrepeso y obesidad.</p></li>
+<li><p>El boxplot evidencia muchos valores atípicos hacia arriba, aunque la mediana está alrededor de 28.</p></li>
+<li><p>La curva de densidad presenta una forma unimodal con cola derecha, también indicando asimetría.</p></li>
+</ul>
+<p>Este tipo de visualización conjunta permite al lector comparar la forma, dispersión y simetría de las variables numéricas más relevantes del estudio. También sirve como base para tomar decisiones estadísticas posteriores, como transformaciones, imputación de valores extremos o segmentación de la muestra por rangos clínicos.</p>
 </section>
-<section id="histograma-del-nivel-promedio-de-glucosa" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="histograma-del-nivel-promedio-de-glucosa"><span class="header-section-number">4.2.2</span> Histograma del nivel promedio de glucosa</h3>
-<p>Este histograma muestra la distribución de la variable avg_glucose_level y superpone una curva de densidad para observar su comportamiento general.</p>
+<section id="comparación-de-variables-cuantitativas-según-la-ocurrencia-de-acv-stroke" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="comparación-de-variables-cuantitativas-según-la-ocurrencia-de-acv-stroke"><span class="header-section-number">7.3</span> Comparación de variables cuantitativas según la ocurrencia de ACV (stroke)</h2>
+<p>Una parte esencial del análisis descriptivo es explorar cómo se comportan las variables cuantitativas en función de una variable categórica relevante. En este caso, se analizan tres indicadores clínicos —edad, nivel promedio de glucosa en sangre (avg_glucose_level) y índice de masa corporal (bmi)— comparando su distribución entre pacientes que han sufrido un accidente cerebrovascular (ACV o stroke) y aquellos que no lo han sufrido.</p>
+<p>Los datos se visualizan mediante diagramas de caja (boxplots), que permiten identificar diferencias en la mediana, dispersión y presencia de valores atípicos entre los dos grupos. Estos gráficos se organizan en una matriz de 1 fila por 3 columnas, lo que permite una comparación visual clara y simultánea entre las tres variables. Esta disposición facilita la detección de patrones relevantes, como asimetrías, concentraciones de valores o extremos, que podrían estar asociados con el riesgo de sufrir un ACV.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(datos<span class="sc">$</span>avg_glucose_level,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribución del nivel de glucosa"</span>,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Nivel de glucosa"</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"lightgreen"</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> <span class="dv">50</span>)  <span class="co"># activa escala de densidad</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(datos<span class="sc">$</span>avg_glucose_level), <span class="at">col =</span> <span class="st">"darkgreen"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)  <span class="co"># curva de densidad</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Asegurar que stroke sea factor (para que ggplot lo interprete como categoría)</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>stroke <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos<span class="sc">$</span>stroke, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"Yes"</span>))</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear los boxplots individuales con títulos alineados a la derecha</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> stroke, <span class="at">y =</span> age, <span class="at">fill =</span> stroke)) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Edad por Stroke"</span>, <span class="at">x =</span> <span class="st">"Stroke"</span>, <span class="at">y =</span> <span class="st">"Edad"</span>) <span class="sc">+</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">face =</span> <span class="st">"bold"</span>)  <span class="co"># Alineación derecha</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> stroke, <span class="at">y =</span> avg_glucose_level, <span class="at">fill =</span> stroke)) <span class="sc">+</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Glucosa por Stroke"</span>, <span class="at">x =</span> <span class="st">"Stroke"</span>, <span class="at">y =</span> <span class="st">"Avg Glucose Level"</span>) <span class="sc">+</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">face =</span> <span class="st">"bold"</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> stroke, <span class="at">y =</span> bmi, <span class="at">fill =</span> stroke)) <span class="sc">+</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"IMC por Stroke"</span>, <span class="at">x =</span> <span class="st">"Stroke"</span>, <span class="at">y =</span> <span class="st">"BMI"</span>) <span class="sc">+</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">face =</span> <span class="st">"bold"</span>)</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel con los tres gráficos</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>panel <span class="ot">&lt;-</span> p1 <span class="sc">|</span> p2 <span class="sc">|</span> p3</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>panel</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -394,17 +539,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<hr>
+<p>El gráfico anterior muestra cómo varían tres variables cuantitativas clave —edad, nivel promedio de glucosa en sangre y índice de masa corporal (IMC)— entre pacientes que no han sufrido un accidente cerebrovascular (ACV) (grupo “No”) y aquellos que sí lo han sufrido (grupo “Yes”).</p>
+<ul>
+<li><p>Edad: Se observa una diferencia clara entre los grupos. Los pacientes con ACV tienden a ser considerablemente mayores, con una mediana por encima de los 70 años, mientras que los que no han tenido ACV presentan una mediana cercana a los 40 años. Esto sugiere una fuerte asociación entre la edad avanzada y la ocurrencia de ACV.</p></li>
+<li><p>Nivel de glucosa: Aunque existe una mayor dispersión entre los pacientes con ACV (con valores más extremos), también se evidencia una mediana ligeramente más alta en comparación con el grupo sin ACV. Además, se detectan muchos valores atípicos (outliers), en quienes no han sufrido ACV.</p></li>
+<li><p>IMC: La distribución del IMC es bastante similar entre ambos grupos, con medianas cercanas a 28. Sin embargo, se nota una mayor variabilidad y presencia de valores extremos en el grupo sin ACV. Esto indica que, en esta muestra, el IMC no parece estar tan claramente asociado con la ocurrencia de ACV como la edad o la glucosa.</p></li>
+</ul>
+<p>Esta visualización es útil para generar hipótesis preliminares sobre posibles factores de riesgo. Por ejemplo, los resultados sugieren que la edad avanzada y niveles elevados de glucosa podrían estar relacionados con mayor riesgo de ACV, mientras que el IMC no presenta una diferencia tan marcada.</p>
 </section>
-<section id="scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi" class="level3" data-number="4.2.3">
-<h3 data-number="4.2.3" class="anchored" data-anchor-id="scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi"><span class="header-section-number">4.2.3</span> scatter plot (diagrama de dispersión) entre las variables Age y Bmi</h3>
-<p>Esta visualización permite explorar la posible relación lineal o no lineal entre la edad y el índice de masa corporal (BMI).</p>
+<section id="exploración-de-relaciones-entre-variables-cuantitativas-matriz-de-dispersión-entre-edad-glucosa-y-bmi" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="exploración-de-relaciones-entre-variables-cuantitativas-matriz-de-dispersión-entre-edad-glucosa-y-bmi"><span class="header-section-number">7.4</span> Exploración de relaciones entre variables cuantitativas: matriz de dispersión entre edad, glucosa y BMI</h2>
+<p>Una parte esencial del análisis descriptivo consiste en explorar las posibles relaciones entre variables cuantitativas. Esta exploración permite detectar patrones, asociaciones o tendencias que podrían ser relevantes desde el punto de vista clínico o epidemiológico, y que además servirán como base para futuros modelos predictivos o explicativos.</p>
+<p>En este caso, se construye una matriz de dispersión para visualizar simultáneamente las relaciones entre tres variables clave: edad, nivel promedio de glucosa en sangre (avg_glucose_level) e índice de masa corporal (bmi). Esta matriz permite observar:</p>
+<ul>
+<li><p>En la diagonal, la distribución individual de cada variable mediante histogramas suavizados.</p></li>
+<li><p>En la parte inferior, diagramas de dispersión (scatterplots) entre pares de variables, lo que facilita visualizar tendencias lineales o no lineales.</p></li>
+<li><p>En la parte superior, los coeficientes de correlación de Pearson entre cada par de variables, incluyendo la significancia estadística.</p></li>
+<li><p>Este tipo de visualización integrada es muy útil para detectar correlaciones significativas o posibles relaciones no evidentes a simple vista.</p></li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(datos<span class="sc">$</span>age, datos<span class="sc">$</span>bmi, </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Relación entre Edad y BMI"</span>,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Edad"</span>,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"BMI"</span>,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">"darkblue"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)  <span class="co"># Para paletas de colores</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(age, avg_glucose_level, bmi) <span class="sc">%&gt;%</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Paleta de colores personalizada</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>color_palette <span class="ot">&lt;-</span> <span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">name =</span> <span class="st">"Set2"</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear matriz de dispersión mejorada</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(df,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Matriz de Dispersión: Edad, Glucosa y BMI"</span>,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">upper =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"cor"</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">alignPercent =</span> <span class="fl">0.8</span>, <span class="at">col =</span> <span class="st">"darkblue"</span>)),</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">lower =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"points"</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">color =</span> <span class="st">"#75AADB"</span>)),  <span class="co"># 🔵 azul RStudio</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">diag =</span> <span class="fu">list</span>(<span class="at">continuous =</span> <span class="fu">wrap</span>(<span class="st">"densityDiag"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">fill =</span> <span class="st">"#A5C8E1"</span>))) <span class="sc">+</span>        <span class="co"># 🔵 tono más claro</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"#333333"</span>),</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"grey85"</span>)</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -413,26 +594,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>La matriz de dispersión presentada permite identificar relaciones significativas entre las variables cuantitativas consideradas en pacientes con ACV. Específicamente, se observa:</p>
+<ul>
+<li><p>Una correlación positiva moderada entre el índice de masa corporal (BMI) y la edad (r = 0.333***), lo que sugiere que, dentro de este grupo de pacientes, las personas de mayor edad tienden a tener un BMI más alto.</p></li>
+<li><p>Una correlación positiva baja entre la edad y el nivel promedio de glucosa (r = 0.236<strong><em>), así como entre el BMI y la glucosa (r = 0.176</em></strong>), lo cual puede indicar una asociación débil pero significativa entre estas variables clínicas.</p></li>
+</ul>
+<p>Además, los gráficos de densidad en la diagonal permiten identificar la distribución asimétrica de las variables, en especial para avg_glucose_level y bmi, con sesgo a la derecha. Este tipo de visualización multivariada facilita no solo la detección de tendencias y valores extremos, sino también la evaluación preliminar de supuestos para modelos más complejos. En conjunto, esta herramienta es fundamental para comprender la estructura interna de los datos antes de avanzar hacia el análisis inferencial.</p>
 </section>
-</section>
-<section id="gráficos-descriptivos-variables-categóricas" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="gráficos-descriptivos-variables-categóricas"><span class="header-section-number">4.3</span> Gráficos descriptivos (Variables Categóricas)</h2>
-<section id="gráfico-de-barras-apiladas" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="gráfico-de-barras-apiladas"><span class="header-section-number">4.3.1</span> Gráfico de barras apiladas</h3>
-<p>Este gráfico de barras apiladas normalizadas muestra la proporción de pacientes con y sin enfermedad cardíaca, según su estatus como fumadores.</p>
+<section id="análisis-de-variables-categóricas" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="análisis-de-variables-categóricas"><span class="header-section-number">7.5</span> Análisis de Variables Categóricas</h2>
+<p>Este gráfico permite comparar la distribución de la edad entre pacientes que han sufrido un ACV (stroke = 1) y los que no (stroke = 0).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(smoking_status, heart_disease) <span class="sc">%&gt;%</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(smoking_status) <span class="sc">%&gt;%</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">porcentaje =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> smoking_status, <span class="at">y =</span> porcentaje, <span class="at">fill =</span> <span class="fu">factor</span>(heart_disease))) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Proporción de Heart Disease por Smoking Status"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Smoking Status"</span>, <span class="at">y =</span> <span class="st">"Porcentaje"</span>, <span class="at">fill =</span> <span class="st">"Heart Disease"</span>) <span class="sc">+</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(age <span class="sc">~</span> stroke, <span class="at">data =</span> datos, <span class="at">main =</span> <span class="st">"Edad por Stroke"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -441,33 +617,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="graficon-de-frecuencia-absoluta-y-relativa" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="graficon-de-frecuencia-absoluta-y-relativa"><span class="header-section-number">4.3.2</span> graficon de frecuencia absoluta y relativa</h3>
-<p>A continuación, se presentan dos gráficos: el primero muestra la frecuencia absoluta de cada categoría de fumador, mientras que el segundo presenta la frecuencia relativa (en porcentaje).</p>
+<hr>
+<section id="histograma-del-nivel-promedio-de-glucosa" class="level3">
+<h3 class="anchored" data-anchor-id="histograma-del-nivel-promedio-de-glucosa">Histograma del nivel promedio de glucosa</h3>
+<p>Este histograma muestra la distribución de la variable avg_glucose_level y superpone una curva de densidad para observar su comportamiento general.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)  <span class="co"># para p1 + p2</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de frecuencia absoluta</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> smoking_status)) <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">25</span>)) <span class="sc">+</span>  <span class="co"># ROTACIÓN del eje x</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Frecuencia absoluta smoking status"</span>, <span class="at">x =</span> <span class="st">"Smoking Status"</span>, <span class="at">y =</span> <span class="st">"Frecuencia"</span>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de frecuencia relativa</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(smoking_status) <span class="sc">%&gt;%</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">porcentaje =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> smoking_status, <span class="at">y =</span> porcentaje)) <span class="sc">+</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"darkorange"</span>) <span class="sc">+</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">25</span>)) <span class="sc">+</span>  <span class="co"># ROTACIÓN del eje x</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(porcentaje, <span class="dv">1</span>), <span class="st">"%"</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Frecuencia relativa smoking status"</span>, <span class="at">x =</span> <span class="st">"Smoking Status"</span>, <span class="at">y =</span> <span class="st">"Porcentaje"</span>)</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar ambos gráficos lado a lado</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> p2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(datos<span class="sc">$</span>avg_glucose_level,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribución del nivel de glucosa"</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Nivel de glucosa"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"lightgreen"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">breaks =</span> <span class="dv">50</span>)  <span class="co"># activa escala de densidad</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(datos<span class="sc">$</span>avg_glucose_level), <span class="at">col =</span> <span class="st">"darkgreen"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)  <span class="co"># curva de densidad</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -476,15 +640,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<hr>
 </section>
-<section id="gráfico-de-barras-agrupadas" class="level3" data-number="4.3.3">
-<h3 data-number="4.3.3" class="anchored" data-anchor-id="gráfico-de-barras-agrupadas"><span class="header-section-number">4.3.3</span> Gráfico de barras agrupadas</h3>
-<p>Este gráfico permite comparar de forma directa la frecuencia de enfermedad cardíaca en cada categoría de fumador.</p>
+<section id="scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi" class="level3">
+<h3 class="anchored" data-anchor-id="scatter-plot-diagrama-de-dispersión-entre-las-variables-age-y-bmi">scatter plot (diagrama de dispersión) entre las variables Age y Bmi</h3>
+<p>Esta visualización permite explorar la posible relación lineal o no lineal entre la edad y el índice de masa corporal (BMI).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> smoking_status, <span class="at">fill =</span> <span class="fu">factor</span>(heart_disease))) <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Smoking Status vs Heart Disease (Barras Agrupadas)"</span>, <span class="at">x =</span> <span class="st">"Smoking Status"</span>, <span class="at">fill =</span> <span class="st">"Heart Disease"</span>) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(datos<span class="sc">$</span>age, datos<span class="sc">$</span>bmi, </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Relación entre Edad y BMI"</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Edad"</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"BMI"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">"darkblue"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -494,23 +663,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="mapa-de-calor-de-una-tabla-de-contingencia" class="level3" data-number="4.3.4">
-<h3 data-number="4.3.4" class="anchored" data-anchor-id="mapa-de-calor-de-una-tabla-de-contingencia"><span class="header-section-number">4.3.4</span> Mapa de calor de una tabla de contingencia</h3>
-<p>Representación visual de la frecuencia entre categorías cruzadas de smoking_status y heart_disease.</p>
+</section>
+<section id="gráficos-descriptivos-variables-categóricas" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="gráficos-descriptivos-variables-categóricas"><span class="header-section-number">7.6</span> Gráficos descriptivos (Variables Categóricas)</h2>
+<section id="gráfico-de-barras-apiladas" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-de-barras-apiladas">Gráfico de barras apiladas</h3>
+<p>Este gráfico de barras apiladas normalizadas muestra la proporción de pacientes con y sin enfermedad cardíaca, según su estatus como fumadores.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">table</span>(datos<span class="sc">$</span>smoking_status, datos<span class="sc">$</span>heart_disease)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>df_heat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(tabla)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df_heat) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"smoking_status"</span>, <span class="st">"heart_disease"</span>, <span class="st">"frecuencia"</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_heat, <span class="fu">aes</span>(<span class="at">x =</span> heart_disease, <span class="at">y =</span> smoking_status, <span class="at">fill =</span> frecuencia)) <span class="sc">+</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> frecuencia), <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"lightblue"</span>, <span class="at">high =</span> <span class="st">"darkblue"</span>) <span class="sc">+</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Heatmap: Smoking Status vs Heart Disease"</span>,</span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Heart Disease"</span>, <span class="at">y =</span> <span class="st">"Smoking Status"</span>) <span class="sc">+</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(smoking_status, heart_disease) <span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(smoking_status) <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">porcentaje =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> smoking_status, <span class="at">y =</span> porcentaje, <span class="at">fill =</span> <span class="fu">factor</span>(heart_disease))) <span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Proporción de Heart Disease por Smoking Status"</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Smoking Status"</span>, <span class="at">y =</span> <span class="st">"Porcentaje"</span>, <span class="at">fill =</span> <span class="st">"Heart Disease"</span>) <span class="sc">+</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -520,20 +694,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="gráfico-de-pastel-pie-chart" class="level3" data-number="4.3.5">
-<h3 data-number="4.3.5" class="anchored" data-anchor-id="gráfico-de-pastel-pie-chart"><span class="header-section-number">4.3.5</span> Gráfico de pastel (pie chart)</h3>
-<p>Una visualización clásica de distribución proporcional para smoking_status.</p>
+<section id="graficon-de-frecuencia-absoluta-y-relativa" class="level3">
+<h3 class="anchored" data-anchor-id="graficon-de-frecuencia-absoluta-y-relativa">graficon de frecuencia absoluta y relativa</h3>
+<p>A continuación, se presentan dos gráficos: el primero muestra la frecuencia absoluta de cada categoría de fumador, mientras que el segundo presenta la frecuencia relativa (en porcentaje).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(smoking_status) <span class="sc">%&gt;%</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">porcentaje =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>,</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">label =</span> <span class="fu">paste0</span>(smoking_status, <span class="st">": "</span>, <span class="fu">round</span>(porcentaje, <span class="dv">1</span>), <span class="st">"%"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> porcentaje, <span class="at">fill =</span> smoking_status)) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> label), <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribución de Smoking Status"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)  <span class="co"># para p1 + p2</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de frecuencia absoluta</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> smoking_status)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">25</span>)) <span class="sc">+</span>  <span class="co"># ROTACIÓN del eje x</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Frecuencia absoluta smoking status"</span>, <span class="at">x =</span> <span class="st">"Smoking Status"</span>, <span class="at">y =</span> <span class="st">"Frecuencia"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de frecuencia relativa</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(smoking_status) <span class="sc">%&gt;%</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">porcentaje =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> smoking_status, <span class="at">y =</span> porcentaje)) <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"darkorange"</span>) <span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">25</span>)) <span class="sc">+</span>  <span class="co"># ROTACIÓN del eje x</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(porcentaje, <span class="dv">1</span>), <span class="st">"%"</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Frecuencia relativa smoking status"</span>, <span class="at">x =</span> <span class="st">"Smoking Status"</span>, <span class="at">y =</span> <span class="st">"Porcentaje"</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar ambos gráficos lado a lado</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> p2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -543,9 +732,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+<section id="gráfico-de-barras-agrupadas" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-de-barras-agrupadas">Gráfico de barras agrupadas</h3>
+<p>Este gráfico permite comparar de forma directa la frecuencia de enfermedad cardíaca en cada categoría de fumador.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> smoking_status, <span class="at">fill =</span> <span class="fu">factor</span>(heart_disease))) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Smoking Status vs Heart Disease (Barras Agrupadas)"</span>, <span class="at">x =</span> <span class="st">"Smoking Status"</span>, <span class="at">fill =</span> <span class="st">"Heart Disease"</span>) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_estadistica_descriptiva_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="aplicación-interactiva" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="aplicación-interactiva"><span class="header-section-number">4.4</span> Aplicación interactiva</h2>
+<section id="mapa-de-calor-de-una-tabla-de-contingencia" class="level3">
+<h3 class="anchored" data-anchor-id="mapa-de-calor-de-una-tabla-de-contingencia">Mapa de calor de una tabla de contingencia</h3>
+<p>Representación visual de la frecuencia entre categorías cruzadas de smoking_status y heart_disease.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">table</span>(datos<span class="sc">$</span>smoking_status, datos<span class="sc">$</span>heart_disease)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>df_heat <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(tabla)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df_heat) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"smoking_status"</span>, <span class="st">"heart_disease"</span>, <span class="st">"frecuencia"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_heat, <span class="fu">aes</span>(<span class="at">x =</span> heart_disease, <span class="at">y =</span> smoking_status, <span class="at">fill =</span> frecuencia)) <span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> frecuencia), <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">"lightblue"</span>, <span class="at">high =</span> <span class="st">"darkblue"</span>) <span class="sc">+</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Heatmap: Smoking Status vs Heart Disease"</span>,</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Heart Disease"</span>, <span class="at">y =</span> <span class="st">"Smoking Status"</span>) <span class="sc">+</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_estadistica_descriptiva_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gráfico-de-pastel-pie-chart" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-de-pastel-pie-chart">Gráfico de pastel (pie chart)</h3>
+<p>Una visualización clásica de distribución proporcional para smoking_status.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Ver código</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(smoking_status) <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">porcentaje =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">label =</span> <span class="fu">paste0</span>(smoking_status, <span class="st">": "</span>, <span class="fu">round</span>(porcentaje, <span class="dv">1</span>), <span class="st">"%"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> porcentaje, <span class="at">fill =</span> smoking_status)) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> label), <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribución de Smoking Status"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02_estadistica_descriptiva_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="aplicación-interactiva" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="aplicación-interactiva"><span class="header-section-number">7.7</span> Aplicación interactiva</h2>
 <p>Como complemento a este capítulo, se ha desarrollado una aplicación interactiva utilizando Shiny que permite explorar conceptos de estadística descriptiva y análisis exploratorio con visualizaciones dinámicas y opciones personalizables para el usuario.</p>
 <p>🔗 <strong>Accede a la app aquí:</strong><br>
 👉 <a href="https://deiversg.shinyapps.io/app_statistical_Methods/" class="uri">https://deiversg.shinyapps.io/app_statistical_Methods/</a></p>
@@ -560,10 +824,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-<section id="recursos-audiovisuales" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="recursos-audiovisuales"><span class="header-section-number">4.5</span> Recursos audiovisuales</h2>
-<section id="introducción-a-la-estadística-descriptiva" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="introducción-a-la-estadística-descriptiva"><span class="header-section-number">4.5.1</span> 🎥 Introducción a la estadística descriptiva</h3>
+<section id="recursos-audiovisuales" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="recursos-audiovisuales"><span class="header-section-number">7.8</span> Recursos audiovisuales</h2>
+<section id="introducción-a-la-estadística-descriptiva" class="level3">
+<h3 class="anchored" data-anchor-id="introducción-a-la-estadística-descriptiva">🎥 Introducción a la estadística descriptiva</h3>
 <div class="only-html">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/W1_eCwuYkAI" title="Estadística descriptiva básica" frameborder="0" allowfullscreen="">
 </iframe>
@@ -573,8 +837,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-<section id="visualización-de-datos-en-r-boxplots-histogramas" class="level3" data-number="4.5.2">
-<h3 data-number="4.5.2" class="anchored" data-anchor-id="visualización-de-datos-en-r-boxplots-histogramas"><span class="header-section-number">4.5.2</span> 📊 Visualización de datos en R (boxplots, histogramas)</h3>
+<section id="visualización-de-datos-en-r-boxplots-histogramas" class="level3">
+<h3 class="anchored" data-anchor-id="visualización-de-datos-en-r-boxplots-histogramas">📊 Visualización de datos en R (boxplots, histogramas)</h3>
 <div class="only-html">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QyntPbbTOns" title="Visualización en R" frameborder="0" allowfullscreen="">
 </iframe>
@@ -584,8 +848,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-<section id="exploración-con-python-seaborn-pandas" class="level3" data-number="4.5.3">
-<h3 data-number="4.5.3" class="anchored" data-anchor-id="exploración-con-python-seaborn-pandas"><span class="header-section-number">4.5.3</span> 🐍 Exploración con Python (Seaborn, pandas)</h3>
+<section id="exploración-con-python-seaborn-pandas" class="level3">
+<h3 class="anchored" data-anchor-id="exploración-con-python-seaborn-pandas">🐍 Exploración con Python (Seaborn, pandas)</h3>
 <div class="only-html">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ludqgCJe1aI" title="Python Exploratorio" frameborder="0" allowfullscreen="">
 </iframe>
@@ -596,11 +860,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 </section>
 </section>
-<section id="conclusión" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="conclusión"><span class="header-section-number">4.6</span> Conclusión</h2>
+<section id="conclusión" class="level2" data-number="7.9">
+<h2 data-number="7.9" class="anchored" data-anchor-id="conclusión"><span class="header-section-number">7.9</span> Conclusión</h2>
 <p>El análisis exploratorio de datos con herramientas como R y Python permite obtener una comprensión inicial robusta de los patrones en datos biomédicos. Esto es esencial antes de aplicar modelos predictivos como regresión o clasificación. El uso de gráficos y resúmenes numéricos fortalece la interpretación clínica y estadística de los fenómenos observados.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

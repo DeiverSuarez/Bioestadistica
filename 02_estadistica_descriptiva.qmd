@@ -1,4 +1,21 @@
-# Estadística Descriptiva
+---
+title: "Estadística Descriptiva"
+number-depth: 2
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    theme: cosmo
+    code-fold: true
+    code-summary: "Ver código"
+    code-overflow: wrap
+    html-math-method: mathjax
+    lang: es
+    fenced-divs: true
+---
+
+
 
 ```{r}
 #| echo: false
@@ -6,14 +23,29 @@
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
+# Introducción
+
+La estadística descriptiva constituye el primer paso esencial en el análisis de datos, ya que permite organizar, resumir y visualizar la información de manera clara y comprensible. A través de ella, es posible identificar patrones, detectar anomalías y formular hipótesis preliminares antes de aplicar métodos más complejos de inferencia o modelado predictivo.
+
+Como señalan Spriestersbach y colaboradores (2009), la presentación adecuada de los datos no solo facilita su comprensión, sino que también revela si fueron recolectados y analizados de forma rigurosa. Esta etapa cobra especial relevancia en el contexto de investigaciones biomédicas, donde cada observación —ya sea un paciente, una célula o un evento clínico— representa una unidad estadística con múltiples variables asociadas, tanto cuantitativas como cualitativas.
+
+Este libro propone una aproximación aplicada y visual al estudio de la estadística descriptiva, utilizando un conjunto de datos reales relacionados con la predicción de accidentes cerebrovasculares (ACV). A través de herramientas como R, aplicaciones Shiny y visualizaciones dinámicas, el lector podrá explorar variables categóricas y numéricas, interpretar sus distribuciones, y comprender cómo la escala de medición influye en la selección de representaciones gráficas y resúmenes numéricos.
+
+Además de gráficos clásicos como histogramas, diagramas de caja y gráficos de barras, se incluirán recursos interactivos, ejemplos reproducibles y videos tutoriales que fortalecen el aprendizaje autónomo. Este enfoque busca no solo enseñar técnicas estadísticas, sino también fomentar una comprensión crítica del análisis de datos en escenarios reales.
+
+Al finalizar este recorrido, el lector habrá adquirido competencias fundamentales para describir datos con claridad, detectar relaciones entre variables y establecer las bases sólidas para futuros análisis inferenciales. Como base de todo estudio científico riguroso, la estadística descriptiva es mucho más que una etapa inicial: es una herramienta poderosa para ver con claridad aquello que los datos tienen por decirnos.
+
+
+#  Contexto del Estudios
+
 Este capítulo explora un conjunto de datos reales proveniente del [Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset), disponible también en [Github](https://github.com/DeiverSuarez/Bioestadistica/blob/main/healthcare-dataset-stroke-data.csv). El dataset contiene información demográfica, médica y de comportamiento de pacientes, con el objetivo de predecir la ocurrencia de accidentes cerebrovasculares (ACV).
 
 Utilizaremos herramientas de estadística descriptiva para explorar y resumir los datos, apoyándonos en visualizaciones gráficas, código en R, aplicaciones Shiny y recursos audiovisuales complementarios.
 
 
-**Clasificación de las variables**
+# Clasificación y Tipos de Variables
 
-En la siguiente tabla se presenta una descripción de las variables del conjunto de datos, clasificadas según su tipo (categórica o cuantitativa) y su escala de medición.
+En la siguiente tabla se presenta una descripción de las variables del conjunto de datos, clasificadas según su tipo (categórica o cuantitativa) y su escala de medición. Es importante esta clasificación para elegir representaciones gráficas adecuadas.
 
 
 ```{r, echo=FALSE}
@@ -47,7 +79,239 @@ head(datos)
 
 ## Gráficos descriptivos (Variables Cuantitativa)
 
-### Boxplot de edad según presencia de ACV
+Las variables cuantitativas del conjunto de datos —aquellas de naturaleza numérica, ya sean continuas o discretas, que permiten realizar operaciones aritméticas y análisis estadísticos— son: age (edad), avg_glucose_level (nivel promedio de glucosa en sangre) y bmi (índice de masa corporal).
+
+Es importante destacar que la variable bmi contiene valores faltantes codificados como "N/A" en formato de texto, lo cual impide que R la reconozca automáticamente como variable numérica. Esta situación puede afectar el cálculo de estadísticas resumen y la generación de gráficos como histogramas y boxplots.
+
+Para resolverlo, es necesario reemplazar los valores "N/A" por NA (la forma correcta de representar datos faltantes en R) y luego convertir la columna a tipo numérico. A continuación se muestra el código utilizado para esta limpieza, seguido de los primeros 20 valores de la variable bmi como ejemplo ilustrativo:
+
+```{r}
+datos$bmi[datos$bmi == "N/A"] <- NA  # Reemplazar "N/A" por NA en la variable bmi.
+datos$bmi <- as.numeric(datos$bmi)   # Convertir la variable bmi a numérica.
+datos$bmi[1:20]                      # Los primeros 20 datos de la variable bmi.
+```
+
+A continuación, se presenta un panel comparativo que resume gráficamente la distribución de tres variables numéricas clave del conjunto de datos: edad, nivel promedio de glucosa en sangre e índice de masa corporal (IMC). Para cada variable se incluyen tres tipos de gráficos:
+
+- Un histograma para visualizar la frecuencia de los valores.
+
+- Un boxplot para identificar la mediana, rango intercuartílico y posibles valores atípicos.
+
+- Una curva de densidad para observar la forma suavizada de la distribución.
+
+Estos gráficos se organizan en una matriz de 3 filas y 3 columnas, permitiendo una comparación visual clara y simultánea entre las variables, facilitando la identificación de patrones como asimetrías, concentraciones y valores extremos.
+
+
+```{r, code-fold: true}
+# Instalar patchwork si no lo tienes
+# install.packages("patchwork")
+
+library(ggplot2)
+library(patchwork)
+
+# Gráficos para 'age'
+p1 <- ggplot(datos, aes(x = age)) +
+  geom_histogram(bins = 30, fill = "#69b3a2", color = "white") +
+  labs(title = "Histograma de Edad", x = NULL, y = "Frecuencia") +
+  theme_minimal()
+
+p2 <- ggplot(datos, aes(y = age)) +
+  geom_boxplot(fill = "#FF9999") +
+  labs(title = "Boxplot de Edad", x = NULL, y = NULL) +
+  theme_minimal()
+
+p3 <- ggplot(datos, aes(x = age)) +
+  geom_density(fill = "#404080", alpha = 0.4) +
+  labs(title = "Densidad de Edad", x = NULL, y = "Densidad") +
+  theme_minimal()
+
+# Gráficos para 'avg_glucose_level'
+p4 <- ggplot(datos, aes(x = avg_glucose_level)) +
+  geom_histogram(bins = 30, fill = "#69b3a2", color = "white") +
+  labs(title = "Histograma de Glucosa", x = NULL, y = "Frecuencia") +
+  theme_minimal()
+
+p5 <- ggplot(datos, aes(y = avg_glucose_level)) +
+  geom_boxplot(fill = "#FF9999") +
+  labs(title = "Boxplot de Glucosa", x = NULL, y = NULL) +
+  theme_minimal()
+
+p6 <- ggplot(datos, aes(x = avg_glucose_level)) +
+  geom_density(fill = "#404080", alpha = 0.4) +
+  labs(title = "Densidad de Glucosa", x = NULL, y = "Densidad") +
+  theme_minimal()
+
+# Gráficos para 'bmi'
+p7 <- ggplot(datos, aes(x = bmi)) +
+  geom_histogram(bins = 30, fill = "#69b3a2", color = "white") +
+  labs(title = "Histograma de IMC", x = "IMC", y = "Frecuencia") +
+  theme_minimal()
+
+p8 <- ggplot(datos, aes(y = bmi)) +
+  geom_boxplot(fill = "#FF9999") +
+  labs(title = "Boxplot de IMC", x = "IMC", y = NULL) +
+  theme_minimal()
+
+p9 <- ggplot(datos, aes(x = bmi)) +
+  geom_density(fill = "#404080", alpha = 0.4, na.rm = TRUE) +
+  labs(title = "Densidad de IMC", x = "IMC", y = "Densidad") +
+  theme_minimal()
+
+# Unir todos los gráficos en una sola figura: 3 columnas x 3 filas
+panel_final <- (p1 | p4 | p7) /
+               (p2 | p5 | p8) /
+               (p3 | p6 | p9) +
+               plot_annotation(title = "Distribuciones para Variables Cuantitativas",
+                               theme = theme(plot.title = element_text(hjust = 0.5, face = "bold")))
+
+# Mostrar el panel completo
+panel_final
+```
+La figura anterior presenta un resumen visual de tres variables cuantitativas clave del conjunto de datos: edad, nivel promedio de glucosa en sangre e índice de masa corporal (IMC). Para cada variable se muestran tres representaciones gráficas: un histograma (distribución de frecuencias), un diagrama de caja (boxplot) y una curva de densidad (estimación suavizada de la distribución).
+
+🔹 Edad
+
+- El histograma de edad revela una distribución aproximadamente uniforme entre los 20 y 80 años, aunque con una ligera acumulación en adultos mayores.
+
+- El boxplot indica una mediana cercana a los 50 años, sin valores extremos evidentes.
+
+- La curva de densidad refuerza la percepción de una distribución dispersa, sin fuerte sesgo.
+
+🔹 Nivel de glucosa promedio
+
+- El histograma muestra una clara asimetría positiva (sesgo a la derecha), con muchos pacientes en el rango de 80–150 mg/dL y pocos con niveles superiores a 200.
+
+- El boxplot confirma esta asimetría al mostrar varios outliers por encima del tercer cuartil.
+
+- La densidad sugiere una distribución no normal, lo cual podría requerir transformación si se usa en modelos paramétricos.
+
+🔹 IMC (Índice de masa corporal)
+
+- El histograma de IMC muestra una distribución centrada en valores entre 25 y 35, compatibles con sobrepeso y obesidad.
+
+- El boxplot evidencia muchos valores atípicos hacia arriba, aunque la mediana está alrededor de 28.
+
+- La curva de densidad presenta una forma unimodal con cola derecha, también indicando asimetría.
+
+Este tipo de visualización conjunta permite al lector comparar la forma, dispersión y simetría de las variables numéricas más relevantes del estudio. También sirve como base para tomar decisiones estadísticas posteriores, como transformaciones, imputación de valores extremos o segmentación de la muestra por rangos clínicos.
+
+
+
+## Comparación de variables cuantitativas según la ocurrencia de ACV (stroke)
+
+Una parte esencial del análisis descriptivo es explorar cómo se comportan las variables cuantitativas en función de una variable categórica relevante. En este caso, se analizan tres indicadores clínicos —edad, nivel promedio de glucosa en sangre (avg_glucose_level) y índice de masa corporal (bmi)— comparando su distribución entre pacientes que han sufrido un accidente cerebrovascular (ACV o stroke) y aquellos que no lo han sufrido.
+
+Los datos se visualizan mediante diagramas de caja (boxplots), que permiten identificar diferencias en la mediana, dispersión y presencia de valores atípicos entre los dos grupos. Estos gráficos se organizan en una matriz de 1 fila por 3 columnas, lo que permite una comparación visual clara y simultánea entre las tres variables. Esta disposición facilita la detección de patrones relevantes, como asimetrías, concentraciones de valores o extremos, que podrían estar asociados con el riesgo de sufrir un ACV.
+
+```{r}
+library(ggplot2)
+library(patchwork)
+library(readr)
+library(dplyr)
+
+# Asegurar que stroke sea factor (para que ggplot lo interprete como categoría)
+datos$stroke <- factor(datos$stroke, levels = c(0, 1), labels = c("No", "Yes"))
+
+# Crear los boxplots individuales con títulos alineados a la derecha
+p1 <- ggplot(datos, aes(x = stroke, y = age, fill = stroke)) +
+  geom_boxplot() +
+  labs(title = "Edad por Stroke", x = "Stroke", y = "Edad") +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(hjust = 1, face = "bold")  # Alineación derecha
+  )
+
+p2 <- ggplot(datos, aes(x = stroke, y = avg_glucose_level, fill = stroke)) +
+  geom_boxplot() +
+  labs(title = "Glucosa por Stroke", x = "Stroke", y = "Avg Glucose Level") +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(hjust = 1, face = "bold")
+  )
+
+p3 <- ggplot(datos, aes(x = stroke, y = bmi, fill = stroke)) +
+  geom_boxplot() +
+  labs(title = "IMC por Stroke", x = "Stroke", y = "BMI") +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(hjust = 1, face = "bold")
+  )
+
+# Panel con los tres gráficos
+panel <- p1 | p2 | p3
+panel
+```
+El gráfico anterior muestra cómo varían tres variables cuantitativas clave —edad, nivel promedio de glucosa en sangre y índice de masa corporal (IMC)— entre pacientes que no han sufrido un accidente cerebrovascular (ACV) (grupo “No”) y aquellos que sí lo han sufrido (grupo “Yes”).
+
+- Edad: Se observa una diferencia clara entre los grupos. Los pacientes con ACV tienden a ser considerablemente mayores, con una mediana por encima de los 70 años, mientras que los que no han tenido ACV presentan una mediana cercana a los 40 años. Esto sugiere una fuerte asociación entre la edad avanzada y la ocurrencia de ACV.
+
+- Nivel de glucosa: Aunque existe una mayor dispersión entre los pacientes con ACV (con valores más extremos), también se evidencia una mediana ligeramente más alta en comparación con el grupo sin ACV. Además, se detectan muchos valores atípicos (outliers), en quienes no han sufrido ACV.
+
+- IMC: La distribución del IMC es bastante similar entre ambos grupos, con medianas cercanas a 28. Sin embargo, se nota una mayor variabilidad y presencia de valores extremos en el grupo sin ACV. Esto indica que, en esta muestra, el IMC no parece estar tan claramente asociado con la ocurrencia de ACV como la edad o la glucosa.
+
+Esta visualización es útil para generar hipótesis preliminares sobre posibles factores de riesgo. Por ejemplo, los resultados sugieren que la edad avanzada y niveles elevados de glucosa podrían estar relacionados con mayor riesgo de ACV, mientras que el IMC no presenta una diferencia tan marcada.
+
+
+## Exploración de relaciones entre variables cuantitativas: matriz de dispersión entre edad, glucosa y BMI
+
+
+Una parte esencial del análisis descriptivo consiste en explorar las posibles relaciones entre variables cuantitativas. Esta exploración permite detectar patrones, asociaciones o tendencias que podrían ser relevantes desde el punto de vista clínico o epidemiológico, y que además servirán como base para futuros modelos predictivos o explicativos.
+
+En este caso, se construye una matriz de dispersión para visualizar simultáneamente las relaciones entre tres variables clave: edad, nivel promedio de glucosa en sangre (avg_glucose_level) e índice de masa corporal (bmi). Esta matriz permite observar:
+
+- En la diagonal, la distribución individual de cada variable mediante histogramas suavizados.
+
+- En la parte inferior, diagramas de dispersión (scatterplots) entre pares de variables, lo que facilita visualizar tendencias lineales o no lineales.
+
+- En la parte superior, los coeficientes de correlación de Pearson entre cada par de variables, incluyendo la significancia estadística.
+
+- Este tipo de visualización integrada es muy útil para detectar correlaciones significativas o posibles relaciones no evidentes a simple vista.
+
+
+```{r}
+library(GGally)
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(RColorBrewer)  # Para paletas de colores
+
+df <- datos %>%
+  select(age, avg_glucose_level, bmi) %>%
+  na.omit()
+
+# Paleta de colores personalizada
+color_palette <- brewer.pal(n = 3, name = "Set2")
+
+# Crear matriz de dispersión mejorada
+ggpairs(df,
+        title = "Matriz de Dispersión: Edad, Glucosa y BMI",
+        upper = list(continuous = wrap("cor", size = 4, alignPercent = 0.8, col = "darkblue")),
+        lower = list(continuous = wrap("points", alpha = 0.6, size = 1.5, color = "#75AADB")),  # 🔵 azul RStudio
+        diag = list(continuous = wrap("densityDiag", alpha = 0.4, fill = "#A5C8E1"))) +        # 🔵 tono más claro
+  theme_light(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 1, size = 16, face = "bold", color = "#333333"),
+    strip.text = element_text(face = "bold", color = "black"),
+    panel.grid = element_line(color = "grey85")
+  )
+```
+
+La matriz de dispersión presentada permite identificar relaciones significativas entre las variables cuantitativas consideradas en pacientes con ACV. Específicamente, se observa:
+
+- Una correlación positiva moderada entre el índice de masa corporal (BMI) y la edad (r = 0.333***), lo que sugiere que, dentro de este grupo de pacientes, las personas de mayor edad tienden a tener un BMI más alto.
+
+- Una correlación positiva baja entre la edad y el nivel promedio de glucosa (r = 0.236***), así como entre el BMI y la glucosa (r = 0.176***), lo cual puede indicar una asociación débil pero significativa entre estas variables clínicas.
+
+Además, los gráficos de densidad en la diagonal permiten identificar la distribución asimétrica de las variables, en especial para avg_glucose_level y bmi, con sesgo a la derecha. Este tipo de visualización multivariada facilita no solo la detección de tendencias y valores extremos, sino también la evaluación preliminar de supuestos para modelos más complejos. En conjunto, esta herramienta es fundamental para comprender la estructura interna de los datos antes de avanzar hacia el análisis inferencial.
+
+
+
+
+## Análisis de Variables Categóricas
+
 
 Este gráfico permite comparar la distribución de la edad entre pacientes que han sufrido un ACV (stroke = 1) y los que no (stroke = 0).
 

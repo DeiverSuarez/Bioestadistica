@@ -18,7 +18,20 @@ book:
     - references.qmd
 
 format:
-  html: default
+  html:
+    number-sections: true
+    toc-depth: 2
+    theme: cosmo
+    lang: es
+  epub:
+    toc-depth: 2
+    number-sections: true
+    lang: es
 
 lang: es
 
+
+#quarto preview      Vista previa (modo directo)	Terminal o terminal RStudio
+# quarto_preview()   Vista previa del libro	Consola RStudio (R)
+#install.packages("quarto")  Instalar paquete en R	Consola RStudio
+#quarto render --to pdf  Compilar en PDF	Terminal
