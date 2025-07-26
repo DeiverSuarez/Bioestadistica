@@ -15,15 +15,13 @@ format:
     fenced-divs: true
 ---
 
-
-
 ```{r}
 #| echo: false
 # Establecer opciones globales de chunk
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-# Introducción
+## Introducción
 
 La estadística descriptiva constituye el primer paso esencial en el análisis de datos, ya que permite organizar, resumir y visualizar la información de manera clara y comprensible. A través de ella, es posible identificar patrones, detectar anomalías y formular hipótesis preliminares antes de aplicar métodos más complejos de inferencia o modelado predictivo.
 
@@ -35,18 +33,15 @@ Además de gráficos clásicos como histogramas, diagramas de caja y gráficos d
 
 Al finalizar este recorrido, el lector habrá adquirido competencias fundamentales para describir datos con claridad, detectar relaciones entre variables y establecer las bases sólidas para futuros análisis inferenciales. Como base de todo estudio científico riguroso, la estadística descriptiva es mucho más que una etapa inicial: es una herramienta poderosa para ver con claridad aquello que los datos tienen por decirnos.
 
-
-#  Contexto del Estudios
+## Contexto del Estudios
 
 Este capítulo explora un conjunto de datos reales proveniente del [Stroke Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset), disponible también en [Github](https://github.com/DeiverSuarez/Bioestadistica/blob/main/healthcare-dataset-stroke-data.csv). El dataset contiene información demográfica, médica y de comportamiento de pacientes, con el objetivo de predecir la ocurrencia de accidentes cerebrovasculares (ACV).
 
 Utilizaremos herramientas de estadística descriptiva para explorar y resumir los datos, apoyándonos en visualizaciones gráficas, código en R, aplicaciones Shiny y recursos audiovisuales complementarios.
 
-
-# Clasificación y Tipos de Variables
+## Clasificación y Tipos de Variables
 
 En la siguiente tabla se presenta una descripción de las variables del conjunto de datos, clasificadas según su tipo (categórica o cuantitativa) y su escala de medición. Es importante esta clasificación para elegir representaciones gráficas adecuadas.
-
 
 ```{r, echo=FALSE}
 library(knitr)
@@ -75,13 +70,7 @@ datos <- read.csv("healthcare-dataset-stroke-data.csv")
 head(datos)
 ```
 
-------------------------------------------------------------------------
-
-## Gráficos descriptivos (Variables Cuantitativa)
-
-Las variables cuantitativas del conjunto de datos —aquellas de naturaleza numérica, ya sean continuas o discretas, que permiten realizar operaciones aritméticas y análisis estadísticos— son: age (edad), avg_glucose_level (nivel promedio de glucosa en sangre) y bmi (índice de masa corporal).
-
-Es importante destacar que la variable bmi contiene valores faltantes codificados como "N/A" en formato de texto, lo cual impide que R la reconozca automáticamente como variable numérica. Esta situación puede afectar el cálculo de estadísticas resumen y la generación de gráficos como histogramas y boxplots.
+**Importante**: Es importante destacar que la variable bmi contiene valores faltantes codificados como "N/A" en formato de texto, lo cual impide que R la reconozca automáticamente como variable numérica. Esta situación puede afectar el cálculo de estadísticas resumen y la generación de gráficos como histogramas y boxplots.
 
 Para resolverlo, es necesario reemplazar los valores "N/A" por NA (la forma correcta de representar datos faltantes en R) y luego convertir la columna a tipo numérico. A continuación se muestra el código utilizado para esta limpieza, seguido de los primeros 20 valores de la variable bmi como ejemplo ilustrativo:
 
@@ -91,16 +80,19 @@ datos$bmi <- as.numeric(datos$bmi)   # Convertir la variable bmi a numérica.
 datos$bmi[1:20]                      # Los primeros 20 datos de la variable bmi.
 ```
 
-A continuación, se presenta un panel comparativo que resume gráficamente la distribución de tres variables numéricas clave del conjunto de datos: edad, nivel promedio de glucosa en sangre e índice de masa corporal (IMC). Para cada variable se incluyen tres tipos de gráficos:
+## Variables Cuantitativa
 
-- Un histograma para visualizar la frecuencia de los valores.
+Las variables cuantitativas del conjunto de datos —aquellas de naturaleza numérica, ya sean continuas o discretas, que permiten realizar operaciones aritméticas y análisis estadísticos— son: age (edad), avg_glucose_level (nivel promedio de glucosa en sangre) y bmi (índice de masa corporal).
 
-- Un boxplot para identificar la mediana, rango intercuartílico y posibles valores atípicos.
+A continuación, se presenta un panel comparativo que resume gráficamente la distribución de tres variables numéricas clave del conjunto de datos: edad, nivel promedio de glucosa en sangre e índice de masa corporal (IMC). Para cada variable se incluyen tres tipos de gráficos que son estandar para variables cuantitativa:
 
-- Una curva de densidad para observar la forma suavizada de la distribución.
+-   Un histograma para visualizar la frecuencia de los valores.
+
+-   Un boxplot para identificar la mediana, rango intercuartílico y posibles valores atípicos.
+
+-   Una curva de densidad para observar la forma suavizada de la distribución.
 
 Estos gráficos se organizan en una matriz de 3 filas y 3 columnas, permitiendo una comparación visual clara y simultánea entre las variables, facilitando la identificación de patrones como asimetrías, concentraciones y valores extremos.
-
 
 ```{r, code-fold: true}
 # Instalar patchwork si no lo tienes
@@ -167,37 +159,534 @@ panel_final <- (p1 | p4 | p7) /
 # Mostrar el panel completo
 panel_final
 ```
-La figura anterior presenta un resumen visual de tres variables cuantitativas clave del conjunto de datos: edad, nivel promedio de glucosa en sangre e índice de masa corporal (IMC). Para cada variable se muestran tres representaciones gráficas: un histograma (distribución de frecuencias), un diagrama de caja (boxplot) y una curva de densidad (estimación suavizada de la distribución).
+
+::: {.callout-note title="Figura 1"}
+La figura presenta un resumen visual de tres variables cuantitativas clave del conjunto de datos: edad, nivel promedio de glucosa en sangre e índice de masa corporal (IMC). Para cada variable se muestran tres representaciones gráficas: un histograma (distribución de frecuencias), un diagrama de caja (boxplot) y una curva de densidad (estimación suavizada de la distribución).
+:::
 
 🔹 Edad
 
-- El histograma de edad revela una distribución aproximadamente uniforme entre los 20 y 80 años, aunque con una ligera acumulación en adultos mayores.
+-   El histograma de edad revela una distribución aproximadamente uniforme entre los 20 y 80 años, aunque con una ligera acumulación en adultos mayores.
 
-- El boxplot indica una mediana cercana a los 50 años, sin valores extremos evidentes.
+-   El boxplot indica una mediana cercana a los 50 años, sin valores extremos evidentes.
 
-- La curva de densidad refuerza la percepción de una distribución dispersa, sin fuerte sesgo.
+-   La curva de densidad refuerza la percepción de una distribución dispersa, sin fuerte sesgo.
 
 🔹 Nivel de glucosa promedio
 
-- El histograma muestra una clara asimetría positiva (sesgo a la derecha), con muchos pacientes en el rango de 80–150 mg/dL y pocos con niveles superiores a 200.
+-   El histograma muestra una clara asimetría positiva (sesgo a la derecha), con muchos pacientes en el rango de 80–150 mg/dL y pocos con niveles superiores a 200.
 
-- El boxplot confirma esta asimetría al mostrar varios outliers por encima del tercer cuartil.
+-   El boxplot confirma esta asimetría al mostrar varios outliers por encima del tercer cuartil.
 
-- La densidad sugiere una distribución no normal, lo cual podría requerir transformación si se usa en modelos paramétricos.
+-   La densidad sugiere una distribución no normal, lo cual podría requerir transformación si se usa en modelos paramétricos.
 
 🔹 IMC (Índice de masa corporal)
 
-- El histograma de IMC muestra una distribución centrada en valores entre 25 y 35, compatibles con sobrepeso y obesidad.
+-   El histograma de IMC muestra una distribución centrada en valores entre 25 y 35, compatibles con sobrepeso y obesidad.
 
-- El boxplot evidencia muchos valores atípicos hacia arriba, aunque la mediana está alrededor de 28.
+-   El boxplot evidencia muchos valores atípicos hacia arriba, aunque la mediana está alrededor de 28.
 
-- La curva de densidad presenta una forma unimodal con cola derecha, también indicando asimetría.
+-   La curva de densidad presenta una forma unimodal con cola derecha, también indicando asimetría.
 
 Este tipo de visualización conjunta permite al lector comparar la forma, dispersión y simetría de las variables numéricas más relevantes del estudio. También sirve como base para tomar decisiones estadísticas posteriores, como transformaciones, imputación de valores extremos o segmentación de la muestra por rangos clínicos.
 
+### Medidas de tendencia central
+
+Las medidas de tendencia central —media, mediana y moda— permiten resumir un conjunto de datos numéricos mediante un valor representativo. La comparación entre estas tres medidas es particularmente útil para identificar el sesgo de una distribución:
+
+-   Sesgo a la izquierda (asimetría negativa): ocurre cuando media \< mediana \< moda.
+
+-   Distribución simétrica o normal: se presenta cuando media ≈ mediana ≈ moda.
+
+-   Sesgo a la derecha (asimetría positiva): se identifica cuando moda \< mediana \< media.
+
+Esta comparación gráfica entre las tres medidas permite interpretar de forma visual la forma y simetría de la distribución de los datos, como se ilustra en la siguiente figura:
+
+```{r, echo=FALSE}
+# Librerías necesarias
+library(ggplot2)
+library(gridExtra)
+library(grid)
+library(dplyr)
+library(cowplot)
+
+# Función para obtener la moda
+moda <- function(x) {
+  d <- density(x)
+  d$x[which.max(d$y)]
+}
+
+# Simular los datos
+set.seed(126)
+right_skew <- rgamma(3000, shape = 2, scale = 30)
+
+symmetric <- rnorm(5000, mean = 50, sd = 70)
+left_skew <- 100 - right_skew 
+
+# Función para crear gráfico
+crear_grafico <- function(datos, titulo, mostrar_leyenda = TRUE) {
+  df <- data.frame(x = datos)
+  media <- mean(df$x)
+  mediana <- median(df$x)
+  moda_val <- moda(df$x)
+  
+  y_max <- max(density(df$x)$y)
+  y_min <- min(density(df$x)$y)
+  
+  lineas <- data.frame(
+    nombre = factor(c("Media", "Mediana", "Moda"), levels = c("Media", "Mediana", "Moda")),
+    x = c(media, mediana, moda_val),
+    xend = c(media, mediana, moda_val),
+    y = rep(y_min, 3),
+    yend = rep(y_max, 3)
+  )
+  
+  ggplot(df, aes(x)) +
+    geom_histogram(aes(y = ..density..), bins = 50,
+                   fill = "lightblue", color = "black", alpha = 0.5) +
+    geom_density(color = "blue", size = 0.8) +
+    geom_segment(data = lineas,
+                 aes(x = x, xend = xend, y = y, yend = yend,
+                     color = nombre, linetype = nombre),
+                 size = 1.0, show.legend = mostrar_leyenda) +
+    scale_color_manual(
+      values = c("Media" = "red", "Mediana" = "red", "Moda" = "red")
+    ) +
+    scale_linetype_manual(
+      values = c("Media" = "solid", "Mediana" = "dashed", "Moda" = "dotted")
+    ) +
+    labs(title = titulo, x = NULL, y = NULL, color = "Medidas", linetype = "Medidas") +
+    theme_minimal(base_size = 10) +
+    theme(
+      plot.title = element_text(hjust = 0.5, face = "bold", size = 11),
+      axis.title = element_blank(),
+      axis.text = element_text(size = 9),
+      legend.title = element_text(face = "bold", size = 10),
+      legend.text = element_text(size = 9),
+      legend.position = ifelse(mostrar_leyenda, "right", "none"),  # 👈 leyenda a la derecha como el ejemplo
+      legend.box = "vertical"
+    )
+}
+
+# Crear gráfico con leyenda
+g_leyenda <- crear_grafico(right_skew, "Sesgo a la derecha\n(Moda < Mediana < Media)", mostrar_leyenda = TRUE)
+leyenda <- cowplot::get_legend(g_leyenda)
+
+# Crear gráficos sin leyenda
+g1 <- crear_grafico(right_skew, "Sesgo a la derecha\n(Moda < Mediana < Media)", mostrar_leyenda = FALSE)
+g2 <- crear_grafico(symmetric, "Distribución simétrica\n(Media ~ Mediana ~ Moda)", mostrar_leyenda = FALSE)
+g3 <- crear_grafico(left_skew, "Sesgo a la izquierda\n(Media < Mediana < Moda)", mostrar_leyenda = FALSE)
+
+# Panel de 3 gráficos
+panel_graficos <- cowplot::plot_grid(g1, g2, g3, ncol = 3, align = "hv")
+
+# Combinar panel con leyenda a la derecha
+panel_completo <- cowplot::plot_grid(panel_graficos, leyenda, ncol = 2, rel_widths = c(1, 0.15))
+
+# Título general
+titulo <- grid::textGrob("Comparación entre Media, Mediana y Moda", gp = gpar(fontsize = 13, fontface = "bold"))
+
+# Mostrar resultado completo
+gridExtra::grid.arrange(
+  titulo,
+  panel_completo,
+  ncol = 1,
+  heights = c(0.07, 1)
+)
+```
+
+::: {.callout-note title="Figura 2"}
+La figura ilustra distintos tipos de asimetría. Cada gráfico presenta un histograma de densidad, junto con las posiciones de la media (línea continua roja), la mediana (línea discontinua roja) y la moda (línea punteada roja). Esta comparación permite identificar el tipo de sesgo en una distribución y, en consecuencia, evaluar cuál medida de tendencia central es más representativa para resumir los datos.
+:::
+
+Las tres medidas de tendencia central —media, mediana y moda— resumen un conjunto de datos numéricos con un valor representativo, pero cada una responde de forma distinta a la naturaleza de los datos. La media es la más utilizada por su sensibilidad a todos los valores, lo cual la hace ideal para datos simétricos y sin valores extremos. Sin embargo, esa misma sensibilidad la convierte en una medida poco robusta ante valores atípicos o distribuciones sesgadas. La mediana, al depender únicamente del valor central, es mucho más resistente a los extremos, lo que la hace preferible cuando los datos presentan asimetría o outliers. Por su parte, la moda es útil para identificar el valor más frecuente, siendo especialmente relevante en distribuciones categóricas o multimodales. La elección de una u otra medida depende del tipo de datos, la presencia de valores atípicos, el objetivo del análisis y la forma de la distribución. En general, se utiliza la media cuando la distribución es simétrica y no presenta valores extremos; la mediana cuando se quiere una medida robusta en presencia de asimetría; y la moda cuando se desea conocer el valor más común o en el análisis de variables cualitativas.
+
+| **Medida**  | **Ventajas**                                                                                                      | **Desventajas**                                                                      | **Cuándo usarla**                                                              | **Fórmula**                                                                                             |
+|---------------|---------------|---------------|---------------|---------------|
+| **Media**   | • Utiliza toda la información de los datos <br> • Fácil de calcular <br> • Compatible con operaciones algebraicas | • Afectada por valores extremos <br> • No adecuada para distribuciones sesgadas      | • Distribuciones simétricas <br> • Ausencia de valores atípicos significativos | $\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$                                                              |
+| **Mediana** | • Robusta frente a outliers <br> • Recomendable para datos sesgados                                               | • No incorpora toda la información <br> • Difícil de usar en expresiones algebraicas | • Distribuciones asimétricas <br> • Datos con valores extremos                 | Si $n$ es impar: valor central <br> Si $n$ es par: $\text{Mediana} = \frac{x_{(n/2)} + x_{(n/2+1)}}{2}$ |
+| **Moda**    | • Indica el valor más frecuente <br> • Apta para datos categóricos                                                | • Puede haber más de una <br> • No siempre representa bien la tendencia central      | • Variables cualitativas <br> • Distribuciones multimodales                    | $\text{Moda} = \arg\max_x f(x)$                                                                         |
+
+**Ejemplo:** Se exploran tres medidas de tendencia central fundamentales: media, mediana y moda, aplicadas a las variables cuantitativas del conjunto de datos sobre predicción de accidentes cerebrovasculares (ACV).
+
+**Cálculo en R**
+
+Las funciones básicas utilizadas en R para calcular estas medidas son:
+
+-   mean(): calcula la media aritmética.
+
+-   median(): calcula la mediana, es decir, el valor central de los datos ordenados.
+
+-   table() combinado con which.max() o mode(): permite determinar la(s) moda(s), es decir, los valores más frecuentes.
+
+A continuación, se presentan los resultados para tres variables clave: edad (age), nivel promedio de glucosa (avg_glucose_level) e índice de masa corporal (bmi).
+
+```{r}
+# Cargar librerías necesarias
+library(dplyr)
+library(knitr)
+
+# Calcular media, mediana y moda para variables cuantitativas
+medidas_tendencia <- data.frame(
+  Variable = c("Edad", "Glucosa promedio", "Índice de masa corporal"),
+  Media = c(mean(datos$age, na.rm = TRUE),
+            mean(datos$avg_glucose_level, na.rm = TRUE),
+            mean(datos$bmi, na.rm = TRUE)),
+  Mediana = c(median(datos$age, na.rm = TRUE),
+              median(datos$avg_glucose_level, na.rm = TRUE),
+              median(datos$bmi, na.rm = TRUE)),
+  Moda = c(
+    as.numeric(names(which.max(table(datos$age)))),
+    as.numeric(names(which.max(table(datos$avg_glucose_level)))),
+    as.numeric(names(which.max(table(datos$bmi))))
+  )
+)
+
+# Redondear para mejor presentación
+medidas_tendencia <- medidas_tendencia %>%
+  mutate(across(Media:Moda, ~round(., 2)))
+
+# Mostrar tabla con formato atractivo
+kable(medidas_tendencia, caption = "Medidas de tendencia central para variables cuantitativas")
+```
+
+La tabla muestra las medidas de tendencia central —media, mediana y moda— para tres variables cuantitativas: edad, glucosa promedio e índice de masa corporal. A partir del orden de estos valores, es posible interpretar la forma de la distribución de cada variable en el conjunto de datos.
+
+En el caso de la glucosa promedio, se observa que la media (106.15) es mayor que la mediana (91.88), y esta a su vez mayor que la moda (93.88). Este patrón indica que la distribución está sesgada a la derecha, probablemente debido a la presencia de algunos pacientes con niveles de glucosa anormalmente altos, lo cual eleva la media respecto a las otras medidas.
+
+Para el índice de masa corporal, las tres medidas son muy similares: la media es 28.89, la mediana 28.10 y la moda 28.70. Esta cercanía sugiere que los datos están distribuidos de manera aproximadamente simétrica, sin evidencia de valores extremos que afecten significativamente la forma de la distribución.
+
+En cuanto a la edad, se observa que la media (43.23) es menor que la mediana (45.00), y esta a su vez menor que la moda (78.00). Este orden sugiere que la distribución está sesgada a la izquierda, lo cual podría reflejar que, aunque la mayoría de los pacientes son adultos mayores (de ahí la moda alta), hay también una proporción importante de personas jóvenes que disminuyen el valor promedio.
+
+Estas observaciones permiten comprender mejor las características de cada variable y anticipar decisiones estadísticas más adecuadas para su análisis posterior.
+
+### Medidas de Variabilidad
+
+**¿Qué son y por qué son importantes?**
+
+Las medidas de tendencia central como la media y la mediana nos indican el valor "típico" o central de una variable, pero no nos dicen cuán dispersos están los datos en torno a ese valor. Dos conjuntos de datos pueden tener la misma media, pero comportamientos completamente distintos si uno es más homogéneo y el otro más variable, como se ilustra en la Figura 3. Para capturar esa información, recurrimos a las medidas de variabilidad.
+
+Estas medidas cuantifican el grado en que los valores de una variable numérica se alejan del centro. Son fundamentales para:
+
+-   Evaluar la estabilidad o consistencia de los datos.
+
+-   Comparar la dispersión entre distintos grupos o variables.
+
+-   Detectar valores atípicos.
+
+-   Preparar el terreno para análisis inferenciales como pruebas de hipótesis o regresión.
+
+```{r, echo=FALSE}
+# Cargar librerías necesarias
+library(ggplot2)
+library(dplyr)
+library(patchwork)
+
+# Semilla para reproducibilidad
+set.seed(123)
+
+# Datos con misma media pero diferente dispersión
+homogeneo <- rnorm(1000, mean = 5, sd = 1)
+heterogeneo <- rnorm(1000, mean = 5, sd = 3.5)
+
+# Crear dataframes
+df1 <- data.frame(valor = heterogeneo, grupo = "Alta variabilidad")
+df2 <- data.frame(valor = homogeneo, grupo = "Baja variabilidad")
+
+# Función general para graficar
+graficar_histograma <- function(df, titulo, color_hist, color_dens) {
+  ggplot(df, aes(x = valor)) +
+    geom_histogram(aes(y = ..density..), bins = 50, fill = color_hist, color = "black", alpha = 0.6) +
+    geom_density(color = color_dens, linewidth = 1.2) +
+    geom_vline(xintercept = mean(df$valor), color = "black", linewidth = 2.5) +
+    labs(title = titulo, x = "", y = "Densidad") +
+    coord_cartesian(xlim = c(-5, 15)) +
+    theme_minimal(base_size = 14) +
+    theme(
+      plot.title = element_text(face = "bold", hjust = 0.5),
+      axis.title.y = element_text(face = "bold")
+    )
+}
+# Crear los gráficos con colores distintos
+g1 <- graficar_histograma(df1, "Distribución con alta variabilidad", "#FFA07A", "#D62828")
+g2 <- graficar_histograma(df2, "Distribución con baja variabilidad", "#90EE90", "#007F5F")
+
+# Combinar en panel
+g1 / g2 + plot_annotation(
+  title = "Comparación de distribuciones con igual media",
+  theme = theme(plot.title = element_text(hjust = 0.5, size = 16, face = "bold"))
+)
+```
+
+::: {.callout-note title="Figura 3"}
+Comparación de distribuciones con igual media pero diferente variabilidad. Se muestran dos conjuntos de datos con una media común de 5, pero con diferente dispersión. En la parte superior, la distribución con alta variabilidad (desviación estándar ≈ 3.5), presenta una forma más aplanada y extendida, mientras que en la parte inferior, la distribución con baja variabilidad (desviación estándar ≈ 1), es más estrecha y concentrada alrededor de la media. La línea vertical negra indica la posición de la media en ambos casos, mostrando que, a pesar de las diferencias en dispersión, ambas distribuciones están centradas en el mismo valor. Esta visualización permite apreciar gráficamente el impacto de la variabilidad en la forma de la distribución de los datos.
+:::
+
+A continuación, exploraremos las principales medidas de dispersión con ejemplos reales del conjunto de datos sobre ACV.
+
+#### **Rango**
+
+El **rango** es la forma más simple de medir la dispersión, refleja la amplitud total de los datos, indicando el intervalo en el que se distribuyen los valores observados. Se calcula como la diferencia entre el valor máximo y el valor mínimo.
+
+$$
+\text{Rango} = x_{\text{máx}} - x_{\text{mín}}
+$$
+
+**Ventajas:** fácilde calcular e interpretar.\
+**Desventajas:** My sensible a valores extremos.
+
+```{r}
+# Cálculo del mínimo, máximo y rango para cada variable
+min_age <- min(datos$age, na.rm = TRUE)
+max_age <- max(datos$age, na.rm = TRUE)
+rango_age <- max_age - min_age
+
+min_glucosa <- min(datos$avg_glucose_level, na.rm = TRUE)
+max_glucosa <- max(datos$avg_glucose_level, na.rm = TRUE)
+rango_glucosa <- max_glucosa - min_glucosa
+
+min_bmi <- min(datos$bmi, na.rm = TRUE)
+max_bmi <- max(datos$bmi, na.rm = TRUE)
+rango_bmi <- max_bmi - min_bmi
+
+# Crear la tabla con Mínimo, Máximo y Rango
+tabla_rango <- data.frame(
+  Variable = c("Edad (age)", "Glucosa (avg_glucose_level)", "IMC (bmi)"),
+  Mínimo = round(c(min_age, min_glucosa, min_bmi), 2),
+  Máximo = round(c(max_age, max_glucosa, max_bmi), 2),
+  Rango = round(c(rango_age, rango_glucosa, rango_bmi), 2)
+)
+
+# Mostrar tabla con bordes y estilo
+library(knitr)
+library(kableExtra)
+
+kable(tabla_rango, format = "html", align = "lccc", caption = "") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "bordered", "condensed"), full_width = FALSE)
+```
+En la variable **edad**, se observa un rango de 81.92 años, con valores que van desde 0.08 hasta 82 años. Esta amplitud tan grande sugiere que el conjunto de datos incluye desde bebés o lactantes hasta adultos mayores. Dado que la edad es uno de los principales factores de riesgo en la ocurrencia de ACV, esta amplia cobertura etaria permite evaluar cómo varía el riesgo a lo largo del ciclo vital. También indica la necesidad de estratificar los análisis por grupos etarios, ya que los mecanismos fisiopatológicos y los factores de riesgo pueden ser distintos en jóvenes y adultos mayores.
+
+En cuanto a la glucosa promedio en sangre, el rango observado es de 216.62 mg/dL, lo que implica una diferencia significativa entre pacientes con normoglucemia (valores mínimos en torno a 55 mg/dL) y aquellos con hiperglucemia severa (valores superiores a 270 mg/dL). Este hallazgo es altamente relevante para el objetivo del estudio, ya que la disglucemia —especialmente en forma de diabetes mal controlada— es un factor de riesgo establecido para ACV. La gran dispersión en los niveles de glucosa sugiere la presencia de múltiples perfiles metabólicos dentro de la muestra, desde pacientes sanos hasta personas en alto riesgo cardiovascular.
+
+Por último, el IMC presenta un rango de 87.30 kg/m², con valores que van desde 10.3 (indicativo de desnutrición severa) hasta 97.6 (obesidad mórbida extrema). Esta amplitud sugiere una gran heterogeneidad en el estado nutricional de los pacientes. Dado que tanto la desnutrición como la obesidad se han asociado con eventos cerebrovasculares, este hallazgo refuerza la importancia de considerar el IMC no solo como una variable continua, sino también categorizada en rangos clínicos para evaluar su impacto sobre la ocurrencia de ACV.
+
+En conjunto, estos rangos muestran que el conjunto de datos es diverso y permite explorar asociaciones entre variables clínicas y la ocurrencia de ACV en distintos perfiles de pacientes, lo cual es fundamental para desarrollar modelos predictivos robustos y generalizables.
 
 
-## Comparación de variables cuantitativas según la ocurrencia de ACV (stroke)
+
+#### **Rango Intercuartílico (IQR)**
+
+El **rango intercuartílico (IQR)** mide la dispersión del 50% central de los datos. A diferencia del rango total, el IQR es robusto frente a valores extremos, lo que lo convierte en una medida más confiable para evaluar la variabilidad real de los datos. El IQR se calcula como la diferencia entre el tercer cuartil (Q3) y el primer cuartil (Q1):
+
+$$
+\text{IQR} = Q_3 - Q_1
+$$
+
+donde $Q_1$ es el primer cuartil (percentil 25) y el $Q_3$ tercer cuartil (percentil 75).
+
+
+**Ventajas:** robusta frente a valores extremos.\
+**Desventajas:** no considera todos los datos (Ignora extremos de la distribución).
+
+```{r}
+# Cálculo del IQR y cuartiles para cada variable
+iqr_age <- IQR(datos$age, na.rm = TRUE)
+q1_age <- quantile(datos$age, 0.25, na.rm = TRUE)
+q3_age <- quantile(datos$age, 0.75, na.rm = TRUE)
+
+iqr_glucosa <- IQR(datos$avg_glucose_level, na.rm = TRUE)
+q1_glucosa <- quantile(datos$avg_glucose_level, 0.25, na.rm = TRUE)
+q3_glucosa <- quantile(datos$avg_glucose_level, 0.75, na.rm = TRUE)
+
+iqr_bmi <- IQR(datos$bmi, na.rm = TRUE)
+q1_bmi <- quantile(datos$bmi, 0.25, na.rm = TRUE)
+q3_bmi <- quantile(datos$bmi, 0.75, na.rm = TRUE)
+
+# Crear tabla con los resultados
+tabla_iqr <- data.frame(
+  Variable = c("Edad (age)", "Glucosa (avg_glucose_level)", "IMC (bmi)"),
+  Q1 = round(c(q1_age, q1_glucosa, q1_bmi), 2),
+  Q3 = round(c(q3_age, q3_glucosa, q3_bmi), 2),
+  IQR = round(c(iqr_age, iqr_glucosa, iqr_bmi), 2)
+)
+
+# Mostrar tabla con estilo
+library(knitr)
+library(kableExtra)
+
+kable(tabla_iqr, format = "html", align = "lccc", caption = "") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "bordered", "condensed"))
+```
+En la variable **edad**, el IQR es de 36 años, con un Q1 de 25 y un Q3 de 61. Esto indica que la mitad central de los pacientes tiene entre 25 y 61 años, lo que sugiere una población predominantemente adulta joven a adulta mayor. Este resultado es clínicamente relevante, ya que los ACV son más frecuentes en adultos mayores, pero el hecho de que muchos pacientes estén por debajo de los 60 años refuerza la importancia de monitorear factores de riesgo en edades más tempranas. La amplitud del IQR también sugiere una considerable diversidad etaria en el segmento central de la muestra.
+
+Para la glucosa promedio, el IQR es de 36.85 mg/dL, con valores entre 77.24 (Q1) y 114.09 (Q3). Esto significa que el 50% de los pacientes tiene niveles de glucosa en un rango que abarca desde la normoglucemia hasta valores que podrían indicar prediabetes. La amplitud de este IQR es clínicamente significativa: muestra que incluso en el rango intermedio hay suficiente variabilidad como para detectar perfiles metabólicos distintos, lo que es esencial para construir modelos predictivos que incluyan la glucosa como variable de riesgo para ACV.
+
+En el caso del IMC, el IQR es de 9.6 kg/m², con valores entre 23.5 y 33.1. Este intervalo cubre desde el límite superior del peso normal hasta el rango de obesidad moderada. Por tanto, la mitad central de la muestra se encuentra en un estado nutricional que ya representa un riesgo metabólico elevado. Esto refuerza la utilidad del IMC como predictor de ACV en la muestra analizada, y sugiere que muchos pacientes podrían beneficiarse de intervenciones de control de peso como medida preventiva.
+
+En conjunto, estos IQRs reflejan una variabilidad clínica importante dentro del núcleo de la muestra. Esta heterogeneidad en edad, glucosa e IMC entre los pacientes refuerza la necesidad de modelos de predicción ajustados por estos factores para identificar con mayor precisión el riesgo de accidente cerebrovascular.
+
+#### Varianza
+
+La **varianza** mide la dispersión promedio de los datos con respecto a su media, elevando al cuadrado las diferencias para evitar cancelaciones, por lo que sus unidades están al cuadrado. Aunque no es directamente interpretable en las unidades originales, es una medida fundamental para análisis estadísticos avanzados como la regresión o el análisis de componentes principales.
+
+$$
+s^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (x_i - \bar{x})^2
+$$
+
+donde:
+
+-   $x_i$ es cada observación,\
+-   $\bar{x}$ es la media,\
+-   $n$ es el tamaño de la muestra.
+
+**Ventajas:** utiliza toda la información.\
+**Desventajas:** Es sensible a valores extremos y su unidad está elevada al cuadrado, lo que dificulta su interpretación directa.
+
+```{r}
+# Calcular varianzas
+var_age <- var(datos$age, na.rm = TRUE)
+var_glucosa <- var(datos$avg_glucose_level, na.rm = TRUE)
+var_bmi <- var(datos$bmi, na.rm = TRUE)
+
+# Crear tabla con unidades al cuadrado
+tabla_varianza <- data.frame(
+  Variable = c("Edad (age)", "Glucosa (avg_glucose_level)", "IMC (bmi)"),
+  Varianza = c(
+    paste0(round(var_age, 2), " años²"),
+    paste0(round(var_glucosa, 2), " (mg/dL)²"),
+    paste0(round(var_bmi, 2), " (kg/m²)")
+  )
+)
+
+# Mostrar tabla con bordes y estilo
+library(knitr)
+library(kableExtra)
+
+kable(tabla_varianza, format = "html", align = "l", caption = "") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "bordered", "condensed"), full_width = FALSE, position = "center")
+```
+En la variable **edad**, la varianza es de 511.33 años², lo cual indica una dispersión considerable en torno al promedio de edad de la muestra. Este valor confirma lo que ya se había observado con el rango y el IQR: la muestra incluye tanto personas jóvenes como adultos mayores. Esta amplitud es crucial para el estudio, ya que el riesgo de ACV se incrementa con la edad, y contar con una población diversa permite modelar ese riesgo de manera más realista.
+
+Para la glucosa promedio, se observa una varianza de 2050.6 (mg/dL)², que es bastante elevada. Esto implica que los niveles de glucosa en sangre en la muestra están altamente dispersos respecto a la media. Esta alta variabilidad podría estar reflejando la coexistencia de personas con control glucémico normal, pacientes prediabéticos y diabéticos no controlados. En el contexto del estudio, esta variabilidad es muy valiosa, ya que la hiperglucemia es un factor de riesgo importante para ACV, y la inclusión de estos extremos permite capturar con mayor precisión su efecto en los modelos predictivos.
+
+En el caso del IMC, la varianza es de 61.69 (kg/m²)², lo cual representa una dispersión moderada en comparación con las otras dos variables. Aunque menor que la varianza observada en glucosa y edad, este valor sigue siendo clínicamente relevante, ya que refleja una población con diferentes estados nutricionales, desde peso bajo hasta obesidad severa. Esta información es crítica para el estudio, ya que tanto la desnutrición como la obesidad han sido asociadas con mayor riesgo de eventos cerebrovasculares.
+
+En resumen, las tres variables muestran varianzas importantes, lo que sugiere una alta heterogeneidad en la muestra. Esta variabilidad es beneficiosa para los fines del estudio, pues permite capturar una gama más amplia de perfiles clínicos y construir modelos de predicción de ACV más robustos y generalizables.
+
+#### Desviación Estándar
+
+La **desviación estándar (SD)** es la raíz cuadrada de la varianza, devolviendo la medida de dispersión a las mismas unidades que los datos originales. Es una de las medidas de variabilidad más utilizadas debido a su interpretación directa y su relevancia en métodos estadísticos como regresión, pruebas de hipótesis y modelos de predicción.
+
+$$
+s = \sqrt{\frac{1}{n - 1} \sum_{i=1}^{n} (x_i - \bar{x})^2}
+$$
+
+
+**Ventajas:** ampliamente utilizada y fácil de interpretar.\
+**Desventajas:** sensible a valores extremos.
+
+```{r}
+# Cálculo de la desviación estándar para cada variable
+sd_age <- sd(datos$age, na.rm = TRUE)
+sd_glucosa <- sd(datos$avg_glucose_level, na.rm = TRUE)
+sd_bmi <- sd(datos$bmi, na.rm = TRUE)
+
+# Crear la tabla con los resultados
+tabla_sd <- data.frame(
+  Variable = c("Edad (age)", "Glucosa Promedio (avg_glucose_level)", "IMC (bmi)"),
+  `Desviación Estándar` = round(c(sd_age, sd_glucosa, sd_bmi), 2)
+)
+
+# Cargar librerías necesarias
+library(knitr)
+library(kableExtra)
+
+# Mostrar la tabla con bordes y estilo profesional
+kable(tabla_sd, format = "html", align = "l", caption = "") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "bordered", "condensed"), full_width = FALSE)
+```
+Para la edad, la desviación estándar es de 22.61 años. Esto indica que, en promedio, los pacientes se desvían ±22.61 años respecto a la edad media. Es una dispersión alta, lo que confirma la presencia de una población muy heterogénea en términos etarios, abarcando desde personas jóvenes hasta adultos mayores. Esta variabilidad es beneficiosa para el objetivo del estudio, ya que permite explorar cómo influye la edad en la ocurrencia de ACV a lo largo de todo el ciclo vital.
+
+En el caso de la glucosa promedio, la desviación estándar es de 45.28 mg/dL, lo cual representa una alta dispersión en comparación con su media. Esto refleja que existen diferencias sustanciales entre pacientes normoglucémicos y aquellos con hiperglucemia severa o diabetes mal controlada. Dado que los niveles elevados de glucosa en sangre están estrechamente relacionados con el riesgo cardiovascular y cerebrovascular, esta variabilidad aporta valor al modelo predictivo del estudio, permitiendo discriminar mejor entre distintos perfiles metabólicos.
+
+Por último, la desviación estándar del IMC es de 7.85 kg/m², menor en comparación con las otras dos variables, pero aún suficientemente amplia como para reflejar la presencia de pacientes con estados nutricionales muy diversos. Esto incluye desde bajo peso hasta obesidad severa, ambos extremos asociados a un mayor riesgo de ACV. Esta variabilidad, aunque más contenida, sigue siendo clínicamente relevante y debe considerarse en la interpretación y estratificación de riesgo.
+
+En conjunto, las desviaciones estándar indican que existe una amplia diversidad clínica en la muestra analizada. Esta heterogeneidad permite desarrollar modelos estadísticos más robustos y generalizables para predecir el riesgo de ACV, que es el objetivo principal del estudio.
+
+
+#### Coeficiente de Variación (CV)
+
+El **coeficiente de variación** es una medida relativa de dispersión que expresa la desviación estándar como porcentaje de la media. El CV es útil para comparar la variabilidad de variables con diferentes escalas o unidades. 
+
+$$
+CV = \left( \frac{s}{\bar{x}} \right) \times 100\%
+$$
+
+**Ventajas:** permite comparar variables heterogéneas.\
+**Desventajas:** no se recomienda cuando la media es cercana a cero.
+
+
+```{r}
+# Cálculo del Coeficiente de Variación (CV) para cada variable
+cv_age <- sd(datos$age, na.rm = TRUE) / mean(datos$age, na.rm = TRUE) * 100
+cv_glucosa <- sd(datos$avg_glucose_level, na.rm = TRUE) / mean(datos$avg_glucose_level, na.rm = TRUE) * 100
+cv_bmi <- sd(datos$bmi, na.rm = TRUE) / mean(datos$bmi, na.rm = TRUE) * 100
+
+# Crear tabla con los CVs
+tabla_cv <- data.frame(
+  Variable = c("Edad (age)", "Glucosa (avg_glucose_level)", "IMC (bmi)"),
+  `Coeficiente de Variación (%)` = round(c(cv_age, cv_glucosa, cv_bmi), 2)
+)
+
+# Mostrar tabla con bordes y estilo en HTML
+library(knitr)
+library(kableExtra)
+
+kable(tabla_cv, format = "html", align = "l", caption = "") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "bordered", "condensed"),
+                full_width = FALSE, position = "center")
+
+```
+En la variable **edad**, el coeficiente de variación es de 52.31%, lo cual indica una alta dispersión relativa respecto a su promedio. Este valor significa que la edad de los pacientes varía más del 50% en relación con la media, reflejando una gran heterogeneidad etaria dentro de la muestra. Esta amplitud es relevante en el contexto del estudio, ya que permite analizar el impacto del ACV en diversos grupos etarios, desde jóvenes hasta adultos mayores, mejorando la generalización de los modelos predictivos.
+
+Para la **glucosa promedio**, el CV es de 42.66%, también indicando una alta variabilidad relativa. Este resultado es clínicamente importante, ya que muestra que los niveles de glucosa en la sangre varían considerablemente entre los pacientes. Esta variabilidad puede deberse a diferencias en el estado metabólico (normoglucemia, prediabetes, diabetes), lo que refuerza la necesidad de incluir esta variable en modelos predictivos de ACV como un factor continuo y potencialmente no lineal.
+
+El **IMC** presenta un CV de 27.18%, lo cual representa la menor variabilidad relativa entre las tres variables. Esto sugiere que, aunque hay diferencias en el estado nutricional de los pacientes, estas son menos marcadas en comparación con la edad y la glucosa. Aun así, este grado de variación sigue siendo clínicamente relevante, ya que el IMC sigue siendo un factor de riesgo importante para enfermedades cardiovasculares y cerebrovasculares.
+
+En conjunto, los coeficientes de variación confirman que edad y glucosa son las variables más heterogéneas en términos relativos, lo que puede implicar una mayor capacidad explicativa en los modelos de predicción de ACV. El uso del CV permite comparar directamente el grado de dispersión de variables con distintas unidades y escalas, y por tanto es un indicador clave para priorizar variables en el análisis multivariado.
+
+
+#### Comparación de Medidas de Variabilidad
+
+| Medida              | Ventajas                              | Desventajas                                 | Recomendación de uso                |
+|----------------|------------------|---------------------|-----------------|
+| Rango               | Simple y rápida de calcular           | Muy sensible a valores atípicos             | Datos exploratorios, no robustos    |
+| IQR                 | Robusto, ignora extremos              | No usa todos los datos                      | Comparar distribuciones asimétricas |
+| Varianza            | Usa toda la información               | Difícil interpretación (unidades cuadradas) | Cálculos posteriores (inferencia)   |
+| Desviación estándar | Intuitiva, misma unidad que los datos | Afectada por valores extremos               | Comparaciones estándar entre grupos |
+| Coef. de variación  | Comparación entre variables           | Requiere media diferente de cero            | Comparar dispersión relativa        |
+
+#### Conclusión
+
+Las medidas de variabilidad complementan las medidas de tendencia central al describir la dispersión de los datos. Su correcta elección depende del objetivo del análisis y del tipo de datos. En contextos biomédicos, donde una pequeña variación puede tener implicaciones clínicas relevantes, interpretar adecuadamente la variabilidad es crucial para una comprensión integral de los resultados. Usar varias medidas de forma conjunta suele proporcionar una imagen más completa del comportamiento de la variable.
+
+En el contexto del presente estudio sobre factores asociados al accidente cerebrovascular (ACV), el análisis de las medidas de dispersión ha permitido evidenciar una alta variabilidad en las variables clínicas clave del estudio —edad, glucosa promedio e IMC— lo cual es fundamental para interpretar la heterogeneidad de la muestra. Mientras que medidas como el rango y el rango intercuartílico muestran la amplitud general y central de los datos respectivamente, la varianza y la desviación estándar cuantifican la dispersión absoluta, y el coeficiente de variación aporta una perspectiva relativa comparativa entre variables con diferentes escalas.
+
+Estos perfiles reflejan que el riesgo de ACV no es uniforme en la muestra, sino que se distribuye en función de múltiples combinaciones de edad, glucemia e IMC. Por ello, es crucial que los análisis estadísticos consideren estas variaciones mediante modelos ajustados o estratificados, para evitar conclusiones simplistas y poder identificar con mayor precisión subgrupos vulnerables. Esto también tiene implicaciones clínicas importantes para diseñar intervenciones dirigidas y medidas preventivas adaptadas a cada perfil.
+
+Esta diversidad en los patrones de dispersión sugiere la existencia de múltiples perfiles clínicos en la muestra, desde jóvenes con bajo peso hasta adultos mayores con hiperglucemia u obesidad severa. Por tanto, estas medidas no solo complementan las estadísticas de tendencia central, sino que ofrecen una base sólida para construir modelos predictivos más precisos y clínicamente relevantes. En el contexto del accidente cerebrovascular, donde la interacción entre factores de riesgo es compleja, comprender la variabilidad de los datos es esencial para identificar subgrupos vulnerables y guiar estrategias preventivas más eficaces.
+
+
+### Distribución de frecuencias para datos agrupados
+
+
+
+
+------------------------------------------------------------------------
+
+### Gráficos descriptivos
+
+### Comparación de variables cuantitativas según la ocurrencia de ACV (stroke)
 
 Una parte esencial del análisis descriptivo es explorar cómo se comportan las variables cuantitativas en función de una variable categórica relevante. En este caso, se analizan tres indicadores clínicos —edad, nivel promedio de glucosa en sangre (avg_glucose_level) y índice de masa corporal (bmi)— comparando su distribución entre pacientes que han sufrido un accidente cerebrovascular (ACV o stroke) y aquellos que no lo han sufrido.
 
@@ -244,32 +733,30 @@ p3 <- ggplot(datos, aes(x = stroke, y = bmi, fill = stroke)) +
 panel <- p1 | p2 | p3
 panel
 ```
+
 El gráfico anterior muestra cómo varían tres variables cuantitativas clave —edad, nivel promedio de glucosa en sangre y índice de masa corporal (IMC)— entre pacientes que no han sufrido un accidente cerebrovascular (ACV) (grupo “No”) y aquellos que sí lo han sufrido (grupo “Yes”).
 
-- Edad: Se observa una diferencia clara entre los grupos. Los pacientes con ACV tienden a ser considerablemente mayores, con una mediana por encima de los 70 años, mientras que los que no han tenido ACV presentan una mediana cercana a los 40 años. Esto sugiere una fuerte asociación entre la edad avanzada y la ocurrencia de ACV.
+-   Edad: Se observa una diferencia clara entre los grupos. Los pacientes con ACV tienden a ser considerablemente mayores, con una mediana por encima de los 70 años, mientras que los que no han tenido ACV presentan una mediana cercana a los 40 años. Esto sugiere una fuerte asociación entre la edad avanzada y la ocurrencia de ACV.
 
-- Nivel de glucosa: Aunque existe una mayor dispersión entre los pacientes con ACV (con valores más extremos), también se evidencia una mediana ligeramente más alta en comparación con el grupo sin ACV. Además, se detectan muchos valores atípicos (outliers), en quienes no han sufrido ACV.
+-   Nivel de glucosa: Aunque existe una mayor dispersión entre los pacientes con ACV (con valores más extremos), también se evidencia una mediana ligeramente más alta en comparación con el grupo sin ACV. Además, se detectan muchos valores atípicos (outliers), en quienes no han sufrido ACV.
 
-- IMC: La distribución del IMC es bastante similar entre ambos grupos, con medianas cercanas a 28. Sin embargo, se nota una mayor variabilidad y presencia de valores extremos en el grupo sin ACV. Esto indica que, en esta muestra, el IMC no parece estar tan claramente asociado con la ocurrencia de ACV como la edad o la glucosa.
+-   IMC: La distribución del IMC es bastante similar entre ambos grupos, con medianas cercanas a 28. Sin embargo, se nota una mayor variabilidad y presencia de valores extremos en el grupo sin ACV. Esto indica que, en esta muestra, el IMC no parece estar tan claramente asociado con la ocurrencia de ACV como la edad o la glucosa.
 
 Esta visualización es útil para generar hipótesis preliminares sobre posibles factores de riesgo. Por ejemplo, los resultados sugieren que la edad avanzada y niveles elevados de glucosa podrían estar relacionados con mayor riesgo de ACV, mientras que el IMC no presenta una diferencia tan marcada.
 
-
 ## Exploración de relaciones entre variables cuantitativas: matriz de dispersión entre edad, glucosa y BMI
-
 
 Una parte esencial del análisis descriptivo consiste en explorar las posibles relaciones entre variables cuantitativas. Esta exploración permite detectar patrones, asociaciones o tendencias que podrían ser relevantes desde el punto de vista clínico o epidemiológico, y que además servirán como base para futuros modelos predictivos o explicativos.
 
 En este caso, se construye una matriz de dispersión para visualizar simultáneamente las relaciones entre tres variables clave: edad, nivel promedio de glucosa en sangre (avg_glucose_level) e índice de masa corporal (bmi). Esta matriz permite observar:
 
-- En la diagonal, la distribución individual de cada variable mediante histogramas suavizados.
+-   En la diagonal, la distribución individual de cada variable mediante histogramas suavizados.
 
-- En la parte inferior, diagramas de dispersión (scatterplots) entre pares de variables, lo que facilita visualizar tendencias lineales o no lineales.
+-   En la parte inferior, diagramas de dispersión (scatterplots) entre pares de variables, lo que facilita visualizar tendencias lineales o no lineales.
 
-- En la parte superior, los coeficientes de correlación de Pearson entre cada par de variables, incluyendo la significancia estadística.
+-   En la parte superior, los coeficientes de correlación de Pearson entre cada par de variables, incluyendo la significancia estadística.
 
-- Este tipo de visualización integrada es muy útil para detectar correlaciones significativas o posibles relaciones no evidentes a simple vista.
-
+-   Este tipo de visualización integrada es muy útil para detectar correlaciones significativas o posibles relaciones no evidentes a simple vista.
 
 ```{r}
 library(GGally)
@@ -301,17 +788,13 @@ ggpairs(df,
 
 La matriz de dispersión presentada permite identificar relaciones significativas entre las variables cuantitativas consideradas en pacientes con ACV. Específicamente, se observa:
 
-- Una correlación positiva moderada entre el índice de masa corporal (BMI) y la edad (r = 0.333***), lo que sugiere que, dentro de este grupo de pacientes, las personas de mayor edad tienden a tener un BMI más alto.
+-   Una correlación positiva moderada entre el índice de masa corporal (BMI) y la edad (r = 0.333\*\*\*), lo que sugiere que, dentro de este grupo de pacientes, las personas de mayor edad tienden a tener un BMI más alto.
 
-- Una correlación positiva baja entre la edad y el nivel promedio de glucosa (r = 0.236***), así como entre el BMI y la glucosa (r = 0.176***), lo cual puede indicar una asociación débil pero significativa entre estas variables clínicas.
+-   Una correlación positiva baja entre la edad y el nivel promedio de glucosa (r = 0.236***), así como entre el BMI y la glucosa (r = 0.176***), lo cual puede indicar una asociación débil pero significativa entre estas variables clínicas.
 
 Además, los gráficos de densidad en la diagonal permiten identificar la distribución asimétrica de las variables, en especial para avg_glucose_level y bmi, con sesgo a la derecha. Este tipo de visualización multivariada facilita no solo la detección de tendencias y valores extremos, sino también la evaluación preliminar de supuestos para modelos más complejos. En conjunto, esta herramienta es fundamental para comprender la estructura interna de los datos antes de avanzar hacia el análisis inferencial.
 
-
-
-
 ## Análisis de Variables Categóricas
-
 
 Este gráfico permite comparar la distribución de la edad entre pacientes que han sufrido un ACV (stroke = 1) y los que no (stroke = 0).
 
@@ -435,6 +918,7 @@ ggplot(df_heat, aes(x = heart_disease, y = smoking_status, fill = frecuencia)) +
 ```
 
 ### Gráfico de pastel (pie chart)
+
 Una visualización clásica de distribución proporcional para smoking_status.
 
 ```{r}
@@ -451,8 +935,6 @@ datos %>%
   labs(title = "Distribución de Smoking Status")
 
 ```
-
-
 
 ## Aplicación interactiva
 
